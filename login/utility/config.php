@@ -1,6 +1,6 @@
 <?php
 
-//PDO Connection
+//PDO Connessione al db
 $servername = "localhost";
 $username = "root";
 $passworddb = "root";
