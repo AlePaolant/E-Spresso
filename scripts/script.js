@@ -62,3 +62,12 @@ $(document).ready(function() {
     });
   });
   
+//opacità al caricamento
+document.addEventListener("DOMContentLoaded", function() {
+  const animatedElements = document.querySelectorAll('.start-animation');
+  animatedElements.forEach(element => {
+      setTimeout(() => {
+          element.classList.remove('start-animation');
+      }, 500); // Rimuove la classe dopo 1 secondo
+  });
+});

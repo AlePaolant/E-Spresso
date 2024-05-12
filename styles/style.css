@@ -47,8 +47,12 @@ a{
   color: #987b65; }
 a:hover {
   color: #ebe9e4; }
-  
-    
+
+/*serve a cambiare il colore della selezione del testo con il mouse*/ 
+::selection{
+  background-color: rgba(126, 93, 71, 0.7);
+}
+
 /*NAVBAR*/
 .navbar {
   background: transparent !important; 
