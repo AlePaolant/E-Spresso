@@ -1,5 +1,4 @@
 const parallax_el = document.querySelectorAll(".parallax");
-const main = document.querySelector(".main");
 
 let xValue = 0, 
     yValue = 0; //di quanti pixel si muoverà il crotols al passaggio del mouse
@@ -27,11 +26,20 @@ window.addEventListener("mousemove", (e) => {  //e = argomento della funzione ch
     update(e.clientX); //chiamata alla funzione
 });
 
-
-
+//responsive parallax
+const main = document.querySelector(".main");
 
 if (window.innerWidth >= 725) {
     main.style.maxHeight = `${window.innerWidth * 0.85}px`;
 } else {
     main.style.maxHeight = `${window.innerWidth * 1.85}px`;
-}
+};
+
+//rotazione tazzina about
+window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY;
+    var rotationValue = scrollPosition / 10; // Regola la velocità di rotazione modificando il divisore
+
+    var rotatingImage = document.getElementById('tazza-about');
+    rotatingImage.style.transform = 'translate(-50%, -50%) rotate(' + rotationValue + 'deg)';
+});
