@@ -139,7 +139,7 @@
     position: absolute;
     width: 45%;                           
     bottom: -110%;              
-    left: 5%;                     
+    left: 6%;                     
     z-index: 1;
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease;
@@ -162,6 +162,15 @@
 .text-bold{
     font-weight: 500;
 }
+.img-chicchi-about{
+    position: absolute; 
+    width: 20%;                           
+    bottom: -6%;              
+    right: -7%;                     
+    z-index: 1;
+    opacity: 90%;
+    transform: translate(-50%, -50%);
+}
 
 
 /*SECTION CAFFE*/
@@ -177,54 +186,375 @@
     margin: 0;
     padding: 0;
 }
-.img-caffe-01{
-    position: absolute;
-    width: 45%;                           
-    bottom: 0;              
-    left: 0;                     
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    transition: transform 0.5s ease;
+.img-caffe-container{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    margin-right: 2%;
+    background-color: transparent !important;
 }
-.img-caffe-02{
+.img-c-01{
     position: absolute;
-    width: 45%;                           
-    bottom: 0;              
-    left: 0;                     
-    z-index: 1;
+    width: 45%; 
+    top: 40%;                                   
+    left: 32%;                     
+    z-index: 0;
     transform: translate(-50%, -50%);
-    transition: transform 0.5s ease;
+    transition-property: top,left; 
+    transition-duration: 0.5s; 
+    transition-timing-function: ease;
 }
-.img-caffe-03{
-    position: absolute;
-    width: 45%;                           
-    bottom: 0;              
-    left: 0;                     
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    transition: transform 0.5s ease;
+.hover-img-c-1{
+    top: 35%;                                   
+    left: 27%;
 }
-.img-caffe-04{
+.img-c-02{
     position: absolute;
-    width: 45%;                           
-    bottom: 0;              
-    left: 0;                     
+    width: 30%;                           
+    top: 35%;           
+    left: 60%;                     
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    transition-property: top,left; 
+    transition-duration: 0.5s; 
+    transition-timing-function: ease;
+}
+.hover-img-c-2{
+    top: 30%;                                   
+    left: 67%;
+}
+.img-c-03{
+    position: absolute;
+    width: 30%;                           
+    top: 55%;                
+    left: 38%;                     
     z-index: 1;
     transform: translate(-50%, -50%);
-    transition: transform 0.5s ease;
+    transition-property: top,left; 
+    transition-duration: 0.5s; 
+    transition-timing-function: ease;
+}
+.hover-img-c-3{
+    top: 73%;                                   
+    left: 34%;
+}
+.img-c-04{
+    position: absolute;
+    width: 38%;                           
+    top: 56%;              
+    left: 65%;                     
+    z-index: 4;
+    transform: translate(-50%, -50%);
+    transition-property: top,left; 
+    transition-duration: 0.5s; 
+    transition-timing-function: ease;
+}
+.hover-img-c-4{
+    top: 78%;                                   
+    left: 71%;
+}
+.caffe-text-container{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: transparent !important;
+}
+.container-interno{
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 15%;
+    padding: 0;
+}
+.caffe-text-container h2{
+    font-weight: 500;
+    line-height: 2;   
+}
+.caffe-text-container p{
+    font-size: 1.2rem;
+    line-height: 1.3;   
+}
+.caffe .img-divisore{
+    position: relative;
+    width: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+.caffe-text-container .btn {
+    margin-top: 2%;
+    color: #343a40;
+    border-color: #343a40;
+}
+.caffe-text-container .btn:hover {
+    color: #fff;
+    background-color: #7e5e47;
+    border-color: #7e5e47;
+    cursor: url('../img/cursor/cursore-chicco.png'), auto;
+}
+.img-bg-foglie{
+    position: absolute;
+    width: 20%;                           
+    top: 15%;              
+    left: 7%;                     
+    z-index: 1;
+    opacity: 90%;
+    transform: translate(-50%, -50%);
+}
+.img-bg-cucchiaio{
+    position: absolute;
+    width: 35%;                           
+    top: 77.5%;              
+    left: 12%;                     
+    z-index: 1;
+    opacity: 90%;
+    transform: translate(-50%, -50%);
 }
 
 
 /*SECTION CUSTOM*/
+.custom{
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+    background-color: rgb(233, 231, 223); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.custom .img-divisore{
+    position: relative; 
+    width: 25%;
+    left: 13%;
+    margin-top: 1%;
+    transform: translate(-50%, -50%);
+}
+.custom .container{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.custom .container h1{
+    font-size: 3.7rem;
+    line-height: 0.9;
+}
+.custom .container p{
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+.custom .btn {
+    margin-top: 2%;
+    color: #343a40;
+    border-color: #343a40;
+}
+.custom .btn:hover {
+    color: #fff;
+    background-color: #7e5e47;
+    border-color: #7e5e47;
+    cursor: url('../img/cursor/cursore-tazza.png'), auto;
+}
 
 
-
-
-
-/*SECTION CONTACTS*/
+/*SECTION FAQ*/
+.faq{
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    overflow: hidden;
+    background-color: rgb(224, 219, 209); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.faq-title{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: transparent !important;
+}
+.faq .faq-title h2{
+    font-size: 2.9rem;
+    line-height: 1.1;
+}
+.faq .faq-title p{
+    margin-top: 6%;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+.faq .faq-title .btn {
+    margin-top: 2%;
+    color: #343a40;
+    border-color: #343a40;
+}
+.faq .faq-title .btn:hover {
+    color: #fff;
+    background-color: #7e5e47;
+    border-color: #7e5e47;
+}
+.faq .img-divisore{
+    position: relative; 
+    width: 55%;
+    left: 27%;
+    margin-top: 3%;
+    transform: translate(-50%, -50%);
+}
+.faq .container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    margin-right: 5%;
+    margin-top: 10%;
+    background-color: transparent !important;
+}
+  
+  .sezione-faq .faq-item {
+    border-bottom: 1px solid #7e5e47;
+  }
+  
+  .sezione-faq .faq-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #7e5e47;
+  }
+  
+  .sezione-faq button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #343a40;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  .sezione-faq button:hover,
+  .sezione-faq button:focus {
+    cursor: pointer;
+    color: #a58e76;
+  }
+  
+  .sezione-faq button:hover::after,
+  .sezione-faq button:focus::after {
+    cursor: pointer;
+    color: #a58e76;
+    border: 1px solid #a58e76;
+  }
+  
+  .sezione-faq button .faq-titolo {
+    padding: 1em 1.5em 1em 0;
+  }
+  
+  .sezione-faq button .faq-icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  
+  .sezione-faq button .faq-icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  .sezione-faq button .faq-icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  
+  .sezione-faq button[aria-expanded='true'] {
+    color: #a58e76;
+  }
+  .sezione-faq button[aria-expanded='true'] .faq-icon::after {
+    width: 0;
+  }
+  .sezione-faq button[aria-expanded='true'] + .faq-risposta {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .sezione-faq .faq-risposta {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .sezione-faq .faq-risposta p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+  }
 
 
 
 
 
 /*SECTION MAILING LIST*/
+.mailinglist{
+    position: relative;
+    width: 100vw;
+    height: 65vh;
+    overflow: hidden;
+    background-color: rgb(233, 231, 223); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.mailinglist video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mailinglist .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(218, 212, 205, 1); /*questo colore si somma a quelli di h1 e p*/
+    z-index: 2;
+    mix-blend-mode: lighten; /*metodo di fusione per scritta*/
+}
+
+.mailinglist .content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #b8b6b2;  /*non cambiare*/
+}
+
+.mailinglist .content p {
+    font-size: 1.2rem;
+    color: #b8b6b2;  /*non cambiare*/
+}
