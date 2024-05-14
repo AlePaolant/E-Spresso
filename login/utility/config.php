@@ -1,5 +1,7 @@
 <?php
 
+/* LATO SERVER */
+
 //PDO Connessione al db
 $servername = "localhost";
 $username = "root";
