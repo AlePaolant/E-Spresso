@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/account.css">
         
 
 
@@ -74,27 +74,63 @@
     }
     ?>
 
-    <h1>Simple php login</h1>
 
-    <!-- Login form -->
-    <form class="" action="utility/login.php" method="POST">
-
-      <!-- Action -->
+    <form class="" action="utility/login.php" method="POST"> <!-- la post serve per mandare i dati ad utility/login.php per processarli -->
       <input type="hidden" name="action" value="login">
 
-      <!-- Email or Username -->
+      <video id="login-video" autoplay loop muted>
+        <source src="../img/video/sfondo_ridotto.mp4" type="video/mp4">
+      </video>
+      <div class="row justify-content-center">
+        <div class="col-md-6 login-container">
+          <div class="card">
+            <div class="card-under-header">
+              Inserisci la tua Email e la tua Password
+            </div>
+            <div class="card-body">
+              <form id="loginForm">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" name="email" required placeholder="latuaemail@email.com">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" required placeholder="latuapassword">
+                </div>
+                <div class="remember-me">
+                    <label class="checkbox" for="remember-me">
+                      <input type="radio" id="remember-me" name="remember-me" required> 
+                      <span class="checkmark"> </span>Ricordami!
+                    </label>
+                </div>
+                <div class="btn-login">
+                  <button class="btn btn-primary">Accedi</button>
+                </div>
+                <div class="under-login-btn">
+                  Non sei registrato? <a href="../pages/registrazione.html">Registrati!</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!--
+    <form class="" action="utility/login.php" method="POST">
+
+      <input type="hidden" name="action" value="login">
+
       <label for="email">Email or Username</label>
       <input autofocus name="email" type="text">
-
-      <!-- Password -->
+    
       <label for="password">Password</label>
       <input name="password" id="password" placeholder="" type="password">
 
-      <!-- Login Button -->
       <button type="submit">Login</button>
 
     </form>
-    <!-- /Login form -->
+    -->
 
   </div>
 </div>

@@ -28,11 +28,7 @@ if ($rows > 0) {
 //Insert new user in DB
 $password = password_hash($password, PASSWORD_DEFAULT);
 $q = $dbh->prepare("INSERT INTO users (username,email,password) 
-    VALUES (
-    :username, 
-    :email, 
-    :password
-    )");
+    VALUES (:username, :email, :password)");
 $q->bindParam(':username', $username);
 $q->bindParam(':email', $email);
 $q->bindParam(':password', $password);
