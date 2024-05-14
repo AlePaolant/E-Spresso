@@ -19,11 +19,6 @@
     -webkit-text-stroke-width: 0.1px; /* Larghezza del bordo */
     -webkit-text-stroke-color:black; /* Colore del bordo */
   }
-  
-  .page-content{
-    height:fit-content;
-    padding-top:150px;
-  }
 
   #login-video{
     width: 100%;
@@ -101,10 +96,15 @@
     align-items: center;
     padding: 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
   }
   
   .btn-primary{
     border-radius: 50px;
+  }
+
+  .btn-primary.accedi{
+    margin-right: 10px;
   }
   
   .under-login-btn{
@@ -126,4 +126,17 @@
 
   .form-group{
     color:blanchedalmond;
+  }
+
+  .page-content{
+    width:100vw;
+    height:100vh;
+    background-image: url("../img/bg-login.jpg");
+    background-size:cover;
+
+  }
+
+  .login-container{
+    margin-top: 20%;
+    margin-bottom: 15%;
   }

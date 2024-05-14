@@ -59,40 +59,24 @@
     </nav>
 
     <!--INSERISCI QUI IL NUOVO CODICE-->
-    <div class="page-content ">
-  <div class="container container-login">
-    
+    <div class="page-content">
+    <!--<div class="img-pre">
+        <img src="img/bg-login.jpg" >
+    </div>-->
+    <div class="container container-login">
+  
     <!--INSERISCI QUI IL NUOVO CODICE-->
-    <video id="login-video" autoplay loop muted>
-      <source src="img/video/sfondo_ridotto.mp4" type="video/mp4">
-    </video>
       <div class="row justify-content-center">
         <div class="col-md-6 login-container">
           <div class="card">
             <div class="card-under-header">
-              Inserisci la tua Email e la tua Password
+              <h3> Accedi o registrati! </h3>
             </div>
             <div class="card-body">
               <form id="loginForm">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email" name="email" required placeholder="latuaemail@email.com">
-                </div>
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" name="password" required placeholder="latuapassword">
-                </div>
-                <div class="remember-me">
-                    <label class="checkbox" for="remember-me">
-                      <input type="radio" id="remember-me" name="remember-me" required> 
-                      <span class="checkmark"> </span>Ricordami!
-                    </label>
-                </div>
                 <div class="btn-login">
-                  <button class="btn btn-primary">Accedi</button>
-                </div>
-                <div class="under-login-btn">
-                  Non sei registrato? <a href="../pages/registrazione.html">Registrati!</a>
+                  <button class="btn btn-primary accedi" onclick="window.open('login/login.php')" > Accedi</button>
+                    <button class="btn btn-primary registrati" onclick="window.open('login/register.php', '_blank')"> Registrati </button>
                 </div>
               </form>
             </div>

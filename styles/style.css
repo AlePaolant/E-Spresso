@@ -183,7 +183,6 @@ a:hover {
 
 /*FOOTER*/
 .footer {
-  margin-top: 100px; /* per staccare il footer dal body */
   height:auto; /* Altezza del footer */
   padding: 7em 0 7em 0; 
   background: #212222;
