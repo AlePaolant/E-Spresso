@@ -76,7 +76,7 @@
 
 
     <form class="" action="utility/login.php" method="POST"> <!-- la post serve per mandare i dati ad utility/login.php per processarli -->
-      <input type="hidden" name="action" value="login">
+      <input type="hidden" name="action" value="login"> 
 
       <video id="login-video" autoplay loop muted>
         <source src="../img/video/sfondo_ridotto.mp4" type="video/mp4">
