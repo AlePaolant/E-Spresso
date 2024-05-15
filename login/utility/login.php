@@ -20,30 +20,28 @@ $rows = $q->rowCount();                 // conta tutte le righe restituite dalla
 if ($rows > 0) {                        // se le righe sono più di 0 allora esiste un utente
     while ($row = $q->fetch()) {        // ciclo while tra le righe
 
-        //Password control
+        //Controllo password non hashata
         if($row['password']===$password){
-            session_start();
-            $_SESSION['id'] = $row["id"];
-            header("location: ../area_riservata.php");
+            session_start();                            //serve per bloccare gli utenti che non hanno fatto il login
+            $_SESSION['id'] = $row["id"];               //Salva l'id dell'utente nella sessione
+            header("location: ../area_riservata.php");  //Redirect alla pagina dell'area riservata
             die();
         }
+        /*-----------------------------------------------------------------
+        CONTROLLO PASSWORD HASHATA (se vogliamo implementare il criptaggio)
+        ------------------------------------------------------------------*/
         /*
         if (!(password_verify($password, $row["password"]))) {
             header("location: ../error.php?error=Wrong Password");
             die();
         }
-
-        //Start Session - serve per bloccare gli utenti che non hanno fatto il login
-        session_start();
-
-        $_SESSION['id'] = $row["id"]; //Save user id in session
-
-        //Redirect alla pagina welcome dell'area riservata
-        header("location: ../area_riservata.php");
+        session_start();                          
+        $_SESSION['id'] = $row["id"];                   
+        header("location: ../area_riservata.php");      
         die();
         */
-    }
+    }       
 } else {
-    header("location: ../error.php?error=Wrong Email or Username");
+    header("location: ../error.php?error=Wrong Email or Username");     //Redirect a pagina errore
     die();
 }

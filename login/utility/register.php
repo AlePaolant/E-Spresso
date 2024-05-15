@@ -1,20 +1,24 @@
 <?php
-//Config File
+//File per connessione al database
 include("config.php");
 
-/* LATO SERVER */
 
 /*------------------------------------------------------
+                    LATO SERVER
                     REGISTER
 -------------------------------------------------------*/
+///Variabili restituite dal metodo POST
+$nome = $_POST['nome'];
+$cognome = $_POST['cognome'];
 $email = $_POST['email'];
-$username = $_POST['username'];
 $password = $_POST['password'];
+$indirizzo = $_POST['indirizzo'];
+$n_civico = $_POST['n_civico'];
+$citta = $_POST['citta'];
 
 //Control if the user or email are already in the database
-$q = $dbh->prepare("SELECT * FROM users WHERE email = :email OR username =:username");
+$q = $pdo->prepare("SELECT * FROM users WHERE email = :email");
 $q->bindParam(':email', $email);
-$q->bindParam(':username', $username);
 $q->execute(); // eseguo la query
 $q->setFetchMode(PDO::FETCH_ASSOC);
 $rows = $q->rowCount();
@@ -26,16 +30,21 @@ if ($rows > 0) {
 }
 
 //Insert new user in DB
-$password = password_hash($password, PASSWORD_DEFAULT);
-$q = $dbh->prepare("INSERT INTO users (username,email,password) 
-    VALUES (:username, :email, :password)");
-$q->bindParam(':username', $username);
+//$password = password_hash($password, PASSWORD_DEFAULT); - HASH
+$q = $pdo->prepare("INSERT INTO users(nome,cognome,email,password,indirizzo,n_civico,citta) 
+    VALUES (:nome, :cognome, :email, :password, :indirizzo, :n_civico, :citta)");
+$q->bindParam(':nome', $nome);
+$q->bindParam(':cognome', $cognome);
 $q->bindParam(':email', $email);
 $q->bindParam(':password', $password);
+$q->bindParam(':indirizzo', $indirizzo);
+$q->bindParam(':n_civico', $n_civico);
+$q->bindParam(':citta', $citta);
+
 $res = $q->execute(); // eseguo la query
 
 if ($res) {
-    header("location: ../index.php?user=yes");
+    header("location: ../login.php?user=yes");
 } else {
     header("location: ../error.php?error=" . $conn->error);
 }

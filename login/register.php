@@ -86,18 +86,20 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="Cognome">Cognome</label>
+                      <label for="cognome">Cognome</label>
                       <input autofocus name="cognome" type="text" class="form-control" id="cognome"  required placeholder="Il tuo cognome">
                     </div>
 
                     <div class="form-group">
                       <label for="email">Email</label> 
-                      <input autofocus name="email" type="text" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" class="form-control" id="email"  required placeholder="Inserisci la tua mail">
+                      <!-- pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" -->
+                      <input autofocus name="email" type="text" class="form-control" id="email"  required placeholder="Inserisci la tua mail">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label> 
-                        <input name="password" id="password" type="text" attern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"  required placeholder="Inserisci una password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" --> 
+                        <input name="password" id="password" type="text"  class="form-control"  required placeholder="Inserisci una password">
                     </div>
 
                     <div class="form-group">
@@ -112,7 +114,7 @@
                     
                     <div class="form-group">
                       <label for="citta">Città</label> 
-                      <input type="text" class="form-control" id="citta" autofocus name="n_civico" required placeholder="Inserisci la tua città">
+                      <input type="text" class="form-control" id="citta" autofocus name="citta" required placeholder="Inserisci la tua città">
                     </div>
 
                     <div class="btn-login">
