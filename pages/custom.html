@@ -26,6 +26,7 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
       <link rel="stylesheet" href="../styles/style.css">
+      <link rel="stylesheet" href="../styles/custom.css">
         
 
 
@@ -61,18 +62,65 @@
       
 
           
+      <!-- CONTENUTO DI SOPRA -->
+      <section class="custom start-animation" id="custom">
+        <div class="container justify-content-center align-items-center text-center">
+          <h1>INSERIRE CARD CAFFE</h1>
           
-      <!-- Contenuto sotto la navbar -->
-      <div class="page-content">
-        <div class="container">
-          <h1>Contenuto sotto la navbar</h1>
-          <h2>Contenuto sotto la navbar</h2>
-          <h3>Contenuto sotto la navbar</h3>
-          <h4>Contenuto sotto la navbar</h4>
-          <p>Qui puoi aggiungere il contenuto della tua pagina.</p>
-          <a class="rotate" href="#">Link e collegamenti.</a>
         </div>
-      </div>
+      </section>
+
+          
+      
+      <!-- SELEZIONE -->
+      <section class="selezione start-animation" id="selezione">
+        <div class="container mt-5">
+          <h1 class="mb-4">Scelta del Caffè</h1>
+          <img src="../img/divisore.png" class="img-divisore">
+          <p>Tua la tazza, tua la miscela! Scegli tra una vasta selezione di caffè e crea la miscela perfetta per il tuo palato. 
+            <br>Con un tocco di creatività e un pizzico di passione, ogni tazza diventa un'opera d'arte da gustare e apprezzare.</p>
+          
+            <!-- Filtri per la scelta del caffè -->
+          <div class="row mb-3">
+            <div class="col-md-2">
+              <label for="corposita" class="form-label">Corposità:</label>
+              <select id="corposita" class="form-select"></select>
+            </div>
+            <div class="col-md-2">
+              <label for="acidita" class="form-label">Acidità:</label>
+              <select id="acidita" class="form-select"></select>
+            </div>
+            <div class="col-md-2">
+              <label for="gusto1" class="form-label">Gusto 1:</label>
+              <select id="gusto1" class="form-select"></select>
+            </div>
+            <div class="col-md-2">
+              <label for="gusto2" class="form-label">Gusto 2:</label>
+              <select id="gusto2" class="form-select"></select>
+            </div>
+            <div class="col-md-2">
+              <label for="retrogusto1" class="form-label">Retrogusto 1:</label>
+              <select id="retrogusto1" class="form-select"></select>
+            </div>
+            <div class="col-md-2">
+              <label for="retrogusto2" class="form-label">Retrogusto 2:</label>
+              <select id="retrogusto2" class="form-select"></select>
+            </div>
+          </div>
+
+          <button onclick="filtroCaffe()" class="btn btn-primary">Applica Filtro</button>
+
+          <!-- Risultati della ricerca -->
+          <div id="risultati" class="mt-5">
+            <!-- Qui verranno visualizzati i risultati della ricerca -->
+          </div>  
+        </div>
+      </section>
+
+
+    
+
+
 
 
       <!-- FOOTER -->
@@ -136,6 +184,7 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="../scripts/script.js"></script>
+      <script src="../scripts/custom.js"></script>
 
     </body>
 </html>

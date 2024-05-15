@@ -13,25 +13,6 @@ if($sessionid==""){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html  lang="it">
     <head>
