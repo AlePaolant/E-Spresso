@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/login.css">
         
 
 
@@ -60,52 +60,69 @@
 
 <!-- LATO CLIENT -->
 
-<div class="container">
-    <div class="box">
+<!-- Contenuto sotto la navbar -->
+<div class="page-content ">
+  <div class="container container-login">
+    
+    <!--INSERISCI QUI IL NUOVO CODICE-->
+    <video id="login-video" autoplay loop muted>
+      <source src="../img/video/c03_top.MOV" type="video/mp4">
+    </video>
+    <form class="" action="utility/register.php" method="POST">  <!-- la post serve per mandare i dati ad utility/register.php per processarli -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 login-container">
+          <div class="card">
+            <div class="card-under-header">
+              Benvenuto! Completa la registrazione
+            </div>
+            <div class="card-body">
+                  <form id="loginForm">
 
-        <h1>Register New User</h1>
+                    <input type="hidden" name="action" value="register">
 
-        <!-- Login form -->
-        <form class="" action="utility/register.php" method="POST">  <!-- la post serve per mandare i dati ad utility/register.php per processarli -->
+                    <div class="form-group">
+                      <label for="nome">Nome</label>
+                      <input autofocus name="nome" type="text" class="form-control" id="nome" required placeholder="Il tuo nome">
+                    </div>
 
-            <!-- Action -->
-            <input type="hidden" name="action" value="register">
+                    <div class="form-group">
+                      <label for="Cognome">Cognome</label>
+                      <input autofocus name="cognome" type="text" class="form-control" id="cognome"  required placeholder="Il tuo cognome">
+                    </div>
 
-            <!-- Nome -->
-            <label for="nome">Nome</label>
-            <input autofocus name="username" type="text">
+                    <div class="form-group">
+                      <label for="email">Email</label> 
+                      <input autofocus name="email" type="text" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" class="form-control" id="email"  required placeholder="Inserisci la tua mail">
+                    </div>
 
-            <!-- Cognome -->
-            <label for="cognome">Cognome</label>
-            <input autofocus name="cognome" type="text">
+                    <div class="form-group">
+                        <label for="password">Password</label> 
+                        <input name="password" id="password" type="text" attern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"  required placeholder="Inserisci una password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                    </div>
 
-            <!-- Email -->
-            <label for="email">Email </label>
-            <input autofocus name="email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
+                    <div class="form-group">
+                        <label for="indirizzo">Indirizzo</label> 
+                        <input type="text" class="form-control" id="indirizzo" autofocus name="indirizzo" required placeholder="Inserisci il tuo indirizzo">
+                    </div>
 
-            <!-- Password -->
-            <label for="password">Password</label>
-            <input name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                    <div class="form-group">
+                      <label for="n_civico">Numero civico</label> 
+                      <input type="text" class="form-control" id="n_civico" autofocus name="n_civico" required placeholder="Inserisci il tuo numero civico">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="citta">Città</label> 
+                      <input type="text" class="form-control" id="citta" autofocus name="n_civico" required placeholder="Inserisci la tua città">
+                    </div>
 
-            <!-- Indirizzo-->
-            <label for="indirizzo">Indirizzo</label>
-            <input autofocus name="indirizzo" type="text">
-
-            <!-- N_Civico-->
-            <label for="n_civico">N_Civico</label>
-            <input autofocus name="n_civico" type="text">
-
-            <!-- Citt-->
-            <label for="citta">Città</label>
-            <input autofocus name="citta" type="text">
-
-            <!-- Registrati -->
-            <button type="submit">Registrati</button>
-
-        </form>
-        <!-- /Login form -->
-
-    </div>
+                    <div class="btn-login">
+                      <button class="btn btn-primary" type="submit"> Registrati </button>
+                    </div>
+                 </form>
+            </div>
+        </div>
+    </form>
+  </div>
 </div>
 
  <!-- FOOTER -->

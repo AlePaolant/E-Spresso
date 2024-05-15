@@ -69,6 +69,7 @@
     <video id="login-video" autoplay loop muted>
       <source src="../img/video/c03_top.MOV" type="video/mp4">
     </video>
+    <form class="" action="utility/register.php" method="POST">  <!-- la post serve per mandare i dati ad utility/register.php per processarli -->
     <div class="row justify-content-center">
         <div class="col-md-6 login-container">
           <div class="card">
@@ -76,34 +77,53 @@
               Benvenuto! Completa la registrazione
             </div>
             <div class="card-body">
-                <form id="loginForm">
+                  <form id="loginForm">
+
+                    <input type="hidden" name="action" value="register">
+
                     <div class="form-group">
                       <label for="nome">Nome</label>
-                      <input type="text" class="form-control" id="nome" name="nome" required placeholder="Il tuo nome">
+                      <input autofocus name="nome" type="text" class="form-control" id="nome" required placeholder="Il tuo nome">
                     </div>
+
                     <div class="form-group">
                       <label for="Cognome">Cognome</label>
-                      <input type="cognome" class="form-control" id="cognome" name="cognome" required placeholder="Il tuo cognome">
+                      <input autofocus name="cognome" type="text" class="form-control" id="cognome"  required placeholder="Il tuo cognome">
                     </div>
+
                     <div class="form-group">
                       <label for="email">Email</label> 
-                      <input type="email" class="form-control" id="email" name="email" required placeholder="Inserisci la tua mail">
+                      <input autofocus name="email" type="text" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" class="form-control" id="email"  required placeholder="Inserisci la tua mail">
                     </div>
+
                     <div class="form-group">
                         <label for="password">Password</label> 
-                        <input type="password" class="form-control" id="password" name="password" required placeholder="Inserisci una password">
+                        <input name="password" id="password" type="text" attern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"  required placeholder="Inserisci una password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                     </div>
+
                     <div class="form-group">
                         <label for="indirizzo">Indirizzo</label> 
-                        <input type="indirizzo" class="form-control" id="indirizzo" name="indirizzo" required placeholder="Inserisci il tuo indirizzo">
+                        <input type="text" class="form-control" id="indirizzo" autofocus name="indirizzo" required placeholder="Inserisci il tuo indirizzo">
                     </div>
+
+                    <div class="form-group">
+                      <label for="n_civico">Numero civico</label> 
+                      <input type="text" class="form-control" id="n_civico" autofocus name="n_civico" required placeholder="Inserisci il tuo numero civico">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="citta">Città</label> 
+                      <input type="text" class="form-control" id="citta" autofocus name="n_civico" required placeholder="Inserisci la tua città">
+                    </div>
+
                     <div class="btn-login">
-                      <button class="btn btn-primary"> Registrati </button>
+                      <button class="btn btn-primary" type="submit"> Registrati </button>
                     </div>
-                </form>
+                 </form>
             </div>
         </div>
-    </div>
+    </form>
+  </div>
 
 
       <!-- FOOTER -->
