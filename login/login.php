@@ -107,7 +107,7 @@
                   <button type="submit" class="btn btn-primary">Accedi</button>
                 </div>
                 <div class="under-login-btn">
-                  Non sei registrato? <a href="../pages/registrazione.html">Registrati!</a>
+                  Non sei registrato? <a href="register.php">Registrati!</a>
                 </div>
               </form>
             </div>
