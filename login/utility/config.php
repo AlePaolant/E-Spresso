@@ -1,8 +1,9 @@
 <?php
 
-/* LATO SERVER */
-
-//PDO Connessione al db
+/*------------------------------------------------------
+                    LATO SERVER 
+            Connessione PDO al database
+--------------------------------------------------------*/
 
 try {
     $pdo = new PDO('pgsql:host=localhost;dbname=users', 'postgres', 'admin');

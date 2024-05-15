@@ -75,7 +75,7 @@
     ?>
 
 
-    <form class="" action="utility/login.php" method="POST"> <!-- la post serve per mandare i dati ad utility/login.php per processarli -->
+    <form class="" action="utility/login.php" method="POST"> <!-- il metodo post serve a non mostrare le credenziali sulla barra di ricerca -->
       <input type="hidden" name="action" value="login"> 
 
       <video id="login-video" autoplay loop muted>
@@ -104,7 +104,7 @@
                     </label>
                 </div>
                 <div class="btn-login">
-                  <button class="btn btn-primary">Accedi</button>
+                  <button type="submit" class="btn btn-primary">Accedi</button>
                 </div>
                 <div class="under-login-btn">
                   Non sei registrato? <a href="../pages/registrazione.html">Registrati!</a>

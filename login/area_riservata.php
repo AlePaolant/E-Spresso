@@ -1,3 +1,37 @@
+<?php
+/*-----------------------------------------------------
+      CODICE PER ACCESSSO ALL'AREA RISERVATA
+  (da copiare su ogni pagina con accesso riservato)
+-------------------------------------------------------*/
+session_start();
+$sessionid= $_SESSION['id'];
+if($sessionid==""){
+  header('location: error.php');
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html  lang="it">
     <head>
