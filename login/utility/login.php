@@ -12,7 +12,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 //Query
-$q = $dbh->prepare("SELECT * FROM users WHERE email = :email");
+$q = $pdo->prepare("SELECT * FROM users WHERE email = :email");
 $q->bindParam(':email', $email);
 $q->execute(); // eseguo la query
 $q->setFetchMode(PDO::FETCH_ASSOC);
