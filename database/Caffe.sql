@@ -150,3 +150,171 @@ INSERT INTO TipiCaffe (nome, idCorposita, idAcidita, idGusto1, idGusto2, idRetro
     ('Papua Nuova Guinea', 2, 3, 11, NULL, 11, NULL),
     ('Perù Imperator', 6, 5, 13, 3, 5, NULL),
     ('Sumatra', 7, 3, 14, 28, NULL, NULL);
+
+
+
+
+-- AGGIUNGI COLONNE PREZZO E DESCRIZIONE
+ALTER TABLE tipicaffe
+ADD COLUMN descrizione TEXT,
+ADD COLUMN prezzo NUMERIC(10,2) DEFAULT 0.00;
+
+
+
+
+-- AGGIUNGI VALORI DESCRIZIONE E PREZZO AD OGNI CAFFE
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica prodotto nell’area Sul de Minas a 1000-1300 m.s.l.m., essiccato al sole. In tazza delicato, equilibrato e dal buon corpo, con un’ acidità minima. Al gusto spiccano note di cacao e cereali, nel retrogusto permangono note di arachide tostato.',
+    prezzo = 7.99
+WHERE nome = 'Brasile';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica prodotto nell’area Ovest d’Etiopia a 1600-1800 metri s.l.m., essiccato al sole. In tazza si presenta con un corpo consistente e un’acidità medio leggera. Il gusto è fruttato, con sentori di agrumi e spezie. Il retrogusto è cioccolatoso.',
+    prezzo = 7.99
+WHERE nome = 'Etiopia';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Robusta, coltivato nella regione Karnataka a 500-800 metri s.l.m., lavato. In tazza si presenta corposo, vellutato e dal gusto intenso. Al gusto risaltano note di liquirizia, cacao e spezie. Nel retrogusto permangono note di frutta secca.',
+    prezzo = 7.99
+WHERE nome = 'India';
+
+UPDATE tipicaffe
+SET descrizione = 'Selezione di caffè Robusta, coltivato nella zona del complesso vulcanico Tengger, tra 600-800 metri s.l.m., lavato. In tazza si presenta corposo. Al gusto si percepiscono gradevoli sentori di cacao e sandalo. Nel retrogusto spiccano note di nocciole tostate.',
+    prezzo = 7.99
+WHERE nome = 'Indonesia';
+
+UPDATE tipicaffe
+SET descrizione = 'Selezione di caffè Robusta, coltivato sugli altopiani settentrionali dell’isola di Flores tra 400-800 metri s.l.m., lavato. In tazza si presenta con un corpo pieno. Al gusto si percepisce l’aroma di cacao. Nel retrogusto persistono note di nocciole tostate e cioccolato.',
+    prezzo = 7.99
+WHERE nome = 'Indonesia Flores';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, lavorato con metodo naturale, essiccato al sole. Coltivato a 1400-1800 metri s.l.m. In tazza si presenta con un buon corpo. Al gusto spiccano note speziate. Nel retrogusto persistono note di cacao e frutta secca, in particolare la noce.',
+    prezzo = 7.99
+WHERE nome = 'Kenia';
+
+UPDATE tipicaffe
+SET descrizione = 'Selezione di caffè Robusta, lavato. Coltivato a sud nella regione del Chiapas a circa 800 metri s.l.m. In tazza si presenta molto corposo. Al gusto presenta gradevoli note di pane tostato e cacao. Nel retrogusto prevalgono note di frutta secca, in particolare sentori di noce.',
+    prezzo = 7.99
+WHERE nome = 'Messico';
+
+UPDATE tipicaffe
+SET descrizione = 'Selezione di caffè Robusta, lavato. Proveniente dallo stato del Karnataka. Coltivato tra 500-1000 metri s.l.m. In tazza si presenta con una crema consistente e vellutata. Al gusto si colgono note calde di cacao e nocciola. Nel retrogusto è persistente.',
+    prezzo = 7.99
+WHERE nome = 'India Peabelly';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità arabica prodotto nell’area Minas Gerais  dalla Fazenda Vila Boa (Carmo da Mata). La coltivazione è situata a 1000-1200 metri s.l.m. In tazza si presenta con un buon corpo, una lieve nota acida che evolve in caramello e frutta secca. Retrogusto dolce con note di cioccolato fondente.',
+    prezzo = 7.99
+WHERE nome = 'Brasile Vila Boa';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità arabica, varietà Castillo e Colombia, coltivato tra i 1400-1600 metri s.l.m. nella regione di Huila. Lavato e fatto essiccare al sole. In tazza si presenta con un buon corpo e una fine acidità. Al gusto si colgono note di agrume dolce. Il retrogusto rilascia note di frutta secca, tipo datteri.',
+    prezzo = 7.99
+WHERE nome = 'Colombia Rio Magdalena';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Caturra e Catuai, coltivato tra i 1300-1800 metri s.l.m. nella regione Tarrazzù, altopiano della valle centrale. Il caffè viene lavato ed essiccato al sole. In tazza si presenta con corpo medio, acidità gradevole, al gusto spiccano note fruttate di frutti rossi tipo mora e amarena mescolate a caramello, retrogusto persistente e dolce.',
+    prezzo = 8.99
+WHERE nome = 'Costa Rica';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica, coltivato nella regione di Oromia, cresce fra 1900-2200 metri s.l.m., sottoposto a lavorazione naturale. In tazza si presenta con un corpo e un’acidità media, tendente al citrico. Al gusto si percepisce un’esplosione di fiori e futura dolce e un retrogusto lievemente speziato e cioccolatoso.',
+    prezzo = 8.99
+WHERE nome = 'Etiopia Guji';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica, coltivato tra 1500 e 1900 metri s.l.m. da una federazione di 130 cooperative locali. Lavato. In tazza si presenta con un buon corpo e un’acidità media. Al gusto spiccano note fruttate di prugna e fichi. Il retrogusto rimanda a sentori di mandorla e cacao.',
+    prezzo = 8.99
+WHERE nome = 'Guatemala';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica, coltivato nella regione di Marcala tra i 1400 - 1700 metri s.l.m., lavato. In tazza si presenta con un buon corpo e un’acidità media. Al gusto spiccano note fruttate di albicocca, mandarancio, mela, rosa canina, cacao e noci.  Il retrogusto risulta speziato.',
+    prezzo = 8.99
+WHERE nome = 'Honduras';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, coltivata tra 1200 - 1350 metri s.l.m. nel Nicaragua Settentrionale, una zona dal microclima particolarmente umido che favorisce la formazione di aromaticità complesse e intense. Selezionato e raccolto manualmente e poi lavato. In tazza l’acidità è citrica, al gusto spiccano note agrumate, miele e caramello.',
+    prezzo = 8.99
+WHERE nome = 'Nicaragua';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica, varietà Burbon e Tipica, coltivato da piccoli produttori nella regione Pasco (Perù centrale, foresta amazzonica) a 1700-1900 metri s.l.m. In tazza, bassa acidità, spiccano note di malto e una lieve nota caramellata. Nel retrogusto prevalgono note di frutta secca, come noce e fava di cacao.',
+    prezzo = 7.99
+WHERE nome = 'Perù';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, raccolto manualmente sottoposto a fermentazione di dodici ore e poi lasciato ad asciugare al sole. Coltivato a 900 metri s.l.m. nella provincia di Barahona su un terreno argilloso dalla famiglia Melo. In tazza si presenta con una particolare composita e ricca aromaticità, acidità equilibrata. Al gusto risaltano note di caramello e frutta secca, nel retrogusto note di tabacco.',
+    prezzo = 7.99
+WHERE nome = 'Santo Domingo';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica, varietà Bourbon, Cattura e Catuai. Coltivato a 1600 metri s.l.m. nella regione di Huehuetenango dalla famiglia Vides. Sottoposto a 36 ore di fermentazione.  In tazza si presenta con un’elevata struttura aromatica: sentori di frutti rossi e agrumi. Il retrogusto fruttato è persistente e pulito.',
+    prezzo = 7.99
+WHERE nome = 'Tanzania';
+
+UPDATE tipicaffe
+SET descrizione = 'Caffè Arabica, varietà Bourbon, Cattura e Catuai. Coltivato a 1600 metri s.l.m. nella regione di Huehuetenango dalla famiglia Vides. Sottoposto a 36 ore di fermentazione. In tazza si presenta con un’elevata struttura aromatica: sentori di frutti rossi e agrumi. Il retrogusto fruttato è persistente e pulito.',
+    prezzo = 7.99
+WHERE nome = 'Guatemala Finca El Puente';
+
+UPDATE tipicaffe
+SET descrizione = 'Miscela di soli caffè Arabica provenienti da Santo Domingo ed Etiopia. In tazza si presenta con un buon corpo e una lievissima acidità. Al gusto esplodono profumi ed aromi di fiori, frutta, miele. Nel retrogusto, amabile e persistente, si colgono note di frutta e cioccolato.',
+    prezzo = 9.99
+WHERE nome = 'Anima';
+
+UPDATE tipicaffe
+SET descrizione = 'Miscela di soli caffè Robusta provenienti da India e Indonesia. Due caffè di alta selezione lavorati in umido.  In tazza si presenta corposo e vellutato, con note di cacao, nocciola e pan tostato. Permane un retrogusto amabile di caffè',
+    prezzo = 9.99
+WHERE nome = 'Caffè';
+
+UPDATE tipicaffe
+SET descrizione = 'Miscela di Arabiche e Robuste provenienti da: Brasile, Colombia, India, e Centro Africa. Un caffè corposo, dall’odore avvolgente. Al gusto spiccano note di cioccolato, cereali e spezie.',
+    prezzo = 9.99
+WHERE nome = 'Drupa';
+
+UPDATE tipicaffe
+SET descrizione = 'Miscela di soli caffè Arabica provenienti da: Brasile, Colombia ed Etiopia. Caffè dalla lieve acidità. Il gusto è equilibrato, spiccano sentori di cioccolato, floreale e frutta fresca.',
+    prezzo = 9.99
+WHERE nome = 'Fiore';
+
+UPDATE tipicaffe
+SET descrizione = 'Miscela di caffè selezionati robusta e 20% arabica provenienti da India, Centro Africa e Brasile. In tazza si presenta corposo con un gusto deciso ed avvolgente, spiccano note speziate, cacao e un persistente retrogusto di nocciola.',
+    prezzo = 9.99
+WHERE nome = 'Foglia';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Red Bourbon, coltivata tra i 1800-2200 metri s.l.m. dalla Farm Nyamade. Sottosto a lavorazione umida. In tazza si presenta con un buon corpo e aroma bilanciato, l’acidità è media. Al gusto spiccano note di ciliegia, caramello e liquirizia. Il retrogusto è cioccolatoso. CUPPING SCORE 86,25',
+    prezzo = 14.99
+WHERE nome = 'Ruanda';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Red Catuai. Prodotto a 1700 metri s.l.m nella zona Chocabamba dalla famiglia Calani. Dopo il raccolto, il caffè viene selezionato manualmente e sottoposto a lavorazione anaerobica, un processo che conferisce al caffè acidità complessa e spiccata. Il corpo pieno e sciropposo. Al gusto si percepiscono note fruttate di albicocca e ciliegia. Nel retrogusto è molto persistente una nota di liquirizia. CUPPING SCORE 88,50',
+    prezzo = 14.99
+WHERE nome = 'Bolivia';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Typica e Castillo. Prodotto tra i 1350-1800 metri s.l.m. nel dipartimento di Huila dalla Farm Cadefinuila. Raccolto e selezionato a mano e sottoposto a lavorazione umida. Un caffè dal corpo sciropposo e dall’acidità complessa e spiccata. Al gusto si colgono note di caramello, passion fruit e pesca. Il retrogusto è dolce, permangono note di pan tostato e zucchero di canna. CUPPING SCORE 85,75',
+    prezzo = 14.99
+WHERE nome = 'Colombia Passion Fruit';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Catuai. Coltivato a 1500-1700 metri s.l.m., Finca El Salto Boquete. Sottoposto a lavorazione umida. In tazza si presenta con un corpo ricco e sciropposo. L’acidità frizzante, di tipo agrumata. Al gusto spiccano note di scorza d’arancia, mela cotogna, tè verde. Retrogusto persistente di frutti rossi e cacao. CUPPING SCORE 84,25',
+    prezzo = 14.99
+WHERE nome = 'Panama';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Bourbon e Typica. Prodotto nella piantagione Sig.ri, situata nella valle di Waghi, tra 1600 e 2200 metri s.l.m. Sottoposto a lavorazione umida che conferisce al caffè un’acidità gradevole e citrica. In tazza si presenta con un buon corpo. Al gusto spiccano note sciroppose, caramello e frutta secca. Retrogusto gradevole di liquirizia. CUPPING SCORE 86',
+    prezzo = 14.99
+WHERE nome = 'Papua Nuova Guinea';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Red Catuai, prodotto dalla Finca Los Santos nella provincia di Utcubamba tra 1700-2000 metri s.l.m. Sottoposto a lavorazione umida ed essiccato al sole. In tazza si presenta con corpo burroso e acidità brillante. Al gusto spiccano note di frutti rossi e arancia dolce, retrogusto pulito con note di chinotto. CUPPING SCORE 85,25',
+    prezzo = 14.99
+WHERE nome = 'Perù Imperator';
+
+UPDATE tipicaffe
+SET descrizione = 'Qualità Arabica, varietà Bourbon.
+Coltivato tra i 1500 - 2200 metri s.l.m., nella zona settentrionale di Sumatra nella provincia di Areh. Sottoposto a lavorazione umida. In tazza si presenta con un corpo ricco e sciropposo. L’acidità è moderata. Al gusto spiccano note di frutti tropicali mescolati a sentori di uva passa e cioccolato. CUPPING SCORE 85',
+    prezzo = 14.99
+WHERE nome = 'Sumatra';

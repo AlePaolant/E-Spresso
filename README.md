@@ -23,6 +23,24 @@ La diffusione maggiore di macchinette automatiche ha trasformato un prodotto di 
 Download PostgreSQL da [qui](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 
 Download XAMPP da [qui](https://www.apachefriends.org/it/download.html)
+---
+### Configurazione database creati (al 16/05/24)
+#### database utenti per login/registrazione
+- host: pgsql:host=localhost 
+- dbname: users
+- username: postgres
+- password: admin
+- tabella: users (id,nome,cognome,email,password,indirizzo,n_civico,citta);
+#### database contenente i caffe e gusti, acidità ecc
+- host: pgsql:host=localhost 
+- dbname: Caffe
+- username: postgres
+- password: admin
+- tabella: TipiCaffe (id,nome,idCorposita,idAcidita,idGusto1,idGusto2,idRetrogusto1,idRetrogusto2);
+- tabella: AciditaDisponibili (id,acidita);
+- tabella: CorpositaDisponibili (id,corposita);
+- tabella: GustiDisponibili (id,gusto);
+- tabella: RetrogustiDisponibili (id,retrogusto);
 
 ### Estensioni Visual Studio Code utili: 
 - HTML CSS Support

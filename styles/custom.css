@@ -48,7 +48,7 @@
     cursor: url('../img/cursor/cursore-tazza.png'), auto;
 }
 
-/*SECTION SELEZIONE*/
+/*SECTION SELEZIONE
 .selezione{
     position: relative;
     width: 100vw;
@@ -91,3 +91,140 @@
     border-color: #7e5e47;
     cursor: url('../img/cursor/cursore-tazza.png'), auto;
 }
+*/
+.acidita-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.acidita-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.acidita-button:hover {
+    background-color: #e9ecef;
+}
+
+.acidita-button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+/*----------------------------------*/
+.corposita-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.corposita-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.corposita-button:hover {
+    background-color: #e9ecef;
+}
+
+.corposita-button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.corposita-container,
+.acidita-container {
+    display: block; /* Imposta la visualizzazione come blocco */
+}
+
+.corposita-button,
+.acidita-button {
+    display: block; /* Imposta la visualizzazione come blocco */
+    margin-bottom: 10px; /* Aggiunge un margine inferiore per spaziare i pulsanti */
+}
+/*----------------------------------------*/
+.gusti-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gusti-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gusti-button:hover {
+    background-color: #e9ecef;
+}
+
+.gusti-button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+/*-----------------------------------------*/
+.retrogusti-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.retrogusti-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.retrogusti-button:hover {
+    background-color: #e9ecef;
+}
+
+.retrogusti-button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+
+/* Stile per il contenitore dei pulsanti "Acquista ora" */
+#risultati {
+    margin-top: 20px; /* Spazio superiore */
+  }
+  
+  /* Stile per i pulsanti "Acquista ora" */
+  .acquista-button {
+    background-color: #4CAF50; /* Colore di sfondo */
+    color: white; /* Colore del testo */
+    padding: 10px 20px; /* Spaziatura interna */
+    text-align: center; /* Allineamento del testo */
+    text-decoration: none; /* Rimuove la sottolineatura del testo */
+    display: inline-block; /* Mostra come elemento inline */
+    border: none; /* Rimuove il bordo */
+    border-radius: 5px; /* Angoli arrotondati */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    margin-right: 10px; /* Spazio destro */
+  }
+  
+  /* Stile per i pulsanti "Acquista ora" al passaggio del mouse */
+  .acquista-button:hover {
+    background-color: #45a049; /* Cambia il colore di sfondo al passaggio del mouse */
+  }
+  
+  /* Stile per i pulsanti "Acquista ora" attivi */
+  .acquista-button:active {
+    background-color: #3e8e41; /* Cambia il colore di sfondo quando premuti */
+  }
+  
