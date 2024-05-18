@@ -71,45 +71,49 @@
 
           
       
-      <!-- SELEZIONE 
       <section class="selezione start-animation" id="selezione">
         <div class="container mt-5">
           <h1 class="mb-4">Scelta del Caffè</h1>
           <img src="../img/divisore.png" class="img-divisore">
           <p>Tua la tazza, tua la miscela! Scegli tra una vasta selezione di caffè e crea la miscela perfetta per il tuo palato. 
             <br>Con un tocco di creatività e un pizzico di passione, ogni tazza diventa un'opera d'arte da gustare e apprezzare.</p>
-          
-            Filtri per la scelta del caffè -->
-          <div class="row mb-3">
-            <div class="col-md-2">
-              <label for="corposita-buttons" class="form-label">Corposità:</label>
+          <p>Seleziona la corposità e l'acidità, seleziona fino a 2 gusti e 2 retrogusti e scopri se esiste il caffè perfetto per te!</p>
+          <p>Non esiste? Non preoccuparti, puoi crearne uno tutto tuo!</p>
+        </div>
+            <!-- Filtri per la scelta del caffè -->
+          <div class="filtri row mb-3">
+            <div class="corposita">
+              <label for="corposita-buttons" class="filtri-label">Corposità:</label>
               <div id="corposita-buttons" class="corposita-container"></div>
             </div>
-            <div class="col-md-2">
-              <label for="acidita-buttons" class="form-label">Acidità:</label>
+            <div class="acidita">
+              <label for="acidita-buttons" class="filtri-label">Acidità:</label>
               <div id="acidita-buttons" class="acidita-container"></div>
             </div>
-            <div class="col-md-12">
-              <label for="gusti-buttons" class="form-label">Gusti:</label>
+            <div class="gusti">
+              <label for="gusti-buttons" class="filtri-label">Gusti:</label>
               <div id="gusti-buttons" class="gusti-container"></div>
             </div>            
-            <div class="col-md-12">
-              <label for="retrogusti-buttons" class="form-label">Retrogusti:</label>
+            <div class="retrogusti">
+              <label for="retrogusti-buttons" class="filtri-label">Retrogusti:</label>
               <div id="retrogusti-buttons" class="retrogusti-container"></div>
             </div>
           </div>
 
-          <button onclick="filtroCaffe()" class="btn btn-primary">Applica Filtro</button>
+          <button onclick="filtroCaffe()" class="btn">Applica Filtro</button>
 
           <!-- Risultati della ricerca -->
-          <div id="risultati" class="mt-5">
-            <!-- Qui verranno visualizzati i risultati della ricerca -->
+          <div id="risultati" class="risultati mt-5">
+            <!-- Qui vengono visualizzati i risultati della ricerca -->
           </div>  
         </div>
-        <!--
-      </section> -->
+        
+      </section> 
 
+      <section class="crea start-animation" id="crea">
+        
 
+      </section>
     
 
 

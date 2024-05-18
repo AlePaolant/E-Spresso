@@ -91,7 +91,6 @@ function creaPulsantiGusti(gustiList) {
     container.innerHTML = ''; // Pulisce il contenitore
     gustiList.forEach(gusto => {
         const button = document.createElement('button');
-        button.textContent = gusto;
         button.classList.add('gusti-button');
         
         // Aggiungi l'immagine come elemento <img>
@@ -100,10 +99,17 @@ function creaPulsantiGusti(gustiList) {
         img.alt = gusto;
         button.appendChild(img);
         
+        // Aggiungi il testo
+        const text = document.createElement('div');
+        text.textContent = gusto;
+        text.classList.add('gusti-text');
+        button.appendChild(text);
+        
         button.addEventListener('click', () => selezionaGusti(gusto));
         container.appendChild(button);
     });
 }
+
 
 let gustiSelezionati = []; // Array per memorizzare i gusti selezionati
 
@@ -138,7 +144,6 @@ function creaPulsantiRetrogusti(retrogustiList) {
     container.innerHTML = ''; // Pulisce il contenitore
     retrogustiList.forEach(retrogusto => {
         const button = document.createElement('button');
-        button.textContent = retrogusto;
         button.classList.add('retrogusti-button');
         
         // Aggiungi l'immagine come elemento <img>
@@ -146,6 +151,12 @@ function creaPulsantiRetrogusti(retrogustiList) {
         img.src = `../img/caffe/retrogusti/${retrogusto}.png`;
         img.alt = retrogusto;
         button.appendChild(img);
+        
+        // Aggiungi il testo
+        const text = document.createElement('div');
+        text.textContent = retrogusto;
+        text.classList.add('retrogusti-text');
+        button.appendChild(text);
         
         button.addEventListener('click', () => selezionaRetrogusti(retrogusto));
         container.appendChild(button);
@@ -217,9 +228,9 @@ function filtroCaffe() {
                 // Crea il pulsante "Acquista ora" con il link allo shop
                 var acquistaButton = document.createElement("button");
                 acquistaButton.textContent = "Acquista ora";
-                acquistaButton.classList.add("acquista-button"); // Aggiungi la classe CSS al pulsante
+                acquistaButton.classList.add("acquista-button");
                 acquistaButton.addEventListener('click', function() {
-                    window.location.href = `../shop.html#${caffe.nome}`;
+                    window.location.href = `../pages/caffe.html#${caffe.nome}`;
                 });
     
                 // Aggiungi il pulsante al risultato
@@ -230,6 +241,16 @@ function filtroCaffe() {
         } else {
             var messaggio = document.createElement("div");
             messaggio.textContent = 'Nessun caffè trovato con le combinazioni selezionate, vuoi crearne uno?';
+            messaggio.classList.add('risultato-negativo');
+            //crea pulsante
+            var pulsante = document.createElement("button");
+            pulsante.textContent = 'Crea';
+            pulsante.classList.add('pulsante-ris-neg');
+            pulsante.addEventListener('click', function() {
+                // Azione da eseguire quando si fa clic sul pulsante (es. aprire una nuova pagina)
+                window.location.href = 'custom.php#crea';
+            });
+            messaggio.appendChild(pulsante);
             document.getElementById("risultati").appendChild(messaggio);
         }
     })
