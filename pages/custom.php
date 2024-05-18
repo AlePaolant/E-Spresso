@@ -111,7 +111,45 @@
       </section> 
 
       <section class="crea start-animation" id="crea">
-        
+        <div class="container">
+          <?php
+          // Configurazione database
+          $dsn = 'pgsql:host=localhost;port=5432;dbname=Caffe';
+          $username = 'postgres';
+          $password = 'admin';
+
+          try {
+              //select - fondamentale rimuovere i gusti custom già esistenti nel database 
+              $pdo = new PDO($dsn, $username, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+              $stmt = $pdo->prepare("SELECT id, nome FROM tipicaffe WHERE nome != :escludiGustoCustom");
+              $escludiGustoCustom = "Gusto Custom";
+              $stmt->bindParam(':escludiGustoCustom', $escludiGustoCustom, PDO::PARAM_STR);
+              $stmt->execute(); 
+              $caffeList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          } catch (PDOException $e) {
+              echo 'Connection failed: ' . $e->getMessage();
+          }
+
+          foreach ($caffeList as $caffe): ?>
+              <div class="caffe-item" draggable="true" ondragstart="drag(event, <?php echo $caffe['id']; ?>)" id="caffe-<?php echo $caffe['id']; ?>">
+                  <img src="../img/caffe/tipicaffe/<?php echo $caffe['nome']; ?>.png" alt="<?php echo $caffe['nome']; ?>">
+                  <p><?php echo $caffe['nome']; ?></p>
+              </div>
+          <?php endforeach; ?>
+        <div class="drop-zone-container">
+          <div class="drop-sx">
+            <div class="drop-zone1" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-1"></div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="slider-1" onchange="updateSliders(this)">
+            <div class="percentage" id="percentage-1">50%</div>
+          </div>
+          <div class="drop-dx">
+            <div class="drop-zone2" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-2"></div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="slider-2" onchange="updateSliders(this)">
+            <div class="percentage" id="percentage-2">50%</div>
+          </div>
+        </div>
+        <button class="submit-button" onclick="submitCustom()">Crea Gusto Custom</button>
+        </div>
 
       </section>
     

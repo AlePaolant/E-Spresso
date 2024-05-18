@@ -407,3 +407,65 @@
 /*            SEZIONE CREA               */
 /*---------------------------------------*/
 /*---------------------------------------*/
+.caffe-item {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+.caffe-item img {
+    width: 100px;
+    height: 100px;
+}
+.drop-zone-container {
+    display: flex;
+    justify-content: center;
+}
+.drop-sx{
+    width: 25vw;
+    padding-right: 2.5%;
+}
+.drop-dx{
+    width: 25vw;
+    padding-left: 2.5%;
+}
+.drop-zone1{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #ccc;
+    margin: 20px;
+    position: relative;
+}
+.drop-zone2{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #ccc;
+    margin: 20px;
+    position: relative;
+}
+.drop-zone img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+}
+.slider {
+    width: 100%;
+    margin-top: 10px;
+}
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

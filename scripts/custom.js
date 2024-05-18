@@ -1,45 +1,38 @@
-window.onload = function() {
+// Funzione per gestire l'evento window.onload senza conflitti
+window.addEventListener('load', function() {
     caricaOpzioni();
-};
+    initCustomGusto();
+});
 
+// Funzione esistente per caricare opzioni
 function caricaOpzioni() {
-    // Array di promesse per ogni fetch
     const fetchPromises = [];
 
-    // Fetch per corposita_disponibili.php
     fetchPromises.push(fetch('../php/selezione_caffe/corposita_disponibili.php')
         .then(response => response.json())
         .then(data => creaPulsantiCorposita(data))
     );
 
-    // Fetch per acidita_disponibili.php
     fetchPromises.push(fetch('../php/selezione_caffe/acidita_disponibili.php')
         .then(response => response.json())
         .then(data => creaPulsantiAcidita(data))
     );
 
-
-    // Fetch per gusti_disponibili.php
     fetchPromises.push(fetch('../php/selezione_caffe/gusti_disponibili.php')
         .then(response => response.json())
         .then(data => creaPulsantiGusti(data))
     );
 
-        
-
-    // Fetch per retrogusti_disponibili.php
     fetchPromises.push(fetch('../php/selezione_caffe/retrogusti_disponibili.php')
         .then(response => response.json())
         .then(data => creaPulsantiRetrogusti(data))
     );
 
-    // Esegui tutte le richieste in parallelo e attendi che siano tutte risolte
     Promise.all(fetchPromises)
         .catch(error => console.error('Errore durante la richiesta:', error));
 }
 
-
-//CORPOSITA
+// Funzioni per creare pulsanti e selezionare opzioni
 function creaPulsantiCorposita(corpositaList) {
     const container = document.getElementById('corposita-buttons');
     container.innerHTML = ''; // Pulisce il contenitore
@@ -62,7 +55,6 @@ function selezionaCorposita(corposita) {
     });
 }
 
-// ACIDITA
 function creaPulsantiAcidita(aciditaList) {
     const container = document.getElementById('acidita-buttons');
     container.innerHTML = ''; // Pulisce il contenitore
@@ -85,7 +77,6 @@ function selezionaAcidita(acidita) {
     });
 }
 
-//GUSTI
 function creaPulsantiGusti(gustiList) {
     const container = document.getElementById('gusti-buttons');
     container.innerHTML = ''; // Pulisce il contenitore
@@ -109,7 +100,6 @@ function creaPulsantiGusti(gustiList) {
         container.appendChild(button);
     });
 }
-
 
 let gustiSelezionati = []; // Array per memorizzare i gusti selezionati
 
@@ -137,8 +127,6 @@ function selezionaGusti(gusto) {
     console.log('Gusti selezionati:', gustiSelezionati);
 }
 
-
-//RETROGUSTI
 function creaPulsantiRetrogusti(retrogustiList) {
     const container = document.getElementById('retrogusti-buttons');
     container.innerHTML = ''; // Pulisce il contenitore
@@ -189,20 +177,11 @@ function selezionaRetrogusti(retrogusto) {
     console.log('Retrogusti selezionati:', retrogustiSelezionati);
 }
 
-
-
-// Funzione per filtrare i caffè
 function filtroCaffe() {
-    //corposita
     var corposita = corpositaSelezionata;
-    //acidita
     var acidita = aciditaSelezionata;
-
-    //gestione dei gusti selezionati
-    var gusto1 = gustiSelezionati.length >= 1 ? gustiSelezionati[0] : ''; // Assegna i primi due gusti selezionati, se presenti
+    var gusto1 = gustiSelezionati.length >= 1 ? gustiSelezionati[0] : '';
     var gusto2 = gustiSelezionati.length >= 2 ? gustiSelezionati[1] : '';
-
-    //gestione dei retrogusti selezionati
     var retrogusto1 = retrogustiSelezionati.length >= 1 ? retrogustiSelezionati[0] : '';
     var retrogusto2 = retrogustiSelezionati.length >= 2 ? retrogustiSelezionati[1] : '';
 
@@ -216,46 +195,113 @@ function filtroCaffe() {
         return response.json();
     })
     .then(data => {
-        console.log(data); // Stampa la risposta JSON nella console
+        console.log(data);
         document.getElementById("risultati").innerHTML = "";
-    
+
         if (Array.isArray(data)) {
             data.forEach(caffe => {
                 var risultato = document.createElement("div");
                 risultato.textContent = `Il caffè perfetto per te è: ${caffe.nome}`;
-                risultato.classList.add("risultato"); // Aggiungi la classe CSS al risultato div
-    
-                // Crea il pulsante "Acquista ora" con il link allo shop
+                risultato.classList.add("risultato");
+
                 var acquistaButton = document.createElement("button");
                 acquistaButton.textContent = "Acquista ora";
                 acquistaButton.classList.add("acquista-button");
                 acquistaButton.addEventListener('click', function() {
                     window.location.href = `../pages/caffe.html#${caffe.nome}`;
                 });
-    
-                // Aggiungi il pulsante al risultato
+
                 risultato.appendChild(acquistaButton);
-    
                 document.getElementById("risultati").appendChild(risultato);
             });
         } else {
             var messaggio = document.createElement("div");
             messaggio.textContent = 'Nessun caffè trovato con le combinazioni selezionate, vuoi crearne uno?';
             messaggio.classList.add('risultato-negativo');
-            //crea pulsante
+
             var pulsante = document.createElement("button");
             pulsante.textContent = 'Crea';
             pulsante.classList.add('pulsante-ris-neg');
             pulsante.addEventListener('click', function() {
-                // Azione da eseguire quando si fa clic sul pulsante (es. aprire una nuova pagina)
                 window.location.href = 'custom.php#crea';
             });
             messaggio.appendChild(pulsante);
             document.getElementById("risultati").appendChild(messaggio);
         }
-    })
-    
-    
+    });
 }
+
+// Funzioni drag and drop e slider
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drag(event, id) {
+    event.dataTransfer.setData("text", id);
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    var draggedElement = document.getElementById("caffe-" + data);
+
+    if (draggedElement) {
+        var clonedElement = draggedElement.cloneNode(true);
+        clonedElement.removeAttribute("id");
+        event.target.innerHTML = "";
+        event.target.appendChild(clonedElement);
+    } else {
+        console.error("Elemento trascinato non trovato:", data);
+    }
+}
+
+// Funzione per inizializzare i valori dei slider e altre impostazioni
+function initCustomGusto() {
+    document.getElementById("slider-1").value = 50;
+    document.getElementById("slider-2").value = 50;
+    document.getElementById("percentage-1").innerText = "50%";
+    document.getElementById("percentage-2").innerText = "50%";
+}
+
+// Funzione per aggiornare i valori dei slider
+function updateSliders(slider) {
+    var slider1 = document.getElementById("slider-1");
+    var slider2 = document.getElementById("slider-2");
+    var value1 = parseInt(slider1.value);
+    var value2 = parseInt(slider2.value);
+
+    if (slider.id === "slider-1") {
+        var newValue2 = 100 - value1;
+        slider2.value = newValue2;
+        document.getElementById("percentage-1").innerText = value1 + "%";
+        document.getElementById("percentage-2").innerText = newValue2 + "%";
+    } else {
+        var newValue1 = 100 - value2;
+        slider1.value = newValue1;
+        document.getElementById("percentage-2").innerText = value2 + "%";
+        document.getElementById("percentage-1").innerText = newValue1 + "%";
+    }
+}
+
+function submitCustom() {
+    var zone1 = document.getElementById("zone-1").querySelector("img").alt;
+    var zone2 = document.getElementById("zone-2").querySelector("img").alt;
+    var slider1 = document.getElementById("slider-1").value;
+    var slider2 = document.getElementById("slider-2").value;
+
+    var description = `${slider1}% di ${zone1}, ${slider2}% di ${zone2}`;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "../php/submit_custom.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert("Gusto Custom creato con successo!");
+        }
+    };
+    xhr.send(`description=${description}`);
+}
+
+
 
 
