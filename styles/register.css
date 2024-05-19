@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   margin:0 auto;
-  width: 105%; /* Aggiusta questa percentuale secondo le tue necessità */
+  width: 100%; /* Aggiusta questa percentuale secondo le tue necessità */
   box-sizing: border-box;
   font-style:oblique;
 }
