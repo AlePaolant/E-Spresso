@@ -22,23 +22,37 @@
     z-index: -5; /* ti mette il video in background*/
 }
 
-.form-group input{
+.card-body{ /* per metter in modo griglia*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 1.5rem
+}
+
+.form-group input{ /* per le caselle di input*/
   display: flex;
   flex-direction: column;
   margin:0 auto;
-  width: 60%; /* Aggiusta questa percentuale secondo le tue necessità */
+  width: 105%; /* Aggiusta questa percentuale secondo le tue necessità */
   box-sizing: border-box;
+  font-style:oblique;
 }
 
-.form-group label{
+.form-group label{ /* per le etichette*/
   width:98%;
   margin-right:10px;
   text-align:center;
   padding:2px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.card-under-header{
+
+.card-under-header{ /* per il titolo della registrazione*/
   font-family:garamond;
   font-style: normal;
   font-size: 29px;
 }
+
+.btn-login{
+  padding-top: 28px;
+}
+

@@ -75,44 +75,44 @@
           <h2 class="card-under-header">Completa la registrazione!</h2>
             <div class="card-body">
 
-                  <form id="loginForm">
+                  <form id="register-form">
 
                     <input type="hidden" name="action" value="register">
                     <div class="form-group">
                       <label for="nome">Nome</label>
-                      <input autofocus name="nome" type="text" class="form-control" id="nome" required placeholder="Il tuo nome">
+                      <input autofocus name="nome" type="text" class="form-control" id="nome" required placeholder="Alessandro">
                     </div>
 
                     <div class="form-group">
                       <label for="cognome">Cognome</label>
-                      <input autofocus name="cognome" type="text" class="form-control" id="cognome"  required placeholder="Il tuo cognome">
+                      <input autofocus name="cognome" type="text" class="form-control" id="cognome"  required placeholder="Coluzzi">
                     </div>
 
                     <div class="form-group">
                       <label for="email">Email</label> 
                       <!-- pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" -->
-                      <input autofocus name="email" type="text" class="form-control" id="email"  required placeholder="Inserisci la tua mail">
+                      <input autofocus name="email" type="text" class="form-control" id="email"  required placeholder="alessandro.coluzzi@gmail.com">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label> 
                         <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" --> 
-                        <input name="password" id="password" type="text"  class="form-control"  required placeholder="Inserisci una password">
+                        <input name="password" id="password" type="text"  class="form-control"  required placeholder="Sivalletto12.">
                     </div>
 
                     <div class="form-group">
                         <label for="indirizzo">Indirizzo</label> 
-                        <input type="text" class="form-control" id="indirizzo" autofocus name="indirizzo" required placeholder="Inserisci il tuo indirizzo">
+                        <input type="text" class="form-control" id="indirizzo" autofocus name="indirizzo" required placeholder="Strada Luci">
                     </div>
 
                     <div class="form-group">
                       <label for="n_civico">Numero civico</label> 
-                      <input type="text" class="form-control" id="n_civico" autofocus name="n_civico" required placeholder="Inserisci il tuo numero civico">
+                      <input type="text" class="form-control" id="n_civico" autofocus name="n_civico" required placeholder="122">
                     </div>
                     
                     <div class="form-group">
                       <label for="citta">Città</label> 
-                      <input type="text" class="form-control" id="citta" autofocus name="citta" required placeholder="Inserisci la tua città">
+                      <input type="text" class="form-control" id="citta" autofocus name="citta" required placeholder="Roma">
                     </div>
 
                     <div class="btn-login">
