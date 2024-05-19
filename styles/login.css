@@ -36,7 +36,7 @@
     bottom:0;
     z-index: -1; /* ti mette il video in background*/
   }
-  
+
   .form-control{
     background: transparent;
     background-color:rgba(226,223,213,0.5);
@@ -122,8 +122,4 @@
 
   .under-login-btn a:hover{
     color:bisque; 
-  }
-
-  .form-group{
-    color:blanchedalmond;
   }

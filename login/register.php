@@ -27,6 +27,7 @@
 
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/register.css">
         
 
 
@@ -61,25 +62,22 @@
 <!-- LATO CLIENT -->
 
 <!-- Contenuto sotto la navbar -->
-<div class="page-content ">
-  <div class="container container-login">
-    
+<div class="page-content-login ">
+  <div class="container container-login"> 
     <!--INSERISCI QUI IL NUOVO CODICE-->
-    <video id="login-video" autoplay loop muted>
+    <video id="login-video-register" autoplay loop muted>
       <source src="../img/video/c03_top.MOV" type="video/mp4">
     </video>
     <form class="" action="utility/register.php" method="POST">  <!-- la post serve per mandare i dati ad utility/register.php per processarli -->
     <div class="row justify-content-center">
         <div class="col-md-6 login-container">
           <div class="card">
-            <div class="card-under-header">
-              Benvenuto! Completa la registrazione
-            </div>
+          <h2 class="card-under-header">Completa la registrazione!</h2>
             <div class="card-body">
+
                   <form id="loginForm">
 
                     <input type="hidden" name="action" value="register">
-
                     <div class="form-group">
                       <label for="nome">Nome</label>
                       <input autofocus name="nome" type="text" class="form-control" id="nome" required placeholder="Il tuo nome">
@@ -120,6 +118,7 @@
                     <div class="btn-login">
                       <button class="btn btn-primary" type="submit"> Registrati </button>
                     </div>
+                    
                  </form>
             </div>
         </div>
