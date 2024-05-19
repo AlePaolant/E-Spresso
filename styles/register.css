@@ -1,0 +1,41 @@
+.container-login{
+    height:fit-content;
+    padding-top: 5%;
+}
+
+#login-video-register{
+    width: 100%;
+    height:max-content;
+    position:absolute;
+    object-fit: cover;
+    left:0;
+    right:0;
+    top: 0;
+    bottom:0;
+    z-index: -5; /* ti mette il video in background*/
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.27);
+    width:100%;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+.form-group-nome-cognome{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:10px;
+    color:blanchedalmond;
+}
+
+.form-group-nome-cognome label {
+    margin-bottom: 5px; /* Spazio tra la label e l'input */
+  }
+
+.form-control-nome-cognome{
+    width: 30%;
+    background: transparent;
+    background-color:rgba(226,223,213,0.5);
+    border-color: wheat;
+    border-radius: 50px;
+}
