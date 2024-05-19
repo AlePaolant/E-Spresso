@@ -61,8 +61,7 @@
 
       
 
-          
-      <!-- CONTENUTO DI SOPRA -->
+
       <section class="custom start-animation" id="custom">
         <div class="container justify-content-center align-items-center text-center">
           <h1>INSERIRE CARD CAFFE</h1>
@@ -72,52 +71,87 @@
 
           
       
-      <!-- SELEZIONE -->
       <section class="selezione start-animation" id="selezione">
         <div class="container mt-5">
           <h1 class="mb-4">Scelta del Caffè</h1>
           <img src="../img/divisore.png" class="img-divisore">
           <p>Tua la tazza, tua la miscela! Scegli tra una vasta selezione di caffè e crea la miscela perfetta per il tuo palato. 
             <br>Con un tocco di creatività e un pizzico di passione, ogni tazza diventa un'opera d'arte da gustare e apprezzare.</p>
-          
+          <p>Seleziona la corposità e l'acidità, seleziona fino a 2 gusti e 2 retrogusti e scopri se esiste il caffè perfetto per te!</p>
+          <p>Non esiste? Non preoccuparti, puoi crearne uno tutto tuo!</p>
+        </div>
             <!-- Filtri per la scelta del caffè -->
-          <div class="row mb-3">
-            <div class="col-md-2">
-              <label for="corposita" class="form-label">Corposità:</label>
-              <select id="corposita" class="form-select"></select>
+          <div class="filtri row mb-3">
+            <div class="corposita">
+              <label for="corposita-buttons" class="filtri-label">Corposità:</label>
+              <div id="corposita-buttons" class="corposita-container"></div>
             </div>
-            <div class="col-md-2">
-              <label for="acidita" class="form-label">Acidità:</label>
-              <select id="acidita" class="form-select"></select>
+            <div class="acidita">
+              <label for="acidita-buttons" class="filtri-label">Acidità:</label>
+              <div id="acidita-buttons" class="acidita-container"></div>
             </div>
-            <div class="col-md-2">
-              <label for="gusto1" class="form-label">Gusto 1:</label>
-              <select id="gusto1" class="form-select"></select>
-            </div>
-            <div class="col-md-2">
-              <label for="gusto2" class="form-label">Gusto 2:</label>
-              <select id="gusto2" class="form-select"></select>
-            </div>
-            <div class="col-md-2">
-              <label for="retrogusto1" class="form-label">Retrogusto 1:</label>
-              <select id="retrogusto1" class="form-select"></select>
-            </div>
-            <div class="col-md-2">
-              <label for="retrogusto2" class="form-label">Retrogusto 2:</label>
-              <select id="retrogusto2" class="form-select"></select>
+            <div class="gusti">
+              <label for="gusti-buttons" class="filtri-label">Gusti:</label>
+              <div id="gusti-buttons" class="gusti-container"></div>
+            </div>            
+            <div class="retrogusti">
+              <label for="retrogusti-buttons" class="filtri-label">Retrogusti:</label>
+              <div id="retrogusti-buttons" class="retrogusti-container"></div>
             </div>
           </div>
 
-          <button onclick="filtroCaffe()" class="btn btn-primary">Applica Filtro</button>
+          <button onclick="filtroCaffe()" class="btn">Applica Filtro</button>
 
           <!-- Risultati della ricerca -->
-          <div id="risultati" class="mt-5">
-            <!-- Qui verranno visualizzati i risultati della ricerca -->
+          <div id="risultati" class="risultati mt-5">
+            <!-- Qui vengono visualizzati i risultati della ricerca -->
           </div>  
         </div>
+        
+      </section> 
+
+      <section class="crea start-animation" id="crea">
+        <div class="container">
+          <?php
+          // Configurazione database
+          $dsn = 'pgsql:host=localhost;port=5432;dbname=Caffe';
+          $username = 'postgres';
+          $password = 'admin';
+
+          try {
+              //select - fondamentale rimuovere i gusti custom già esistenti nel database 
+              $pdo = new PDO($dsn, $username, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+              $stmt = $pdo->prepare("SELECT id, nome FROM tipicaffe WHERE nome != :escludiGustoCustom");
+              $escludiGustoCustom = "Gusto Custom";
+              $stmt->bindParam(':escludiGustoCustom', $escludiGustoCustom, PDO::PARAM_STR);
+              $stmt->execute(); 
+              $caffeList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          } catch (PDOException $e) {
+              echo 'Connection failed: ' . $e->getMessage();
+          }
+
+          foreach ($caffeList as $caffe): ?>
+              <div class="caffe-item" draggable="true" ondragstart="drag(event, <?php echo $caffe['id']; ?>)" id="caffe-<?php echo $caffe['id']; ?>">
+                  <img src="../img/caffe/tipicaffe/<?php echo $caffe['nome']; ?>.png" alt="<?php echo $caffe['nome']; ?>">
+                  <p><?php echo $caffe['nome']; ?></p>
+              </div>
+          <?php endforeach; ?>
+        <div class="drop-zone-container">
+          <div class="drop-sx">
+            <div class="drop-zone1" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-1"></div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="slider-1" onchange="updateSliders(this)">
+            <div class="percentage" id="percentage-1">50%</div>
+          </div>
+          <div class="drop-dx">
+            <div class="drop-zone2" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-2"></div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="slider-2" onchange="updateSliders(this)">
+            <div class="percentage" id="percentage-2">50%</div>
+          </div>
+        </div>
+        <button class="submit-button" onclick="submitCustom()">Crea Gusto Custom</button>
+        </div>
+
       </section>
-
-
     
 
 

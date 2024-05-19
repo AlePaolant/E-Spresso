@@ -49,7 +49,7 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="../pages/caffe.html" class="nav-link">Caffè</a></li>
-              <li class="nav-item"><a href="../pages/custom.html" class="nav-link">Create</a></li>
+              <li class="nav-item"><a href="../pages/custom.php" class="nav-link">Create</a></li>
               <li class="nav-item"><a href="../pages/contatti.html" class="nav-link">Contatti</a></li>
               <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
               <li class="nav-item"><a href="../pages/carrello.html" class="nav-link bi bi-bag"></a></li>
@@ -144,7 +144,7 @@
                   <ul class="list-unstyled">
                     <li><a href="../index.html" class="py-2 d-block">Home</a></li>
                     <li><a href="../pages/caffe.html" class="py-2 d-block">Caffe</a></li>
-                    <li><a href="../pages/custom.html" class="py-2 d-block">Custom</a></li>
+                    <li><a href="../pages/custom.php" class="py-2 d-block">Custom</a></li>
                     <li><a href="../pages/contatti.html" class="py-2 d-block">Contatti</a></li>
                     <li><a href="../account.php" class="py-2 d-block">Account</a></li>
                     <li><a href="../pages/carrello.html" class="py-2 d-block">Carrello</a></li>
