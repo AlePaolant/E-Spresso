@@ -133,10 +133,4 @@
     height:100vh;
     background-image: url("../img/bg-login.jpg");
     background-size:cover;
-
-  }
-
-  .login-container{
-    margin-top: 20%;
-    margin-bottom: 15%;
   }
