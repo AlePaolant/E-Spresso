@@ -1,3 +1,9 @@
+<?php
+include '../php/funzioni_shop.php';
+$products = getProducts();
+?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -50,7 +56,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
-          <li class="nav-item"><a href="custom.html" class="nav-link">Create</a></li>
+          <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
           <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
