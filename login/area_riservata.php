@@ -42,6 +42,7 @@ if($sessionid==""){
 
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/riservata.css">
         
 
 
@@ -75,13 +76,19 @@ if($sessionid==""){
 
 <!-- LATO CLIENT -->
 
-<div class="container">
-    <div class="box welcome">
 
-        <h1>Login successful</h1>
+<div class="welcome">
+  <div class="contenuto-sx">
+    <h1>SINISTRA</h1>
+  <div class="contenuto-dx">
 
-    </div>
+        <h1>DESTRA</h1>
+
+  </div>
+  </div>
 </div>
+
+
 
 <!-- FOOTER -->
 <footer class="footer footer-bg">
@@ -138,7 +145,6 @@ if($sessionid==""){
         </div>
       </div>
     </footer>
-
 
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
