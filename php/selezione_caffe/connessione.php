@@ -6,7 +6,7 @@
 --------------------------------------------------------*/
 
 try {
-    $pdo = new PDO('pgsql:host=localhost;dbname=Caffe', 'postgres', 'admin');
+    $pdo = new PDO('pgsql:host=localhost;dbname=e-spresso', 'postgres', 'admin');
     $pdo ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     header('Content-Type: application/json');

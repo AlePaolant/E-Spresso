@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header('Location: index.php');
+    exit();
+}
+
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+?>
+
+
+
 <!DOCTYPE html>
 <html  lang="it">
     <head>

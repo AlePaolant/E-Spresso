@@ -11,5 +11,5 @@ create table users (
 );
 
 
-insert into users(nome,cognome,email,password,indirizzo,n_civico,citta)
+insert into users(nome,cognome,email,password,indirizzo,n_civico,citta,numero_telefono)
 values ('alessandro','nardi','ale02','Nina1.','pantanello',321,'latina',1234567891)

@@ -25,17 +25,13 @@ Download PostgreSQL da [qui](https://www.enterprisedb.com/downloads/postgres-pos
 Download XAMPP da [qui](https://www.apachefriends.org/it/download.html)
 ---
 ### Configurazione database creati (al 16/05/24)
-#### database utenti per login/registrazione
+#### database GENERALE: 
 - host: pgsql:host=localhost 
-- dbname: users
+- dbname: e-spresso
 - username: postgres
 - password: admin
 - tabella: users (id,nome,cognome,email,password,indirizzo,n_civico,citta);
-#### database contenente i caffe e gusti, acidità ecc
-- host: pgsql:host=localhost 
-- dbname: Caffe
-- username: postgres
-- password: admin
+- tabella: carrello (id,user_id,product_id,quantita);
 - tabella: TipiCaffe (id,nome,idCorposita,idAcidita,idGusto1,idGusto2,idRetrogusto1,idRetrogusto2);
 - tabella: AciditaDisponibili (id,acidita);
 - tabella: CorpositaDisponibili (id,corposita);

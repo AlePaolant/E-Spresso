@@ -160,7 +160,7 @@
           </div>
           <?php
           // Configurazione database
-          $dsn = 'pgsql:host=localhost;port=5432;dbname=Caffe';
+          $dsn = 'pgsql:host=localhost;port=5432;dbname=e-spresso';
           $username = 'postgres';
           $password = 'admin';
 

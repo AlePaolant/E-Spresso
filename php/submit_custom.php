@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
 
-    $dsn = 'pgsql:host=localhost;port=5432;dbname=Caffe';
+    $dsn = 'pgsql:host=localhost;port=5432;dbname=e-spresso';
     $username = 'postgres';
     $password = 'admin';
 
