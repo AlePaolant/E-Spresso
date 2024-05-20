@@ -1,22 +1,9 @@
-<?php
-session_start();
-if (!isset($_SESSION['id'])) {
-    header('Location: ../login/login.php');
-    exit();
-}
-
-include '../php/funzioni_shop.php';
-$cartItems = getCartItems($_SESSION['id']);
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
 
-  <title>E-spresso | Carrello</title>
+  <title>E-spresso | Caffè</title>
   <meta charset="UTF-8">
   <!-- Responsive design -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -63,7 +50,7 @@ $cartItems = getCartItems($_SESSION['id']);
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
-          <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
+          <li class="nav-item"><a href="custom.html" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
           <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
@@ -72,24 +59,20 @@ $cartItems = getCartItems($_SESSION['id']);
     </div>
   </nav>
 
+
   <section>
-  <h2>Your Cart</h2>
-    <?php if (empty($cartItems)) : ?>
-        <p>Your cart is empty.</p>
-    <?php else : ?>
-        <ul>
-            <?php foreach ($cartItems as $item) : ?>
-                <li><?= htmlspecialchars($item['nome']) ?> - $<?= number_format($item['prezzo'], 2) ?> - Quantity: <?= $item['quantita'] ?></li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-    <a href="shop.php">Back to Shop</a>
+    <h2>Shop</h2>
+    <div id="products">
+      <?php foreach ($products as $product) : ?>
+        <div class="product" data-id="<?= $product['id'] ?>">
+          <h3><?= htmlspecialchars($product['nome']) ?></h3>
+          <p>Price: $<?= number_format($product['prezzo'], 2) ?></p>
+          <button onclick="addToCart(<?= $product['id'] ?>)">Aggiungi al carrello</button>
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <a href="../pages/carrello.php">Vai al carrello</a>
   </section>
-
-
-
-
-
 
   <!-- FOOTER -->
   <footer class="footer footer-bg">
@@ -107,7 +90,7 @@ $cartItems = getCartItems($_SESSION['id']);
                 <h2 class="footer-heading">Navigazione</h2>
                 <ul class="list-unstyled">
                   <li><a href="../index.html" class="py-2 d-block">Home</a></li>
-                  <li><a href="shop.php" class="py-2 d-block">Shop</a></li>
+                  <li><a href="shop.php" class="py-2 d-block">Caffe</a></li>
                   <li><a href="custom.php" class="py-2 d-block">Create</a></li>
                   <li><a href="contatti.html" class="py-2 d-block">Contatti</a></li>
                   <li><a href="../account.php" class="py-2 d-block">Account</a></li>
@@ -152,6 +135,7 @@ $cartItems = getCartItems($_SESSION['id']);
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="../scripts/script.js"></script>
+  <script src="../scripts/shop.js"></script>
 
 </body>
 

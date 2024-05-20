@@ -17,7 +17,7 @@ $n_civico = $_POST['n_civico'];
 $citta = $_POST['citta'];
 $numero_telefono = $_POST['numero_telefono'];
 
-//Control if the user or email are already in the database
+//Controlla se l'utente esiste già nel db
 $q = $pdo->prepare("SELECT * FROM users WHERE email = :email");
 $q->bindParam(':email', $email);
 $q->execute(); // eseguo la query
@@ -25,12 +25,12 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
 $rows = $q->rowCount();
 if ($rows > 0) {
     while ($row = $q->fetch()) {
-        header("location: ../error.php?error=Email or Username already register!");
+        header("location: ../error.php?error=L'email o l'username esiste già!");
         die();
     }
 }
 
-//Insert new user in DB
+//Inserisce il nuovo utente nel db
 //$password = password_hash($password, PASSWORD_DEFAULT); - HASH
 $q = $pdo->prepare("INSERT INTO users(nome,cognome,email,password,indirizzo,n_civico,citta,numero_telefono) 
     VALUES (:nome, :cognome, :email, :password, :indirizzo, :n_civico, :citta, :numero_telefono)");
