@@ -66,10 +66,6 @@
     <?php
     if (isset($_GET['user']) && $_GET['user'] == 'yes') {
     ?>
-      <div class="box welcome">
-        <h1>New user created!</h1>
-        <p>Now you can Log In</p>
-      </div>
     <?php
     }
     ?>
