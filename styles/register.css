@@ -1,14 +1,16 @@
-.page-content-login{
-  padding-top:none;
-}
-.container-login{
-    height:fit-content;
+
+.container-register{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .login-container{
-    margin-top: 12%;
-    margin-bottom: 15%;
-  }
+  display:flex;
+  justify-content:center;
+  margin-top: 12%;
+  margin-bottom: 15%;
+}
 
 #login-video-register{
     width: 100%;
@@ -51,3 +53,5 @@
   font-style: normal;
   font-size: 29px;
 }
+
+

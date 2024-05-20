@@ -63,7 +63,7 @@
 
 <!-- Contenuto sotto la navbar -->
 <div class="page-content-login ">
-  <div class="container container-login"> 
+  <div class="container-register"> 
     <!--INSERISCI QUI IL NUOVO CODICE-->
     <video id="login-video-register" autoplay loop muted>
       <source src="../img/video/c03_top.MOV" type="video/mp4">
@@ -124,6 +124,7 @@
             <button class="btn btn-primary" type="submit"> Registrati </button>
           </div>
         </div>
+    </div>
     </form>
   </div>
 </div>
