@@ -1,0 +1,18 @@
+.welcome{
+    display:flex;
+    justify-content: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.contenuto-sx{
+    display: flex;
+    height:40%;
+    width:50%;
+}
+
+.contenuto-dx{
+    display:flex;
+    height:40%;
+    width:50%;
+}
