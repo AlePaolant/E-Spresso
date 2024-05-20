@@ -1,18 +1,18 @@
 .welcome{
     display:flex;
     justify-content: center;
-    padding-top: 10%;
+    padding-top: 13%;
     padding-bottom: 10%;
 }
 
 .contenuto-sx{
     display: flex;
-    height:40%;
-    width:50%;
+    height:70vh;
+    width:15vw;
 }
 
 .contenuto-dx{
     display:flex;
-    height:40%;
-    width:50%;
+    height:70vh;
+    width:50vw;
 }

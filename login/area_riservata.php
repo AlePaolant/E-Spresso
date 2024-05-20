@@ -78,14 +78,38 @@ if($sessionid==""){
 
 
 <div class="welcome">
-  <div class="contenuto-sx">
-    <h1>SINISTRA</h1>
-  <div class="contenuto-dx">
+  
+  <div class="contenuto-sx bg-primary">
+  <table>
+    <tr>
+        <td>PROFILO</td>
+    </tr>
+    <tr>
+        <td>INDIRIZZO</td>
+    </tr>
+    <tr>
+        <td>METODO DI PAGAMENTO</td>
+    </tr>
+    <tr>
+        <td>IMPOSTAZIONI</td>
+    </tr>
+    <tr>
+        <td>ESCI</td>
+    </tr>
+   
+
+</table>
+
+    
+
+  </div>
+  
+  <div class="contenuto-dx bg-secondary">
 
         <h1>DESTRA</h1>
 
   </div>
-  </div>
+  
 </div>
 
 
