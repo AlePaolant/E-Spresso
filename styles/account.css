@@ -134,3 +134,10 @@
     background-image: url("../img/bg-login.jpg");
     background-size:cover;
   }
+
+  .login-container{
+    display:flex;
+    justify-content: center;
+    padding-top:15%;
+    padding-bottom:10%;
+  }
