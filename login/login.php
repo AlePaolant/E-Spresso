@@ -93,12 +93,14 @@
                   <label for="password">Password</label>
                   <input type="password" class="form-control" id="password" name="password" required placeholder="latuapassword">
                 </div>
-                <div class="remember-me">
+
+                <!-- <div class="remember-me">
                     <label class="checkbox" for="remember-me">
                       <input type="radio" id="remember-me" name="remember-me" required> 
                       <span class="checkmark"> </span>Ricordami!
                     </label>
-                </div>
+                </div> -->
+                
                 <div class="btn-login">
                   <button type="submit" class="btn btn-primary">Accedi</button>
                 </div>
