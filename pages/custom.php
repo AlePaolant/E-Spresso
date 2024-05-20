@@ -48,11 +48,11 @@
           <div class="collapse navbar-collapse" id="nav-ham">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="caffe.html" class="nav-link">Caffè</a></li>
-                <li class="nav-item"><a href="custom.html" class="nav-link">Create</a></li>
+                <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
+                <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
                 <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
                 <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
-                <li class="nav-item"><a href="carrello.html" class="nav-link bi bi-bag"></a></li>
+                <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
               </ul>
           </div>
         </div>
@@ -216,11 +216,11 @@
                     <h2 class="footer-heading">Navigazione</h2>
                     <ul class="list-unstyled">
                       <li><a href="../index.html" class="py-2 d-block">Home</a></li>
-                      <li><a href="caffe.html" class="py-2 d-block">Caffe</a></li>
-                      <li><a href="custom.html" class="py-2 d-block">Create</a></li>
+                      <li><a href="shop.php" class="py-2 d-block">Shop</a></li>
+                      <li><a href="custom.php" class="py-2 d-block">Create</a></li>
                       <li><a href="contatti.html" class="py-2 d-block">Contatti</a></li>
-                      <li><a href="account.html" class="py-2 d-block">Account</a></li>
-                      <li><a href="carrello.html" class="py-2 d-block">Carrello</a></li>
+                      <li><a href="../account.php" class="py-2 d-block">Account</a></li>
+                      <li><a href="carrello.php" class="py-2 d-block">Carrello</a></li>
                     </ul>
                   </div>
                 </div>
