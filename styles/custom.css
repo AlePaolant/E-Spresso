@@ -5,12 +5,18 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-/*SECTION CUSTOM*/
-.custom {
+a{
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+a:hover{
+    color: #7e5e47;
+}
+/*SEZIONE LANDING*/
+.landing {
     position: relative;
     width: 100vw;
-    height: 70vh;
+    height: 60vh;
     overflow: hidden;
     background-color: rgb(233, 231, 223);
     display: flex;
@@ -19,44 +25,83 @@
     margin: 0;
     padding: 0;
 }
-
-.custom .img-divisore {
-    position: relative;
-    width: 25%;
-    left: 13%;
-    margin-top: 1%;
-    transform: translate(-50%, -50%);
-}
-
-.custom .container {
+.landing .container {
+    margin-top: 7%;
     margin-left: 10%;
     margin-right: 10%;
 }
-
-.custom .container h1 {
+.landing .container h1 {
     font-size: 3.7rem;
     line-height: 0.9;
 }
-
-.custom .container p {
+.landing .container p {
     font-size: 1.2rem;
     line-height: 1.3;
 }
 
-.custom .btn {
-    margin-top: 2%;
-    color: #343a40;
-    border-color: #343a40;
+/*SEZIONE SPIEGONE*/
+.spiegone {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.spiegone .corpo, .acido{
+    width: 100%;
+    height: 40vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(224, 219, 209); 
+}
+.spiegone .corpo{
+    border-radius: 50px 50px 0 0;
+}
+.corpo img{
+    position: relative;
+    padding-left: 5%;
+    width: 30%;
+}
+.corpo .testo{
+    padding-left: 7%;
+    padding-right: 7%;
+}
+.testo h1{
+    font-size: 3.7rem;
+    line-height: 0.9;
+}
+.testo p{
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+.acido img{
+    position: relative;
+    padding-right: 5%;
+    width: 35%;
+}
+.acido .testo{
+    padding-left: 7%;
+    padding-right: 7%;
+}
+.spiegone .g-r-container{
+    width: 100%;
+    height: 40vh; 
+    display: flex;
+}
+.spiegone .g-r{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(224, 219, 209); 
+}
+.spiegone .g-r-margin{
+    border-right: 2px inset #7e5e47;
 }
 
-.custom .btn:hover {
-    color: #fff;
-    background-color: #7e5e47;
-    border-color: #7e5e47;
-    cursor: url('../img/cursor/cursore-tazza.png'), auto;
-}
-
-/*SECTION SELEZIONE*/
+/*SEZIONE SELEZIONE*/
 .selezione {
     position: relative;
     width: 100vw;
@@ -407,14 +452,42 @@
 /*            SEZIONE CREA               */
 /*---------------------------------------*/
 /*---------------------------------------*/
+.crea{
+    background-color: rgb(224, 219, 209); 
+}
+.crea-intestazione{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text-on-drag-item{
+    cursor: default;
+}
 .caffe-item {
     display: inline-block;
     margin: 10px;
     text-align: center;
 }
+.caffe-item img:active{
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
 .caffe-item img {
     width: 100px;
     height: 100px;
+    cursor: move; /* fallback se il cursore grab non è supportato */
+    cursor: grab;
+    cursor: -moz-grab;     /* imposta il cursore grab quando si trova sull'immagine*/
+    cursor: -webkit-grab;
+}
+.caffe-item img:active{
+    cursor: grabbing;
+    cursor: -moz-grabbing; /* imposta il cursore grabbing quando trascina l'immagine*/
+    cursor: -webkit-grabbing;
 }
 .drop-zone-container {
     display: flex;
@@ -422,25 +495,19 @@
 }
 .drop-sx{
     width: 25vw;
+    padding-top: 5%;
     padding-right: 2.5%;
 }
 .drop-dx{
     width: 25vw;
+    padding-top: 5%;
     padding-left: 2.5%;
 }
-.drop-zone1{
+.drop-zone{
     display: inline-block;
     width: 150px;
     height: 150px;
-    border: 2px dashed #ccc;
-    margin: 20px;
-    position: relative;
-}
-.drop-zone2{
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    border: 2px dashed #ccc;
+    border: 2px dashed #c7b8a3;
     margin: 20px;
     position: relative;
 }
@@ -454,18 +521,30 @@
     object-fit: cover;
 }
 .slider {
-    width: 100%;
+    width: 75%;
     margin-top: 10px;
 }
-.container {
+.crea .container {
     text-align: center;
     margin-top: 20px;
 }
 .submit-button {
-    margin-top: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #c7b8a3;
     color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+}
+.submit-button:hover {
+    background-color: #a58e76;
+}
+.submit-button:active {
+    background-color: #7e5e47;
 }

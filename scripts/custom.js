@@ -296,10 +296,11 @@ function submitCustom() {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            alert("Gusto Custom creato con successo!");
+            openPopup("Gusto Custom creato con successo!");
         }
     };
     xhr.send(`description=${description}`);
+    
 }
 
 
