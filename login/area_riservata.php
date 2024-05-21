@@ -1,14 +1,40 @@
 <?php
-/*-----------------------------------------------------
-      CODICE PER ACCESSSO ALL'AREA RISERVATA
-  (da copiare su ogni pagina con accesso riservato)
--------------------------------------------------------*/
 session_start();
-$sessionid= $_SESSION['id'];
-if($sessionid==""){
-  header('location: error.php');
+$sessionid=$_SESSION['id'];
+
+if($sessionid ==""){
+  header('Location: error.php');
+  exit;
+}
+
+$host = 'localhost';
+$port = '5432';
+$dbname = 'e-spresso';
+$user = 'postgres';
+$password = 'admin';
+
+$dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+try {
+    $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+    $sql="SELECT id,nome,cognome,email,indirizzo,n_civico,citta,numero_telefono FROM users WHERE id=:id";
+    $stmt=$pdo->prepare($sql);
+    $stmt->bindParam(':id',$sessionid, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $user=$stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if (!$user){
+      echo "utente non trovato";
+      exit();
+    }
+
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+    exit;
 }
 ?>
+
 
 
 
@@ -81,7 +107,7 @@ if($sessionid==""){
   
   <div class="contenuto-sx">
 
-  <table>
+  <table id="clickableTable">
 
      <!-- parte iniziale------------------------------------>
 
@@ -90,14 +116,14 @@ if($sessionid==""){
     <!-- corpo--------------------------------------------->
 
     <tr>
-        <td class="area profilo" > <i class="bi bi-person-circle"></i> PROFILO </td>
+        <td class="area profilo"> <i class="bi bi-person-circle"></i> PROFILO </td>
     </tr>
     
     <tr>
-        <td class="area indirizzo"> <i class="bi bi-house-check-fill"></i> INDIRIZZO</td>
+        <td class="area indirizzo" > <i class="bi bi-house-check-fill"></i> INDIRIZZO</td>
     </tr>
     <tr>
-        <td class="area pagamento"> <i class="bi bi-cash-coin"></i> PAGAMENTO</td>
+        <td class="area pagamento" > <i class="bi bi-cash-coin"></i> PAGAMENTO</td>
     </tr>
     <tr>
         <td class="area impostazioni"> <i class="bi bi-gear-wide-connected"></i> IMPOSTAZIONI</td>
@@ -115,9 +141,35 @@ if($sessionid==""){
   
   <div class="contenuto-dx ">
 
-        <h1>DESTRA</h1>
-        
+    <div class="interno">
+      <div class="oggetti">
+        <label for="nome"> Nome </label>
+        <div id="nomeDisplay">
+        <p class="nome"><?php echo htmlspecialchars($user['nome']); ?></p>
+        </div>
+      </div>
 
+      <div class="oggetti">
+        <label for="cognome"> Cognome </label>
+        <div id="cognomeDisplay">
+        <p class="cognome"><?php echo htmlspecialchars($user['cognome']); ?></p>
+        </div>
+      </div>
+
+      <div class="oggetti">
+        <label for="email"> Email </label>
+        <div id="emailDisplay">
+        <p class="email"><?php echo htmlspecialchars($user['email']); ?></p>
+        </div>
+      </div>
+
+      <div class="oggetti">
+        <label for="telefono"> Telefono </label>
+        <div id="telefonoDisplay">
+        <p class="telefono"><?php echo htmlspecialchars($user['numero_telefono']); ?></p>
+        </div>
+      </div>
+    </div>
   </div>
   
 </div>
@@ -184,6 +236,8 @@ if($sessionid==""){
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="../scripts/script.js"></script>
+      <script src="../scripts/"></script>
+      <script src="../scripts/area_riservata.js"></script>
 
     </body>
 </html>

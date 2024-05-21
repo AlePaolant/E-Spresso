@@ -2,7 +2,7 @@
     width:100vw;
     height:100 vh;
     display:flex;
-    padding-top: 7%;
+    padding-top: 9%;
     padding-bottom: 5%;
     padding-left: 5%;
 }
@@ -22,32 +22,21 @@
 
 
 .bi-person-circle{
-    padding-right:75px;
-}
-.bi-house-check-fill{
     padding-right:70px;
 }
+.bi-house-check-fill{
+    padding-right:65px;
+}
 .bi-cash-coin{
-    padding-right:57px;
+    padding-right:54px;
 }
 .bi-gear-wide-connected{
-    padding-right:55px;
+    padding-right:48px;
 }
 
-
-.profilo{
-    padding-right:38%;
+td{
+    padding-left: 5%;
 }
-.indirizzo{
-    padding-right:36%;
-}
-.pagamento{
-    padding-right:31%;
-}
-.impostazioni{
-    padding-right:27%;
-}
-
 
 th { /* INTESTAZIONE E FOOT*/
     height:auto;
@@ -55,20 +44,13 @@ th { /* INTESTAZIONE E FOOT*/
     padding: 3px;
     display: flex;
     justify-content: center;
-    background-color:black; /* Colore di sfondo dell'intestazione */
+    background-color:#7E5E47; /* Colore di sfondo dell'intestazione */
     color:blanchedalmond; /* Colore del testo dell'intestazione */
     border-radius: 15px;
 }
 
-td{ /*BODY*/
-    padding: 5px; /* Per centrare le scritte */
-    height:6vh;
-    width: 23vw;
-    display: flex;
-    justify-content: center;
-}
-
 tr:hover {
+    border-radius: 25px;
     display:block;
     height:auto;
     background-color:bisque    /* Colore di sfondo al passaggio del mouse */
@@ -76,4 +58,35 @@ tr:hover {
 tr:active{
     border-right: 2px inset red;
 }
+
+.area {
+    width: 255px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.clicked{
+    background-color:#D9CCB5;
+    color: white;
+}
+
+.interno{ /*contenitore oggetti*/
+    display:grid;
+    padding-top:14%;
+    padding-left:10%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 10rem;
+    row-gap: 10rem;
+  }
+
+  .edit{
+    display:grid;
+  }
+
+
+  
 
