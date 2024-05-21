@@ -87,6 +87,32 @@ tr:active{
     display:grid;
   }
 
+  .sezione-contenuto{
+    display:none;
+  }
+
+  .sezione-contenuto.active{
+    display:block;
+  }
+
+  .popup {
+    display: block;
+    position:absolute; /* Cambiato da 'fixed' a 'absolute' */
+    z-index: 999;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#logout{
+    cursor:pointer;
+}
+
+
 
   
 
