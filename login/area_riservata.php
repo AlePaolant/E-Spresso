@@ -79,34 +79,44 @@ if($sessionid==""){
 
 <div class="welcome">
   
-  <div class="contenuto-sx bg-primary">
+  <div class="contenuto-sx">
+
   <table>
-    <tr>
-        <td>PROFILO</td>
-    </tr>
-    <tr>
-        <td>INDIRIZZO</td>
-    </tr>
-    <tr>
-        <td>METODO DI PAGAMENTO</td>
-    </tr>
-    <tr>
-        <td>IMPOSTAZIONI</td>
-    </tr>
-    <tr>
-        <td>ESCI</td>
-    </tr>
-   
 
-</table>
+     <!-- parte iniziale------------------------------------>
 
+    <th>AREA RISERVATA</th>
+
+    <!-- corpo--------------------------------------------->
+
+    <tr>
+        <td class="area profilo" > <i class="bi bi-person-circle"></i> PROFILO </td>
+    </tr>
     
+    <tr>
+        <td class="area indirizzo"> <i class="bi bi-house-check-fill"></i> INDIRIZZO</td>
+    </tr>
+    <tr>
+        <td class="area pagamento"> <i class="bi bi-cash-coin"></i> PAGAMENTO</td>
+    </tr>
+    <tr>
+        <td class="area impostazioni"> <i class="bi bi-gear-wide-connected"></i> IMPOSTAZIONI</td>
+    </tr>
+
+    <!-- parte finale -------------------------------------->
+
+    <tfoot> 
+      <th>ESCI</th>
+    </tfoot>
+
+  </table>
 
   </div>
   
-  <div class="contenuto-dx bg-secondary">
+  <div class="contenuto-dx ">
 
         <h1>DESTRA</h1>
+        
 
   </div>
   

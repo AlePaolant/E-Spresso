@@ -1,18 +1,79 @@
 .welcome{
+    width:100vw;
+    height:100 vh;
     display:flex;
-    justify-content: center;
-    padding-top: 13%;
-    padding-bottom: 10%;
+    padding-top: 7%;
+    padding-bottom: 5%;
+    padding-left: 5%;
 }
 
 .contenuto-sx{
     display: flex;
     height:70vh;
-    width:15vw;
+    width:25vw;
 }
 
 .contenuto-dx{
+    padding-left: 10%;
     display:flex;
     height:70vh;
     width:50vw;
 }
+
+
+.bi-person-circle{
+    padding-right:75px;
+}
+.bi-house-check-fill{
+    padding-right:70px;
+}
+.bi-cash-coin{
+    padding-right:57px;
+}
+.bi-gear-wide-connected{
+    padding-right:55px;
+}
+
+
+.profilo{
+    padding-right:38%;
+}
+.indirizzo{
+    padding-right:36%;
+}
+.pagamento{
+    padding-right:31%;
+}
+.impostazioni{
+    padding-right:27%;
+}
+
+
+th { /* INTESTAZIONE E FOOT*/
+    height:auto;
+    border: 1px solid #ddd;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    background-color:black; /* Colore di sfondo dell'intestazione */
+    color:blanchedalmond; /* Colore del testo dell'intestazione */
+    border-radius: 15px;
+}
+
+td{ /*BODY*/
+    padding: 5px; /* Per centrare le scritte */
+    height:6vh;
+    width: 23vw;
+    display: flex;
+    justify-content: center;
+}
+
+tr:hover {
+    display:block;
+    height:auto;
+    background-color:bisque    /* Colore di sfondo al passaggio del mouse */
+}
+tr:active{
+    border-right: 2px inset red;
+}
+
