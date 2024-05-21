@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (!isset($_SESSION['id'])) {
-    header('Location: carrello_nologin.php');
-    exit();
+  header('Location: carrello_nologin.php');
+  exit();
 }
 
 include '../php/funzioni_shop.php';
@@ -40,7 +40,7 @@ $cartItems = getCartItems($_SESSION['id']);
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <link rel="stylesheet" href="../styles/style.css">
-
+  <link rel="stylesheet" href="../styles/carrello.css">
 
 
 </head>
@@ -72,8 +72,83 @@ $cartItems = getCartItems($_SESSION['id']);
     </div>
   </nav>
 
-  <section>
-  <h2>Your Cart</h2>
+  <section class="carrello start-animation" id="carrello">
+    <div class="card-carrello bg-secondary">
+      <div class="shopping-cart bg-primary">
+        <h2>Shopping Cart</h2>
+        <div class="cart-container">
+          <?php if (empty($cartItems)) : ?>
+            <p>Your cart is empty.</p>
+          <?php else : ?>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Size</th>
+                  <th>Quantity</th>
+                  <th>Unit Price</th>
+                  <th>Total Price</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($cartItems as $item) : ?>
+                  <tr>
+                    <td><?= htmlspecialchars($item['nome']) ?></td>
+                    <td><?= htmlspecialchars($item['size']) ?></td>
+                    <td>
+                      <input type="number" class="form-control" value="<?= htmlspecialchars($item['quantita']) ?>" min="1" onchange="updateQuantita(<?= $item['id'] ?>, this.value)">
+                    </td>
+                    <td>$<?= number_format($item['prezzo'], 2) ?></td>
+                    <td>$<?= number_format($item['prezzo'] * $item['quantita'], 2) ?></td>
+                    <td><button class="btn btn-danger btn-sm" onclick="rimuoviElementi(<?= $item['id'] ?>)">X</button></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          <?php endif; ?>
+        </div>
+        <a href="shop.php" class="btn btn-secondary">Continue Shopping</a>
+      </div>
+      <!-- AAAAAAAAA -->
+      <div class="checkout bg-secondary">
+        <h2>Payment Info</h2>
+        <form>
+          <div class="form-group">
+            <label for="paymentMethod">Payment Method</label>
+            <select class="form-control" id="paymentMethod" onchange="selezionaMetodoPagamento()">
+              <option value="creditCard">Credit Card</option>
+              <option value="paypal">PayPal</option>
+            </select>
+          </div>
+          <div id="creditCardInfo">
+            <div class="form-group">
+              <label for="cardName">Name on Card</label>
+              <input type="text" class="form-control" id="cardName" value="John Carter">
+            </div>
+            <div class="form-group">
+              <label for="cardNumber">Credit Card Number</label>
+              <input type="text" class="form-control" id="cardNumber" value="**** **** **** 2153">
+            </div>
+            <div class="form-group">
+              <label for="cardExpiry">Expiration Date</label>
+              <input type="text" class="form-control" id="cardExpiry" value="05/2022">
+            </div>
+            <div class="form-group">
+              <label for="cardCVC">CVC</label>
+              <input type="text" class="form-control" id="cardCVC" value="136">
+            </div>
+          </div>
+          <div id="paypalInfo" class="hidden">
+            <button type="button" class="btn btn-primary btn-block">Pay with PayPal</button>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Check Out</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- <h2>Your Cart</h2>
     <?php if (empty($cartItems)) : ?>
         <p>Your cart is empty.</p>
     <?php else : ?>
@@ -83,9 +158,7 @@ $cartItems = getCartItems($_SESSION['id']);
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
-    <a href="shop.php">Back to Shop</a>
-  </section>
-
+    <a href="shop.php">Back to Shop</a> -->
 
 
 
@@ -148,10 +221,11 @@ $cartItems = getCartItems($_SESSION['id']);
   </footer>
 
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="../scripts/script.js"></script>
+  <script src="../scripts/carrello.js"></script>
 
 </body>
 
