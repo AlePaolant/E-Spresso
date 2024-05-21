@@ -90,17 +90,17 @@ if($sessionid==""){
     <!-- corpo--------------------------------------------->
 
     <tr>
-        <td class="area profilo" > <i class="bi bi-person-circle"></i> PROFILO </td>
+        <td class="area profilo" id="clickableArea"> <i class="bi bi-person-circle"></i> PROFILO </td>
     </tr>
     
     <tr>
-        <td class="area indirizzo"> <i class="bi bi-house-check-fill"></i> INDIRIZZO</td>
+        <td class="area indirizzo" id="clickableArea"> <i class="bi bi-house-check-fill"></i> INDIRIZZO</td>
     </tr>
     <tr>
-        <td class="area pagamento"> <i class="bi bi-cash-coin"></i> PAGAMENTO</td>
+        <td class="area pagamento" id="clickableArea"> <i class="bi bi-cash-coin"></i> PAGAMENTO</td>
     </tr>
     <tr>
-        <td class="area impostazioni"> <i class="bi bi-gear-wide-connected"></i> IMPOSTAZIONI</td>
+        <td class="area impostazioni" id="clickableArea"> <i class="bi bi-gear-wide-connected"></i> IMPOSTAZIONI</td>
     </tr>
 
     <!-- parte finale -------------------------------------->
@@ -184,6 +184,7 @@ if($sessionid==""){
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="../scripts/script.js"></script>
+      <script src="../scripts/"></script>
 
     </body>
 </html>
