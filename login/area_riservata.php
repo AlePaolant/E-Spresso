@@ -2,6 +2,9 @@
 session_start();
 $sessionid = $_SESSION['id'];
 
+
+//where user.id='$sessionid'---------------------------------------------------------------------->PER LA MODIFICA, PASSI ID UTENTE
+
 if ($sessionid == "") {
   header('Location: error.php');
   exit;
@@ -133,7 +136,7 @@ try {
         <!-- parte finale -------------------------------------->
 
         <tfoot>
-          <th id="logout" >ESCI</th>  
+          <th id="logout">ESCI</th>
         </tfoot>
 
       </table>
@@ -215,32 +218,39 @@ try {
 
         </div>
       </div>
-    </div>
+      <!-----------------------QUARTO CONTENUTO -------------------------------------->
+      <div class="sezione-contenuto" id="impostazioni" style="display:none;">
+        <div class="interno-quarto">
 
-    <!-----------------------QUARTO CONTENUTO -------------------------------------->
-    <div class="sezione-contenuto" id="impostazioni" style="display:none;">
-      <div class="interno bg-primary">
-        <button id="editButton">Modifica</button>
+          <div class="modifica-elementi">
+            <h3 class="input-modifica">Vuoi modificare i tuoi dati?</h3>
+            <button id="editButton">Modifica</button>
+            <!-- -------------------------Il pop-up ---------------------------------------------------------->
+            <div id="popupModifica" class="popup">
+              <div class="popup-content">
+                <span class="close">&times;</span>
+                <!-- ------------------contenuto pop-up------------------------------------------- -->
+                <div class="modifica" id="modifica">
+                  <a>Vuoi modificare i tuoi dati?</a>
+                  <button class="btn btn-danger" type="submit"> Modifica </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <!--
-
-        <a href="../login/login.php"> 
-        <button type="button" class="btn btn-lg">Login</button>
-        </a> 
-
-        -->
-
-        <!-- Il pop-up -->
-        <div id="popup" class="popup bg-danger">
-          <div class="popup-content">
-            <span class="close">&times;</span>
-            <p>Contenuto del pop-up</p>
-            <!-- Aggiungi qui il contenuto che desideri -->
-            <?php
-                // Codice PHP per generare contenuto dinamico
-                echo "Questo è un esempio di contenuto PHP!";
-            ?>
-          
+          <div class="elimina-dati">
+            <h3 class="input-elimina">Vuoi eliminare i tuoi dati?</h3>
+            <button id="deleteButton">Elimina</button>
+            <div id="popupElimina" class="popup">
+              <div class="popup-content">
+                <span class="closed">&times;</span>
+                <!-- ------------------contenuto pop-up------------------------------------------- -->
+                <div class="elimina" id="elimina">
+                  <a>Vuoi eliminare i tuoi dati?</a>
+                  <button class="btn btn-danger" type="submit"> Elimina </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
