@@ -1,10 +1,4 @@
 
-.container-register{
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .login-container{
   display:flex;
   justify-content:center;
@@ -26,32 +20,51 @@
 
 .card-body{ /* per metter in modo griglia*/
   display: grid;
+  font-size: 90%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  column-gap: 1.5rem
+  column-gap: 3rem
 }
 
 .form-group input{ /* per le caselle di input*/
-  display: flex;
-  flex-direction: column;
-  margin:0 auto;
-  width: 100%; /* Aggiusta questa percentuale secondo le tue necessità */
-  box-sizing: border-box;
+  font-size: 100%;
   font-style:oblique;
 }
 
 .form-group label{ /* per le etichette*/
-  width:98%;
   margin-right:10px;
-  text-align:center;
-  padding:2px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:110%;
+  color:aliceblue;
 }
 
 .card-under-header{ /* per il titolo della registrazione*/
-  font-family:garamond;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: normal;
-  font-size: 29px;
+  font-size:28px;
+  color:navajowhite;
 }
+
+.nav-link-register{
+  padding:8px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px; 
+  transition: background-color 0.3s;
+  color:navajowhite !important;
+}
+
+.nav-link-register:hover{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px; 
+  color: #7E5E47 !important;
+}
+
+
 
 

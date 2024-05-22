@@ -9,9 +9,12 @@ $password = $_POST['password'];
 
 // Query 
 $q = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-$q->bindParam(':email', $email, PDO::PARAM_STR);  // Parametro di tipo stringa
-$q->execute();  // Esegui la query
-$q->setFetchMode(PDO::FETCH_ASSOC);  // Recupera i dati come un array associativo
+// Parametro di tipo stringa
+$q->bindParam(':email', $email, PDO::PARAM_STR);  
+// Esegui la query
+$q->execute();  
+ // Recupera i dati come un array associativo
+$q->setFetchMode(PDO::FETCH_ASSOC); 
 
 $row = $q->fetch();  // Recupera il primo (e unico) risultato
 
@@ -20,8 +23,10 @@ if ($row) {
     // Controllo della password in chiaro
     if ($row["password"] === $password) {
         session_start();
-        $_SESSION['id'] = $row["id"];  // Salva l'id dell'utente nella sessione
-        header("location: ../area_riservata.php");  // Redirect alla pagina dell'area riservata
+        // Salva l'id dell'utente nella sessione
+        $_SESSION['id'] = $row["id"];  
+        // Redirect alla pagina dell'area riservata
+        header("location: ../area_riservata.php");  
         die();
     } else {
         echo 'Password errata.';
@@ -29,7 +34,8 @@ if ($row) {
         die();
     }
 } else {
-    header("location: ../error.php?error=Email o Username errati");  // Redirect a pagina errore
+    // Redirect a pagina errore
+    header("location: ../error.php?error=Email o Username errati"); 
     die();
 }
 ?>

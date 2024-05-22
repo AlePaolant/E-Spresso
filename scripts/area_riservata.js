@@ -35,15 +35,28 @@ window.onclick = function (event) {
     }
 }
 
-document.getElementById("logout").addEventListener("click",function(){
+document.getElementById("logout").addEventListener("click", function () {
     fetch('../login/utility/out.php')
         .then(response => {
             if (response.ok) {
                 window.location.href = '../login/login.php';
             }
-            else{
+            else {
                 alert('Errore durante il logout');
             }
         })
         .catch(error => console.error('errore: ', error));
 });
+
+
+//per nascondere la password in register.php e per abilitare
+//la funzione mostra o nascondi
+function togglePassword() {
+    var passwordField = document.getElementById("password");
+    var showPasswordCheckbox = document.getElementById("show-password");
+    if (showPasswordCheckbox.checked) {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}

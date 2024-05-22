@@ -219,11 +219,19 @@ try {
 
     <!-----------------------QUARTO CONTENUTO -------------------------------------->
     <div class="sezione-contenuto" id="impostazioni" style="display:none;">
-      <div class="interno">
+      <div class="interno bg-primary">
         <button id="editButton">Modifica</button>
 
+        <!--
+
+        <a href="../login/login.php"> 
+        <button type="button" class="btn btn-lg">Login</button>
+        </a> 
+
+        -->
+
         <!-- Il pop-up -->
-        <div id="popup" class="popup bg-primary">
+        <div id="popup" class="popup bg-danger">
           <div class="popup-content">
             <span class="close">&times;</span>
             <p>Contenuto del pop-up</p>
