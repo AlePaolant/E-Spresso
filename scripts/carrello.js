@@ -52,7 +52,7 @@ function diminuisce(id) {
     }
 }
 
-
+//funzione per il cambio del metodo di pagamento
 function cambioMetodoPagamento(method) {
     document.getElementById('infoCartaCredito').classList.add('hidden');
     document.getElementById('infoPayPal').classList.add('hidden');
@@ -63,7 +63,7 @@ function cambioMetodoPagamento(method) {
     }
 }
 
-// Default to PayPal if selected
+// Imposta di default il metodo di pagamento con carta 
 window.onload = function() {
     cambioMetodoPagamento('cartacredito');
 }

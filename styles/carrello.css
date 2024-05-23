@@ -5,6 +5,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 .carrello {
     width: 100vw;
     height: 98vh;
@@ -13,6 +14,7 @@
     padding-top: 9%;
     padding-bottom: 4%;
 }
+
 .card-carrello {
     width: 80%;
     height: 100%;
@@ -20,6 +22,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
 }
+
 /* SEZIONE CARRELLO (SX)*/
 .div-carrello {
     flex: 70%;
@@ -27,11 +30,13 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+
 .div-carrello h2 {
     font-size: 2.5rem;
     margin-top: 2%;
     margin-left: 5%;
 }
+
 .container-carrello {
     margin-top: 1.5%;
     margin-left: 5%;
@@ -40,55 +45,69 @@
     border-bottom: 2px solid rgba(33, 34, 34, 0.2);
     height: 60%;
 }
+
 .tabella {
     width: 100%;
     border-collapse: collapse;
 }
+
 .tabella th,
 .tabella td {
     padding: 1%;
     text-align: left;
 }
+
 .tabella-head {
     background-color: transparent;
 }
+
 .tabella-head th {
     border-bottom: 2px solid rgba(33, 34, 34, 0.2);
     font-size: 0.9rem;
     font-weight: 500;
 }
+
 .tabella tbody tr:nth-child(even) {
     background-color: transparent;
 }
+
 .tabella tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
+
 .prod {
     width: 45%;
 }
+
 .tabella img {
     width: 12%;
 }
+
 .nome-item {
     font-size: 1.1rem;
     padding-left: 7%;
 }
+
 .quantita-container {
     display: flex;
     align-items: center;
 }
+
 .quantita {
     text-align: center;
 }
+
 .quantita-container .icona {
     color: rgba(33, 34, 34, 0.7);
     font-size: 20px;
     cursor: pointer;
     padding: 0 7px;
 }
+
 .quantita-container .icona:hover {
     color: rgba(33, 34, 34, 1);
 }
+
 .quantita-container input {
     text-align: center;
     border: none;
@@ -100,17 +119,20 @@
     -moz-appearance: textfield;
     /* Per rimuovere le frecce in Firefox */
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     /* Per rimuovere le frecce in WebKit */
 }
+
 .container-rimuovi .icona {
     color: rgba(33, 34, 34, 0.7);
     font-size: 24px;
     cursor: pointer;
     padding: 0 10px;
 }
+
 .container-rimuovi .icona:hover {
     color: rgba(33, 34, 34, 1);
 }
@@ -186,34 +208,41 @@ input::-webkit-inner-spin-button {
     position: relative;
     background-color: rgb(224, 219, 209);
 }
+
 .checkout h2 {
     margin-bottom: 20px;
 }
+
 .form-group {
     margin-bottom: 15px;
 }
+
 .form-check {
     margin-bottom: 10px;
 }
+
 .form-check-label {
     margin-left: 10px;
 }
 
-.form-check-input:checked{
+.form-check-input:checked {
     background-color: #7e5e47;
     border-color: transparent;
     outline: none;
     box-shadow: none;
 }
+
 .hidden {
     display: none;
 }
+
 .btn-block {
     width: 100%;
     padding: 10px;
     background-color: #6f42c1;
     border-color: #6f42c1;
 }
+
 .checkout-button {
     position: sticky;
     bottom: 0;
@@ -221,45 +250,55 @@ input::-webkit-inner-spin-button {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 .form-control {
     background-color: rgba(233, 231, 223, 1);
     border-color: transparent;
 }
+
 .form-control:focus {
     background-color: rgb(245, 243, 235);
     border-color: transparent;
     outline: none;
     box-shadow: none;
 }
-.checkout-button .btn-primary{
+
+.checkout-button .btn-primary {
     background-color: #a58e76;
     border-color: transparent;
 }
-.checkout-button .btn-primary:hover{
+
+.checkout-button .btn-primary:hover {
     background-color: #7e5e47;
     border-color: transparent;
 }
-.paypal-button .btn-primary{
+
+.paypal-button .btn-primary {
     background-color: #3b7bbf;
     border-color: transparent;
 }
-.paypal-button .btn-primary:hover{
+
+.paypal-button .btn-primary:hover {
     background-color: #1e477a;
     border-color: transparent;
 }
 
-@media screen and (max-width: 991px){
-    .carrello{
+@media screen and (max-width: 991px) {
+    .carrello {
         height: 140vh;
     }
-    .card-carrello{
+
+    .card-carrello {
         width: 100%;
         flex-direction: column;
     }
-    .div-carrello, .checkout{
+
+    .div-carrello,
+    .checkout {
         flex: 100%;
     }
-    .checkout{
+
+    .checkout {
         margin-top: 20%;
         padding-bottom: 40%;
         width: 100%;
