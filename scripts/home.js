@@ -1,10 +1,10 @@
 const parallax_el = document.querySelectorAll(".parallax");
 
-let xValue = 0, 
+let xValue = 0,
     yValue = 0; //di quanti pixel si muoverà il crotols al passaggio del mouse
 
 //funzione per muovere gli elementi in base alla posizione del mouse
-function update(cursorPosition){
+function update(cursorPosition) {
     parallax_el.forEach((el) => {
         //riprendo l'attributo custom che ho creato tramite dataset ( perchè restituisce dati )
         let speedx = el.dataset.speedx;
@@ -36,7 +36,7 @@ if (window.innerWidth >= 725) {
 };
 
 //rotazione tazzina about
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     var scrollPosition = window.scrollY;
     var rotationValue = scrollPosition / 10; // Regola la velocità di rotazione modificando il divisore
 
@@ -45,13 +45,13 @@ window.addEventListener('scroll', function() {
 });
 
 //Movimento immagini in hover  -  sezione caffe
-$(document).ready(function(){
-    $('.img-caffe-container').hover(function(){
+$(document).ready(function () {
+    $('.img-caffe-container').hover(function () {
         $('.img-c-01').addClass('hover-img-c-1'); // Aggiunge la classe 'hover-img-c-1' all'elemento con la classe 'img-c-01' quando si passa sopra il contenitore
-        $('.img-c-02').addClass('hover-img-c-2'); 
+        $('.img-c-02').addClass('hover-img-c-2');
         $('.img-c-03').addClass('hover-img-c-3');
-        $('.img-c-04').addClass('hover-img-c-4');  
-    }, function(){
+        $('.img-c-04').addClass('hover-img-c-4');
+    }, function () {
         $('.img-c-01').removeClass('hover-img-c-1');  // Rimuove la classe 'hover-img-c-1' all'elemento con la classe 'img-c-01' quando il mouse esce dal contenitore
         $('.img-c-02').removeClass('hover-img-c-2');
         $('.img-c-03').removeClass('hover-img-c-3');
@@ -62,12 +62,12 @@ $(document).ready(function(){
 //FAQ - espansione sezione 
 const items = document.querySelectorAll('.sezione-faq button');
 function toggleSezione() {
-  const itemToggle = this.getAttribute('aria-expanded');
-  for (i = 0; i < items.length; i++) {
-    items[i].setAttribute('aria-expanded', 'false');
-  }
-  if (itemToggle == 'false') {
-    this.setAttribute('aria-expanded', 'true');
-  }
+    const itemToggle = this.getAttribute('aria-expanded');
+    for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+    }
+    if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+    }
 }
 items.forEach((item) => item.addEventListener('click', toggleSezione));
