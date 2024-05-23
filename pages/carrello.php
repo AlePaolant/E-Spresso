@@ -65,102 +65,130 @@ $cartItems = getCartItems($_SESSION['id']);
           <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
           <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
-          <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
+          <li class="nav-item"><a href="../login/area_riservata.php" class="nav-link bi bi-person-circle"></a></li>
           <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- CARRELLO -->
   <section class="carrello start-animation" id="carrello">
-    <div class="card-carrello bg-secondary">
-      <div class="shopping-cart bg-primary">
-        <h2>Shopping Cart</h2>
-        <div class="cart-container">
+    <div class="card-carrello ">
+      <!-- SEZIONE CARRELLO -->
+      <div class="div-carrello">
+        <h2>Carrello</h2>
+        <div class="container-carrello ">
           <?php if (empty($cartItems)) : ?>
-            <p>Your cart is empty.</p>
+            <p>Il carrello è vuoto.</p>
           <?php else : ?>
-            <table class="table table-bordered">
-              <thead>
+            <table class="tabella">
+              <thead class="tabella-head">
                 <tr>
-                  <th>Product</th>
-                  <th>Size</th>
-                  <th>Quantity</th>
-                  <th>Unit Price</th>
-                  <th>Total Price</th>
-                  <th>Action</th>
+                  <th class="prod">Prodotto</th>
+                  <th class="quan">Quantità</th>
+                  <th class="pu">Prezzo Unitario</th>
+                  <th class="ptot">Totale</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <?php foreach ($cartItems as $item) : ?>
                   <tr>
-                    <td><?= htmlspecialchars($item['nome']) ?></td>
-                    <td><?= htmlspecialchars($item['size']) ?></td>
-                    <td>
-                      <input type="number" class="form-control" value="<?= htmlspecialchars($item['quantita']) ?>" min="1" onchange="updateQuantita(<?= $item['id'] ?>, this.value)">
+                    <td class="img-item">
+                      <img src="../img/caffe/tipicaffe/<?php echo $item['nome']; ?>.png" alt="<?php echo $item['nome']; ?>">
+                      <span class="nome-item"><?= htmlspecialchars($item['nome']) ?></span>
                     </td>
-                    <td>$<?= number_format($item['prezzo'], 2) ?></td>
-                    <td>$<?= number_format($item['prezzo'] * $item['quantita'], 2) ?></td>
-                    <td><button class="btn btn-danger btn-sm" onclick="rimuoviElementi(<?= $item['id'] ?>)">X</button></td>
+                    <td>
+                      <div class="quantita-container">
+                        <i class="bi bi-dash icona" onclick="diminuisce(<?= $item['id'] ?>)"></i>
+                        <input type="number" class="quantita" data-id="<?= $item['id'] ?>" value="<?= htmlspecialchars($item['quantita']) ?>" min="1" readonly onchange="updateQuantita(<?= $item['id'] ?>, this.value)">
+                        <i class="bi bi-plus icona" onclick="aumenta(<?= $item['id'] ?>)"></i>
+                      </div>
+                    </td>
+                    <td id="prezzo<?= $item['id'] ?>">€ <?= number_format($item['prezzo'], 2) ?></td>
+                    <td id="subtotale<?= $item['id'] ?>">€ <?= number_format($item['quantita'] * $item['prezzo'], 2) ?></td>
+                    <td>
+                      <div class="container-rimuovi">
+                        <i class="bi bi-x icona" onclick="rimuoviElementi(<?= $item['id'] ?>)"></i>
+                      </div>
+                    </td>
                   </tr>
+                  <?php $total += $item['quantita'] * $item['prezzo']; ?>
                 <?php endforeach; ?>
               </tbody>
             </table>
           <?php endif; ?>
         </div>
-        <a href="shop.php" class="btn btn-secondary">Continue Shopping</a>
+        <div class="totale-carrello ">
+          <div class="div-sx ">
+            <a href="shop.php"><i class="bi bi-caret-left-fill"></i> Torna allo Shop</a>
+          </div>
+          <div class="div-dx ">
+            <div class="subtotale">
+              <table class="tabella-totale">
+                <tr>
+                  <td>Subtotale:</td>
+                  <td style="text-align: right;">€<?= number_format($total, 2) ?></td>
+                </tr>
+                <tr>
+                  <td>Spedizione:</td>
+                  <td style="text-align: right;">€0.00</td>
+                </tr>
+              </table>
+            </div>
+            <div class="totale">
+              <h4>Totale: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€<?= number_format($total, 2) ?></h4>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- AAAAAAAAA -->
-      <div class="checkout bg-secondary">
-        <h2>Payment Info</h2>
+      <!-- SEZIONE CHECKOUT -->
+      <div class="checkout">
+        <h2>Checkout</h2>
         <form>
           <div class="form-group">
-            <label for="paymentMethod">Payment Method</label>
-            <select class="form-control" id="paymentMethod" onchange="selezionaMetodoPagamento()">
-              <option value="creditCard">Credit Card</option>
-              <option value="paypal">PayPal</option>
-            </select>
-          </div>
-          <div id="creditCardInfo">
-            <div class="form-group">
-              <label for="cardName">Name on Card</label>
-              <input type="text" class="form-control" id="cardName" value="John Carter">
+            <label for="paymentMethod">Metodo di pagamento</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="metodopagamento" id="cartacredito" onclick="cambioMetodoPagamento('cartacredito')" checked>
+              <label class="form-check-label" for="cartacredito">
+                Carta di Credito
+              </label>
             </div>
-            <div class="form-group">
-              <label for="cardNumber">Credit Card Number</label>
-              <input type="text" class="form-control" id="cardNumber" value="**** **** **** 2153">
-            </div>
-            <div class="form-group">
-              <label for="cardExpiry">Expiration Date</label>
-              <input type="text" class="form-control" id="cardExpiry" value="05/2022">
-            </div>
-            <div class="form-group">
-              <label for="cardCVC">CVC</label>
-              <input type="text" class="form-control" id="cardCVC" value="136">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="metodopagamento" id="paypal" onclick="cambioMetodoPagamento('paypal')">
+              <label class="form-check-label" for="paypal">
+                PayPal
+              </label>
             </div>
           </div>
-          <div id="paypalInfo" class="hidden">
-            <button type="button" class="btn btn-primary btn-block">Pay with PayPal</button>
+          <div id="infoCartaCredito" class="hidden">
+            <div class="form-group">
+              <label for="NomeCarta">Nome sulla Carta</label>
+              <input type="text" class="form-control" id="NomeCarta" placeholder="Il tuo Nome">
+            </div>
+            <div class="form-group">
+              <label for="cardNumber">Numero della Carta</label>
+              <input type="text" class="form-control" id="numerocarta" placeholder="**** **** **** 2153">
+            </div>
+            <div class="form-group">
+              <label for="cardExpiry">Data di Scadenza</label>
+              <input type="text" class="form-control" id="scadenzacarta" placeholder="MM/YYYY">
+            </div>
+            <div class="form-group">
+              <label for="cardCVC">CVV</label>
+              <input type="text" class="form-control" id="CVV" placeholder="***">
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Check Out</button>
+          <div id="infoPayPal" class="paypal-button hidden">
+            <button type="button" class="btn btn-primary btn-block"><i class="bi bi-paypal"></i></button>
+          </div>
+          <div class="checkout-button">
+            <button type="submit" class="btn btn-primary btn-block">CheckOut</button>
+          </div>
         </form>
       </div>
-    </div>
   </section>
-
-  <!-- <h2>Your Cart</h2>
-    <?php if (empty($cartItems)) : ?>
-        <p>Your cart is empty.</p>
-    <?php else : ?>
-        <ul>
-            <?php foreach ($cartItems as $item) : ?>
-                <li><?= htmlspecialchars($item['nome']) ?> - $<?= number_format($item['prezzo'], 2) ?> - Quantity: <?= $item['quantita'] ?></li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-    <a href="shop.php">Back to Shop</a> -->
-
-
 
 
 
@@ -183,7 +211,7 @@ $cartItems = getCartItems($_SESSION['id']);
                   <li><a href="shop.php" class="py-2 d-block">Shop</a></li>
                   <li><a href="custom.php" class="py-2 d-block">Create</a></li>
                   <li><a href="contatti.html" class="py-2 d-block">Contatti</a></li>
-                  <li><a href="../account.php" class="py-2 d-block">Account</a></li>
+                  <li><a href="../login/area_riservata.php" class="py-2 d-block">Account</a></li>
                   <li><a href="carrello.php" class="py-2 d-block">Carrello</a></li>
                 </ul>
               </div>
