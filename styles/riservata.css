@@ -22,20 +22,26 @@
 
 
 .bi-person-circle {
-    padding-right: 70px;
+    padding-right: 30%;
 }
 
 .bi-house-check-fill {
-    padding-right: 65px;
+    padding-right: 28%;
 }
 
 .bi-cash-coin {
-    padding-right: 54px;
+    padding-right: 23%;
 }
 
 .bi-gear-wide-connected {
-    padding-right: 48px;
+    padding-right: 21%;
 }
+
+.bi-box-arrow-left{
+    padding-right:55%;
+}
+
+
 
 td {
     padding-left: 5%;
@@ -65,6 +71,15 @@ tr:hover {
 
 tr:active {
     border-right: 2px inset red;
+}
+
+
+.riservata{
+    padding-left:6%;
+}
+
+.logout{
+    padding-right:40%;
 }
 
 .area {
@@ -104,24 +119,59 @@ tr:active {
     display: block;
 }
 
+.popup, .overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it covers the rest of the content */
+}
 .popup {
     display: none;
     position: fixed;
-    /* Cambiato da 'fixed' a 'absolute' */
-    z-index: 1;
-    left: 60%;
+    z-index: 1001;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vh;
+    width: 30vw;
+    height: 30vh;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #a62323; /* Solid color */
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 999;
 }
 
 .close:hover,
 .close:focus {
     
     color:aqua;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closed:hover,
+.closed:focus {
+    
+    color:rgb(196, 228, 78);
     text-decoration: none;
     cursor: pointer;
 }

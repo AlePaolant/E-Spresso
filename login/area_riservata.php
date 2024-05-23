@@ -3,8 +3,8 @@ session_start();
 $sessionid = $_SESSION['id'];
 
 
-//where user.id='$sessionid'---------------------------------------------------------------------->PER LA MODIFICA, PASSI ID UTENTE
-
+//where user.id='$sessionid'--------------------------------------------->PER LA MODIFICA, PASSI ID UTENTE, SESSION è GLOBALE, QUINDI IN OGNI PHP
+//------------------------------------------------------------------------è VISIBILE sessionid
 if ($sessionid == "") {
   header('Location: error.php');
   exit;
@@ -115,7 +115,7 @@ try {
 
         <!-- parte iniziale------------------------------------>
 
-        <th>AREA RISERVATA</th>
+        <th class="riservata">AREA RISERVATA</th>
 
         <!-- corpo--------------------------------------------->
 
@@ -136,7 +136,7 @@ try {
         <!-- parte finale -------------------------------------->
 
         <tfoot>
-          <th id="logout">ESCI</th>
+          <th class= "logout" id="logout"> <i class="bi bi-box-arrow-left"></i>ESCI</th>
         </tfoot>
 
       </table>
@@ -221,7 +221,8 @@ try {
       <!-----------------------QUARTO CONTENUTO -------------------------------------->
       <div class="sezione-contenuto" id="impostazioni" style="display:none;">
         <div class="interno-quarto">
-
+          <div id="overlay" class="overlay"></div>
+          
           <div class="modifica-elementi">
             <h3 class="input-modifica">Vuoi modificare i tuoi dati?</h3>
             <button id="editButton">Modifica</button>
@@ -252,6 +253,7 @@ try {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
