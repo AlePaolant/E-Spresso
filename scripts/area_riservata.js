@@ -88,7 +88,7 @@ function togglePassword() {
     }
 }
 
-document.getElementById('deleteButton').addEventListener('click', function() {
+document.getElementById('elimina').addEventListener('click', function() {
     var confirmation = confirm('Sei sicuro di voler eliminare i tuoi dati?');
     if (confirmation) {
       var xhr = new XMLHttpRequest();
@@ -97,7 +97,8 @@ document.getElementById('deleteButton').addEventListener('click', function() {
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
           alert('Dati eliminati con successo');
-          window.location.href = 'logout.php'; // Redirect to logout page after deletion
+          // Reindirizza alla pagina di logout
+          window.location.href = '../login/utility/out.php'; 
         }
       };
       xhr.send('id=<?php echo $sessionid; ?>');
