@@ -87,3 +87,19 @@ function togglePassword() {
         passwordField.type = "password";
     }
 }
+
+document.getElementById('deleteButton').addEventListener('click', function() {
+    var confirmation = confirm('Sei sicuro di voler eliminare i tuoi dati?');
+    if (confirmation) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'delete_user.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          alert('Dati eliminati con successo');
+          window.location.href = 'logout.php'; // Redirect to logout page after deletion
+        }
+      };
+      xhr.send('id=<?php echo $sessionid; ?>');
+    }
+  });

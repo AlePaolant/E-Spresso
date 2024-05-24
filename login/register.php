@@ -98,7 +98,7 @@
                   <div class="form-group">
                     <label for="password">Password</label>
                     <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" -->
-                    <input id="password" type="password" class="form-control" required placeholder="Password12.">
+                    <input autofocus name="password" id="password" type="password" class="form-control" required placeholder="Password12.">
 
                     <div class="toggle-password">
                       <input type="checkbox" id="show-password" onclick="togglePassword()" style="transform: scale(0.75);">
