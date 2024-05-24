@@ -9,33 +9,22 @@ if ($sessionid == "") {
   header('Location: error.php');
   exit;
 }
+//File per connessione al database
+include("utility/config.php");
 
-$host = 'localhost';
-$port = '5432';
-$dbname = 'e-spresso';
-$user = 'postgres';
-$password = 'admin';
+$sql = "SELECT id, nome, cognome, email, indirizzo, n_civico, citta, numero_telefono FROM users WHERE id=:id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':id', $sessionid, PDO::PARAM_INT);
+$stmt->execute();
 
-$dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
-try {
-  $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  $sql = "SELECT id,nome,cognome,email,indirizzo,n_civico,citta,numero_telefono FROM users WHERE id=:id";
-  $stmt = $pdo->prepare($sql);
-  $stmt->bindParam(':id', $sessionid, PDO::PARAM_INT);
-  $stmt->execute();
-
-  $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  if (!$user) {
+if (!$user) {
     echo "utente non trovato";
     exit();
-  }
-} catch (PDOException $e) {
-  echo 'Connection failed: ' . $e->getMessage();
-  exit;
 }
 ?>
+
 
 
 

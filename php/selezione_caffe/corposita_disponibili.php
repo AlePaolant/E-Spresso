@@ -4,7 +4,7 @@
 --------------------------------------------------------------------------*/
 
 //File per connessione al database
-include("connessione.php");
+include("../../login/utility/config.php");
 
 // Esegui la query per recuperare le corposità disponibili (restituisce oggetto di tipo statement di database)
 $stmt = $pdo->query("SELECT corposita FROM corpositadisponibili ORDER BY id;");

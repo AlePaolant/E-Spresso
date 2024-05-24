@@ -1,13 +1,14 @@
 <?php
+
+include("../login/utility/config.php"); 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
 
-    $dsn = 'pgsql:host=localhost;port=5432;dbname=e-spresso';
-    $username = 'postgres';
-    $password = 'admin';
-
     try {
-        $pdo = new PDO($dsn, $username, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        if (!isset($pdo)) {
+            throw new PDOException("La connessione PDO non è stata creata.");
+        }
 
         $sql = "INSERT INTO tipicaffe (nome, descrizione, prezzo) VALUES (:nome, :descrizione, :prezzo)";
         $stmt = $pdo->prepare($sql);
