@@ -26,10 +26,6 @@ if (!$user) {
 ?>
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="it">
 
