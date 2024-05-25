@@ -66,11 +66,11 @@
   <!-- LANDING -->
   <section class="landing start-animation" id="landing">
     <div class="container justify-content-center align-items-center text-center">
-      <h1>Benvenuto nella sezione custom!</h1>
+      <h1>Benvenuto nella sezione create!</h1>
       <p>Qui potrai trovare o creare il caffè perfetto per te, ma prima ti consigliamo di informarti sui criteri di selezione.
         <br>Sono 4, e scorrendo li potrai scoprire nel dettaglio: Corposità, Acidità, Gusto e Retrogusto
       </p>
-      <p>Se conosci già la teoria e vuoi cimentarti con la creazione clicca <a href="pages/custom.php#crea">QUI</a>.</p>
+      <p>Se conosci già la teoria e vuoi cimentarti con la creazione clicca <a href="custom.php#crea">QUI</a>.</p>
     </div>
   </section>
 

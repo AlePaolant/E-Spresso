@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Errore: " . $stmt->errorInfo()[2];
         }
     } catch (PDOException $e) {
-        echo 'Connection failed: ' . $e->getMessage();
+        echo 'Connessione fallita: ' . $e->getMessage();
     }
 }
 ?>

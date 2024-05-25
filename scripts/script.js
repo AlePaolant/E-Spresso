@@ -15,26 +15,22 @@ $(document).ready(function() {
             }
         } else {
             if (navbar.hasClass('scrolled')) {
-                navbar.removeClass('scrolled sleep');
+                navbar.removeClass('scrolled nascondi');
                 logoNero.show();
                 logoBianco.hide();
             }
         }
 
         if (scroll > 350) {
-            if (!navbar.hasClass('awake')) {
-                navbar.addClass('awake');
+            if (!navbar.hasClass('mostra')) {
+                navbar.addClass('mostra');
             }
         } else {
-            if (navbar.hasClass('awake')) {
-                navbar.removeClass('awake');
-                navbar.addClass('sleep');
+            if (navbar.hasClass('mostra')) {
+                navbar.removeClass('mostra');
+                navbar.addClass('nascondi');
             }
         }
-
-        // Effetto di zoom sull'immagine di sfondo
-        var scale = 1 + scroll / 3000;  // Modifica la sensibilità dello zoom qui
-        $('.background-image').css('transform', 'scale(' + scale + ')');
     });
 });
 
@@ -45,6 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
   animatedElements.forEach(element => {
       setTimeout(() => {
           element.classList.remove('start-animation');
-      }, 500); // Rimuove la classe dopo 1 secondo
+      }, 400); // Rimuove la classe dopo 400ms
   });
 });

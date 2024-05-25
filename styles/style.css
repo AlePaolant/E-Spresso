@@ -143,12 +143,12 @@ a:hover {
   padding-top: 0.7rem !important;
   padding-bottom: 0.7rem !important;
   color: #000000 !important; }
-.navbar.scrolled.awake {
+.navbar.scrolled.mostra {
   margin-top: 0px;
   -webkit-transition: .3s all ease-out;
   -o-transition: .3s all ease-out;
   transition: .3s all ease-out; }
-.navbar.scrolled.sleep {
+.navbar.scrolled.nascondi {
   -webkit-transition: .3s all ease-out;
   -o-transition: .3s all ease-out;
   transition: .3s all ease-out; }
@@ -188,6 +188,8 @@ a:hover {
   background: #212222;
   min-height: 250px;
   position: relative;}
+.footer-logo{
+  width: 70%;}
 .footer p {
   color: #ebe9e4; }
 .footer a {
@@ -227,4 +229,8 @@ a:hover {
   transform: translate(-50%, -50%); }
 .footer-social li a:hover {
   color: #987b65; }
-    
+@media screen and (max-width: 768px) {
+  .footer-logo{
+    width: 25%;
+  }
+}

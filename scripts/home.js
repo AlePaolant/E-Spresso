@@ -1,16 +1,16 @@
 const parallax_el = document.querySelectorAll(".parallax");
 
 let xValue = 0,
-    yValue = 0; //di quanti pixel si muoverà il crotols al passaggio del mouse
+    yValue = 0; 
 
-//funzione per muovere gli elementi in base alla posizione del mouse
+//funzione per aggiornare la posizione degli elementi
 function update(cursorPosition) {
     parallax_el.forEach((el) => {
-        //riprendo l'attributo custom che ho creato tramite dataset ( perchè restituisce dati )
+        //riprendo l'attributo custom che ho creato tramite dataset 
         let speedx = el.dataset.speedx;
         let speedy = el.dataset.speedy;
         el.style.transform = `translateX(calc(-50% + ${-xValue * speedx}px)) 
-            translateY(calc(-50% + ${yValue * speedy}px))` //backtick non apici !!!!!!!!!!
+            translateY(calc(-50% + ${yValue * speedy}px))` 
     });
 };
 
@@ -38,7 +38,7 @@ if (window.innerWidth >= 725) {
 //rotazione tazzina about
 window.addEventListener('scroll', function () {
     var scrollPosition = window.scrollY;
-    var rotationValue = scrollPosition / 10; // Regola la velocità di rotazione modificando il divisore
+    var rotationValue = scrollPosition / 4; // Regola la velocità di rotazione modificando il divisore
 
     var rotatingImage = document.getElementById('tazza-about');
     rotatingImage.style.transform = 'translate(-50%, -50%) rotate(' + rotationValue + 'deg)';

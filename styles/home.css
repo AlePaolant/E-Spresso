@@ -163,13 +163,14 @@
 }
 
 .about .container {
+    padding: 0;
     margin-left: 25%;
     margin-right: 5%;
 }
 
 .about .container h1 {
-    font-size: 3.7rem;
-    line-height: 0.9;
+    font-size: 3.2rem;
+    line-height: 1.1;
 }
 
 .about .container p {
@@ -211,6 +212,14 @@
 
     .img-chicchi-about {
         width: 30%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .about {
+        height: 90vh;
+    }
+    .tazza-about {
+        display: none;
     }
 }
 
@@ -475,25 +484,27 @@
 
 @media screen and (max-width: 768px) {
     .caffe {
-        height: 80vh;
+        height: 70vh;
     }
 
     .img-container-mobile {
         display: none;
     }
-
+    .caffe-text-container{
+        width: 80%;
+    }
     .img-bg-foglie {
         position: absolute;
         width: 50%;
         top: 15%;
-        left: -30%;
+        left: -10%;
     }
 
     .img-bg-cucchiaio {
         position: absolute;
-        width: 65%;
+        width: 45%;
         top: 77.5%;
-        left: -10%;
+        left: 10%;
     }
 }
 
@@ -546,13 +557,18 @@
     border-color: #7e5e47;
     cursor: url('../img/cursor/cursore-tazza.png'), auto;
 }
+@media screen and (max-width: 768px) {
+    .custom{
+        height: 65vh;
+    }
+}
 
 
 /*SECTION FAQ*/
 .faq {
     position: relative;
     width: 100vw;
-    height: 60vh;
+    height: 70vh;
     overflow: hidden;
     background-color: rgb(224, 219, 209);
     display: flex;
@@ -723,6 +739,7 @@
     .faq .faq-title,
     .faq .container {
         width: 100%;
+        padding-top: 0;
     }
 
     .faq .container {

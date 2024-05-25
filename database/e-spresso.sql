@@ -43,7 +43,7 @@ CREATE TABLE carrello (
     product_id INT NOT NULL,
     quantita INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (product_id) REFERENCES TipiCaffe (id);
+    FOREIGN KEY (product_id) REFERENCES TipiCaffe (id)
 );
 
 
