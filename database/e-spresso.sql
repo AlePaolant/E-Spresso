@@ -11,6 +11,18 @@
 -- tabella: GustiDisponibili (id,gusto);
 -- tabella: RetrogustiDisponibili (id,retrogusto);
 
+
+--ISTRUZIONI PER CREARE:
+-- 1) crea tabella users
+-- 2) crea tabella acidità,corposità,gusti,retrogusti
+-- 3) crea tabella tipicaffe
+-- 4) crea tabella carrello
+-- 5) popola tabelle tipicaffe,gusti ecc ecc (fino a ALTER TABLE, riga 200)
+-- 6) esegui ALTER TABLE
+-- 7) popola con tutte le UPDATE 
+-- 8) per test login aggiungi un utente a caso (riga 370)
+
+
 -- TABELLA USERS:
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
@@ -344,6 +356,8 @@ SET descrizione = 'Qualità Arabica, varietà Bourbon.
 Coltivato tra i 1500 - 2200 metri s.l.m., nella zona settentrionale di Sumatra nella provincia di Areh. Sottoposto a lavorazione umida. In tazza si presenta con un corpo ricco e sciropposo. L’acidità è moderata. Al gusto spiccano note di frutti tropicali mescolati a sentori di uva passa e cioccolato. CUPPING SCORE 85',
     prezzo = 14.99
 WHERE nome = 'Sumatra';
+
+
 
 
 
