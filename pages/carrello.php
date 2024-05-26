@@ -87,7 +87,7 @@ $cartItems = getCartItems($_SESSION['id']);
                 <tr>
                   <th class="prod">Prodotto</th>
                   <th class="quan">Quantità</th>
-                  <th class="pu">Prezzo Unitario</th>
+                  <th class="pu">Prezzo</th>
                   <th class="ptot">Totale</th>
                   <th></th>
                 </tr>
@@ -106,8 +106,8 @@ $cartItems = getCartItems($_SESSION['id']);
                         <i class="bi bi-plus icona" onclick="aumenta(<?= $item['id'] ?>)"></i>
                       </div>
                     </td>
-                    <td id="prezzo<?= $item['id'] ?>">€ <?= number_format($item['prezzo'], 2) ?></td>
-                    <td id="subtotale<?= $item['id'] ?>">€ <?= number_format($item['quantita'] * $item['prezzo'], 2) ?></td>
+                    <td class="prezzo" id="prezzo<?= $item['id'] ?>">€ <?= number_format($item['prezzo'], 2) ?></td>
+                    <td class="subtot" id="subtotale<?= $item['id'] ?>">€ <?= number_format($item['quantita'] * $item['prezzo'], 2) ?></td>
                     <td>
                       <div class="container-rimuovi">
                         <i class="bi bi-x icona" onclick="rimuoviElementi(<?= $item['id'] ?>)"></i>

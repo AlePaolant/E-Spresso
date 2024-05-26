@@ -21,7 +21,8 @@
 -- 5) popola tabelle tipicaffe,gusti ecc ecc (fino a ALTER TABLE, riga 200)
 -- 6) esegui ALTER TABLE
 -- 7) popola con tutte le UPDATE 
--- 8) per test login aggiungi un utente a caso (riga 370)
+-- 8) per test login aggiungi un utente a caso (riga 400 circa)
+-- 9) aggiunte 23/05
 
 
 -- TABELLA USERS:
@@ -163,12 +164,17 @@ INSERT INTO RetrogustiDisponibili (retrogusto) VALUES
     ('Spezie'),
     ('Tabacco'),
     ('Zucchero di canna');
+
+
+
 -- Popola la tabella CategorieDisponibili (AGGIUNTA 23/05)
 INSERT INTO CategorieDisponibili (categoria) VALUES
     ('Singole origini'),
     ('Top selection'),
     ('Miscele'),
     ('Specialty');
+
+
 -- Popola la tabella TipiCaffe
 INSERT INTO TipiCaffe (nome, idCorposita, idAcidita, idGusto1, idGusto2, idRetrogusto1, idRetrogusto2) VALUES
     ('Brasile', 2, 1, 6, 4, 1, NULL),
