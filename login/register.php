@@ -145,7 +145,7 @@
           <div class="row">
             <div class="col-md">
               <div class="mb-4">
-                <img src="../img/logo_footer.png" style="width: 75%;">
+                <img class="footer-logo" src="../img/logo_footer.png">
               </div>
             </div>
             <div class="col-md">
