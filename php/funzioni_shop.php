@@ -31,9 +31,16 @@ function addToCart($userId, $productId) {
     }
 }
 
-function getProducts() {
+/* function getProducts() {
     $pdo = getDbConnection();
     $stmt = $pdo->query('SELECT id, nome, prezzo FROM tipicaffe');
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+} */
+function getProducts() {
+    $pdo = getDbConnection();
+    $stmt = $pdo->query('SELECT caf.id, caf.nome, caf.prezzo, caf.descrizione, cat.categoria 
+                         FROM tipicaffe caf
+                         JOIN categorieDisponibili cat ON caf.idCategoria = cat.id');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 

@@ -10,6 +10,7 @@
 -- tabella: CorpositaDisponibili (id,corposita);
 -- tabella: GustiDisponibili (id,gusto);
 -- tabella: RetrogustiDisponibili (id,retrogusto);
+-- tabella: CategorieDisponibili (id,categoria);  (AGGIUNTA 23/05)
 
 -- TABELLA USERS:
 CREATE TABLE users (
@@ -50,7 +51,7 @@ CREATE TABLE TipiCaffe (
     FOREIGN KEY (idGusto2) REFERENCES GustiDisponibili(id),
     FOREIGN KEY (idCorposita) REFERENCES CorpositaDisponibili(id),
     FOREIGN KEY (idRetrogusto1) REFERENCES RetrogustiDisponibili(id),
-    FOREIGN KEY (idRetrogusto2) REFERENCES RetrogustiDisponibili(id)
+    FOREIGN KEY (idRetrogusto2) REFERENCES RetrogustiDisponibili(id),
 );
 -- Tabella per le acidità disponibili
 CREATE TABLE AciditaDisponibili (
@@ -72,6 +73,11 @@ CREATE TABLE RetrogustiDisponibili (
     id SERIAL PRIMARY KEY,
     retrogusto VARCHAR(100) NOT NULL
 );
+-- Tabella per le categorie disponibili (AGGIUNTA 23/05)
+CREATE TABLE CategorieDisponibili (
+    id SERIAL PRIMARY KEY,
+    categoria VARCHAR(100) NOT NULL
+)
 
 
 
@@ -145,6 +151,12 @@ INSERT INTO RetrogustiDisponibili (retrogusto) VALUES
     ('Spezie'),
     ('Tabacco'),
     ('Zucchero di canna');
+-- Popola la tabella CategorieDisponibili (AGGIUNTA 23/05)
+INSERT INTO CategorieDisponibili (categoria) VALUES
+    ('Singole origini'),
+    ('Top selection'),
+    ('Miscele'),
+    ('Specialty');
 -- Popola la tabella TipiCaffe
 INSERT INTO TipiCaffe (nome, idCorposita, idAcidita, idGusto1, idGusto2, idRetrogusto1, idRetrogusto2) VALUES
     ('Brasile', 2, 1, 6, 4, 1, NULL),
@@ -346,7 +358,19 @@ Coltivato tra i 1500 - 2200 metri s.l.m., nella zona settentrionale di Sumatra n
 WHERE nome = 'Sumatra';
 
 
+-- AGGIUNTA DELLA COLONNA idCategoria A tipicaffe  (AGGIUNTA 23/05)
+ALTER TABLE tipicaffe
+ADD COLUMN idCategoria INTEGER,
+ADD FOREIGN KEY (idCategoria) REFERENCES CategorieDisponibili(id);
 
+-- UPDATE DI tipicaffe CON LE CATEGORIE  (AGGIUNTA 23/05)
+UPDATE tipicaffe
+SET idCategoria = CASE
+    WHEN id < 9 THEN 1
+    WHEN id < 20 THEN 2
+    WHEN id < 25 THEN 3
+    ELSE 4
+END
 
 
 

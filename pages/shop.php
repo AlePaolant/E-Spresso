@@ -33,6 +33,7 @@ $products = getProducts();
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/shop.css">  <!-- AGGIUNTA 24/05 -->
 
 
 
@@ -66,17 +67,201 @@ $products = getProducts();
   </nav>
 
 
-  <section>
-    <h2>Shop</h2>
-    <div id="products">
-      <?php foreach ($products as $product) : ?>
-        <div class="product" data-id="<?= $product['id'] ?>">
-          <h3><?= htmlspecialchars($product['nome']) ?></h3>
-          <p>Price: $<?= number_format($product['prezzo'], 2) ?></p>
-          <button onclick="addToCart(<?= $product['id'] ?>)">Aggiungi al carrello</button>
+  <section class="page-class">
+
+    <section class="shop-home">
+      
+      <div class="shop-container">
+        <h1 class="shop-title">Shop</h1>
+        <p class="shop-description">Ahhh, qui ci starebbe proprio bene una bella descrizione.</p>
+      </div>
+
+      <a href="#acquista"><button class="down-btn"></button></a>
+    
+    </section>
+      
+    <!-- AGGIUNTA 24/05, AGGIORNATA 25/05 -->
+    <?php 
+      $categorie = ['Singole origini', 'Top selection', 'Miscele', 'Specialty'];
+      $categorie['Singole origini'] = [];
+      $categorie['Top selection'] = [];
+      $categorie['Miscele'] = [];
+      $categorie['Specialty'] = [];
+
+      foreach ($products as $product) {
+        $cat = $product['categoria'];
+        if ( isset($categorie[$cat]) ){
+          $categorie[$cat][] = $product;
+        }
+      }
+    ?>
+
+    <!-- SEZIONE SINGOLE ORIGINI -->
+    <section class="category-section" id="acquista">
+      <div class="category-container">
+        <h1 class="category-title">SINGOLE ORIGINI</h1>
+        <p class="category-description">una bella descrizione</p>
+      </div>
+
+      <div class="slider-container">
+        <div class="card-slider slider-pic1">
+          <div class="pointer">
+            <?php foreach ($categorie['Singole origini'] as $caffe) : ?>
+
+              <div class="card">
+
+                <div class="card-img-container">
+                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                </div>
+                <div class="card-title-container">
+                  <p class="card-title"><?= $caffe['nome'] ?></p>
+                </div>
+
+                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
+                <button class="card-btn-desc">i</button>
+                <div class="card-desc-container">
+                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                </div>
+
+              </div>
+
+            <?php endforeach; ?>
+          </div>
+
+          <button class="left-btn">&lt;</button>
+          <button class="right-btn">&gt;</button>
         </div>
-      <?php endforeach; ?>
-    </div>
+
+        <div class="dot-container"></div>
+      </div>
+      
+    </section>
+
+    <!-- SEZIONE TOP SELECTION -->
+    <section class="category-section2">
+      <div class="category-container">
+        <h1 class="category-title2">TOP SELECTION</h1>
+        <p class="category-description2">una bella descrizione</p>
+      </div>
+
+      <div class="slider-container">
+        <div class="card-slider slider-pic2">
+          <div class="pointer">
+            <?php foreach ($categorie['Top selection'] as $caffe) : ?>
+
+              <div class="card">
+
+                <div class="card-img-container">
+                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                </div>
+                <div class="card-title-container">
+                  <p class="card-title"><?= $caffe['nome'] ?></p>
+                </div>
+
+                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
+                <button class="card-btn-desc">i</button>
+                <div class="card-desc-container">
+                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                </div>
+
+              </div>
+
+            <?php endforeach; ?>
+          </div>
+
+          <button class="left-btn">&lt;</button>
+          <button class="right-btn">&gt;</button>
+        </div>
+
+        <div class="dot-container"></div>
+      </div>
+      
+    </section>
+
+    <!-- SEZIONE MISCELE -->
+    <section class="category-section3">
+      <div class="category-container">
+        <h1 class="category-title">MISCELE</h1>
+        <p class="category-description">una bella descrizione</p>
+      </div>
+
+      <div class="slider-container">
+        <div class="card-slider slider-pic3">
+          <div class="pointer">
+            <?php foreach ($categorie['Miscele'] as $caffe) : ?>
+
+              <div class="card">
+
+                <div class="card-img-container">
+                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                </div>
+                <div class="card-title-container">
+                  <p class="card-title"><?= $caffe['nome'] ?></p>
+                </div>
+
+                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
+                <button class="card-btn-desc">i</button>
+                <div class="card-desc-container">
+                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                </div>
+
+              </div>
+
+            <?php endforeach; ?>
+          </div>
+
+          <button class="left-btn">&lt;</button>
+          <button class="right-btn">&gt;</button>
+        </div>
+
+        <div class="dot-container"></div>
+      </div>
+      
+    </section>
+
+    <!-- SEZIONE SPECIALTY -->
+    <section class="category-section4">
+      <div class="category-container">
+        <h1 class="category-title2">SPECIALTY</h1>
+        <p class="category-description2">una bella descrizione</p>
+      </div>
+
+      <div class="slider-container">
+        <div class="card-slider slider-pic4">
+          <div class="pointer">
+            <?php foreach ($categorie['Specialty'] as $caffe) : ?>
+
+              <div class="card">
+
+                <div class="card-img-container">
+                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                </div>
+                <div class="card-title-container">
+                  <p class="card-title"><?= $caffe['nome'] ?></p>
+                </div>
+
+                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
+                <button class="card-btn-desc">i</button>
+                <div class="card-desc-container">
+                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                </div>
+
+              </div>
+
+            <?php endforeach; ?>
+          </div>
+
+          <button class="left-btn">&lt;</button>
+          <button class="right-btn">&gt;</button>
+        </div>
+
+        <div class="dot-container"></div>
+      </div>
+      
+    </section>
+
+    <!-- FINE SEZIONI CATEGORIE -->
+
     <a href="../pages/carrello.php">Vai al carrello</a>
   </section>
 
