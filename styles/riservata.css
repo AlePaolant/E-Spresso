@@ -1,62 +1,85 @@
-.welcome{
-    width:100vw;
-    height:100 vh;
-    display:flex;
+.welcome {
+    width: 100vw;
+    height: 100 vh;
+    display: flex;
     padding-top: 9%;
     padding-bottom: 5%;
     padding-left: 5%;
 }
 
-.contenuto-sx{
+.contenuto-sx {
     display: flex;
-    height:70vh;
-    width:25vw;
+    height: 70vh;
+    width: 25vw;
 }
 
-.contenuto-dx{
+.contenuto-dx {
     padding-left: 10%;
-    display:flex;
-    height:70vh;
-    width:50vw;
+    display: flex;
+    height: 70vh;
+    width: 50vw;
 }
 
 
-.bi-person-circle{
-    padding-right:70px;
-}
-.bi-house-check-fill{
-    padding-right:65px;
-}
-.bi-cash-coin{
-    padding-right:54px;
-}
-.bi-gear-wide-connected{
-    padding-right:48px;
+.bi-person-circle {
+    padding-right: 30%;
 }
 
-td{
+.bi-house-check-fill {
+    padding-right: 28%;
+}
+
+.bi-cash-coin {
+    padding-right: 23%;
+}
+
+.bi-gear-wide-connected {
+    padding-right: 21%;
+}
+
+.bi-box-arrow-left{
+    padding-right:55%;
+}
+
+
+
+td {
     padding-left: 5%;
 }
 
-th { /* INTESTAZIONE E FOOT*/
-    height:auto;
+th {
+    /* INTESTAZIONE E FOOT*/
+    height: auto;
     border: 1px solid #ddd;
     padding: 3px;
     display: flex;
     justify-content: center;
-    background-color:#7E5E47; /* Colore di sfondo dell'intestazione */
-    color:blanchedalmond; /* Colore del testo dell'intestazione */
+    background-color: #7E5E47;
+    /* Colore di sfondo dell'intestazione */
+    color: blanchedalmond;
+    /* Colore del testo dell'intestazione */
     border-radius: 15px;
 }
 
 tr:hover {
     border-radius: 25px;
-    display:block;
-    height:auto;
-    background-color:bisque    /* Colore di sfondo al passaggio del mouse */
+    display: block;
+    height: auto;
+    background-color: bisque
+        /* Colore di sfondo al passaggio del mouse */
 }
-tr:active{
+
+tr:active {
     border-right: 2px inset red;
+}
+
+
+.riservata{
+    padding-left:6%;
+}
+
+.logout{
+    padding-right:40%;
 }
 
 .area {
@@ -68,51 +91,112 @@ tr:active{
     border-radius: 25px;
 }
 
-.clicked{
-    background-color:#D9CCB5;
+.clicked {
+    background-color: #D9CCB5;
     color: white;
 }
 
-.interno{ /*contenitore oggetti*/
-    display:grid;
-    padding-top:14%;
-    padding-left:10%;
+.interno {
+    /*contenitore oggetti*/
+    display: grid;
+    padding-top: 14%;
+    padding-left: 10%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     column-gap: 10rem;
     row-gap: 10rem;
-  }
+}
 
-  .edit{
-    display:grid;
-  }
+.edit {
+    display: grid;
+}
 
-  .sezione-contenuto{
-    display:none;
-  }
+.sezione-contenuto {
+    display: none;
+}
 
-  .sezione-contenuto.active{
-    display:block;
-  }
-
-  .popup {
+.sezione-contenuto.active {
     display: block;
-    position:absolute; /* Cambiato da 'fixed' a 'absolute' */
-    z-index: 999;
-    left: 60%;
+}
+
+.popup, .overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it covers the rest of the content */
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vh;
+    width: 30vw;
+    height: 30vh;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #a62323; /* Solid color */
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-#logout{
-    cursor:pointer;
+.popup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 999;
+}
+
+.close:hover,
+.close:focus {
+    
+    color:aqua;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closed:hover,
+.closed:focus {
+    
+    color:rgb(196, 228, 78);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#logout {
+    cursor: pointer;
+}
+
+/* modifica quarto contenuto*/
+.interno-quarto {
+    display: block;
+    padding: 90px;
+}
+
+/* grandezza scritte modifica ed elimina*/
+.input-modifica {
+    font-size: 25px;
+}
+
+.input-elimina {
+    font-size: 25px;
 }
 
 
 
-  
-
+.modifica-elementi {
+    padding-bottom: 20%;
+}

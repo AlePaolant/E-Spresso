@@ -1,24 +1,17 @@
 <?php
 function getDbConnection() {
-    $host = 'localhost';
-    $port = '5432';
-    $dbname = 'e-spresso';
-    $user = 'postgres';
-    $password = 'admin';
+    // Includi il file di configurazione
+    include("../login/utility/config.php");
 
-    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
-    try {
-        $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-    } catch (PDOException $e) {
-        echo 'Connection failed: ' . $e->getMessage();
-        exit();
-    }
+    // Restituisci la connessione PDO
     return $pdo;
 }
 
-function getData(){
-    $pdo=getDbConnection();
-    $stmt=$pdo->query('SELECT * FROM users');
+function getData() {
+    $pdo = getDbConnection();
+    $stmt = $pdo->query('SELECT * FROM users');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+?>
+
 ?>

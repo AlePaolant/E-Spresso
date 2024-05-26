@@ -12,6 +12,18 @@
 -- tabella: RetrogustiDisponibili (id,retrogusto);
 -- tabella: CategorieDisponibili (id,categoria);  (AGGIUNTA 23/05)
 
+
+--ISTRUZIONI PER CREARE:
+-- 1) crea tabella users
+-- 2) crea tabella acidità,corposità,gusti,retrogusti
+-- 3) crea tabella tipicaffe
+-- 4) crea tabella carrello
+-- 5) popola tabelle tipicaffe,gusti ecc ecc (fino a ALTER TABLE, riga 200)
+-- 6) esegui ALTER TABLE
+-- 7) popola con tutte le UPDATE 
+-- 8) per test login aggiungi un utente a caso (riga 370)
+
+
 -- TABELLA USERS:
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
@@ -22,7 +34,7 @@ CREATE TABLE users (
 	indirizzo VARCHAR(100) NOT NULL,
 	n_civico VARCHAR(5) NOT NULL,
 	citta VARCHAR(100) NOT NULL,
-	numero_telefono INT NOT NULL
+	numero_telefono NUMERIC(10) NOT NULL
 );
 
 -- TABELLA CARRELLO:
@@ -32,7 +44,7 @@ CREATE TABLE carrello (
     product_id INT NOT NULL,
     quantita INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (product_id) REFERENCES TipiCaffe (id);
+    FOREIGN KEY (product_id) REFERENCES TipiCaffe (id)
 );
 
 
@@ -371,6 +383,8 @@ SET idCategoria = CASE
     WHEN id < 25 THEN 3
     ELSE 4
 END
+
+
 
 
 

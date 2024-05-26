@@ -5,12 +5,19 @@
             Connessione PDO al database
 --------------------------------------------------------*/
 
+$host = 'localhost';
+$db = 'e-spresso';
+$user = 'postgres';
+$pass = 'admin';
+$port = '5432';
+$dsn = "pgsql:host=$host;port=$port;dbname=$db";
+
 try {
-    $pdo = new PDO('pgsql:host=localhost;dbname=e-spresso', 'postgres', 'admin');
-    $pdo ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connessione riuscita";
+    // Crea una nuova connessione PDO
+    $pdo = new PDO($dsn, $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+    //echo "Connessione riuscita!";
 } catch (PDOException $e) {
-    print "Errore di connessione: " . $e->getMessage() . "<br/>";
+    echo "Errore di connessione: " . $e->getMessage() . "<br/>";
     die();
 }
 ?>

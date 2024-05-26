@@ -1,281 +1,317 @@
 <!DOCTYPE html>
-<html  lang="it">
-  <head>
-      
-    <title>E-spresso</title>
-    <meta charset="UTF-8">
-    <!-- Responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Descrizione per motore di ricerca -->
-    <meta name="description" content="Stanco del solito caffè? Entra nel mondo di E-Spresso e crea il caffè dei tuoi sogni.">
-    <meta name="keywords" content="e-spresso, caffè, coffee, custom coffee, caffe personalizzato, custom brew">
-    <meta name="author" content="Alessandro Paolantonio,2000159; Alessandro Nardi, 1853941; Andrea Panichi, 2008617 ">
-    <!-- Descrizione per server esterni, es. condivisione link su whatsapp-->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="e-spresso">
-    <meta property="og:description" content="Stanco del solito caffè? Entra nel mondo di E-Spresso e crea il caffè dei tuoi sogni.">
-    <meta property="og:image" content="https://www.e-spresso.it/img/og_image.png"> <!-- ovviamente non funziona -->
-      
-    <link rel="icon" type="svg" href="img/icon.svg">
+<html lang="it">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<head>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>E-spresso</title>
+  <meta charset="UTF-8">
+  <!-- Responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Descrizione per motore di ricerca -->
+  <meta name="description"
+    content="Stanco del solito caffè? Entra nel mondo di E-Spresso e crea il caffè dei tuoi sogni.">
+  <meta name="keywords" content="e-spresso, caffè, coffee, custom coffee, caffe personalizzato, custom brew">
+  <meta name="author" content="Alessandro Paolantonio,2000159; Alessandro Nardi, 1853941; Andrea Panichi, 2008617 ">
+  <!-- Descrizione per server esterni, es. condivisione link su whatsapp-->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="e-spresso">
+  <meta property="og:description"
+    content="Stanco del solito caffè? Entra nel mondo di E-Spresso e crea il caffè dei tuoi sogni.">
+  <meta property="og:image" content="https://www.e-spresso.it/img/og_image.png"> <!-- ovviamente non funziona -->
 
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/home.css">
-        
+  <link rel="icon" type="svg" href="img/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/home.css">
 
 
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg start-animation" id="navbar">
-      <div class="container container-navbar">
-        <a href="index.html">
-          <img src="img/navbar-brand-w.png" class="logo-bianco" id="logo-bianco" alt="Logo Bianco">
-          <img src="img/navbar-brand-b.png" id="logo-nero" alt="Logo Nero">
-        </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-ham" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg start-animation" id="navbar">
+    <div class="container container-navbar">
+      <a href="index.html">
+        <img src="img/navbar-brand-w.png" class="logo-bianco" id="logo-bianco" alt="Logo Bianco">
+        <img src="img/navbar-brand-b.png" id="logo-nero" alt="Logo Nero">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-ham"
+        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="container">
+      <div class="collapse navbar-collapse" id="nav-ham">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="pages/shop.php" class="nav-link">Shop</a></li>
+          <li class="nav-item"><a href="pages/custom.php" class="nav-link">Create</a></li>
+          <li class="nav-item"><a href="pages/contatti.html" class="nav-link">Contatti</a></li>
+          <li class="nav-item"><a href="account.php" class="nav-link bi bi-person-circle"></a></li>
+          <li class="nav-item"><a href="pages/carrello.php" class="nav-link bi bi-bag"></a></li>
+        </ul>
       </div>
-      <div class="container">
-        <div class="collapse navbar-collapse" id="nav-ham">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="pages/shop.php" class="nav-link">Shop</a></li>
-              <li class="nav-item"><a href="pages/custom.php" class="nav-link">Create</a></li>
-              <li class="nav-item"><a href="pages/contatti.html" class="nav-link">Contatti</a></li>
-              <li class="nav-item"><a href="account.php" class="nav-link bi bi-person-circle"></a></li>
-              <li class="nav-item"><a href="pages/carrello.php" class="nav-link bi bi-bag"></a></li>
+    </div>
+  </nav>
+
+  <!-- PARALLAX -->
+  <section class="main" id="parallax">
+    <!-- ho creato attributi custom per la velocità di movimento su asse x e y (di default si muovono troppo veloce)-->
+    <img src="img/home/parallax/background.png" data-speedx="0.20" data-speedy="0.25"
+      class="parallax bg-img start-animation">
+    <img src="img/home/parallax/07.png" data-speedx="0.25" data-speedy="0.32"
+      class="parallax bg-img-07 start-animation">
+    <img src="img/home/parallax/06.png" data-speedx="0.20" data-speedy="0.29"
+      class="parallax bg-img-06 start-animation">
+    <div data-speedx="0.18" data-speedy="0.1" class="main-text parallax start-animation">
+      <h1>e-spresso</h1>
+    </div>
+    <img src="img/home/parallax/05.png" data-speedx="0.12" data-speedy="0.15"
+      class="parallax bg-img-05 start-animation">
+    <img src="img/home/parallax/04.png" data-speedx="0.1" data-speedy="0.1" class="parallax bg-img-04 start-animation">
+    <img src="img/home/parallax/03.png" data-speedx="0.1" data-speedy="0.1" class="parallax bg-img-03 start-animation">
+    <img src="img/home/parallax/02.png" data-speedx="0.075" data-speedy="0.1"
+      class="parallax bg-img-02 start-animation">
+    <img src="img/home/parallax/foreground.png" data-speedx="0.05" data-speedy="0.09"
+      class="parallax fg-img start-animation">
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about start-animation" id="about">
+    <img src="img/home/tazza-home-about.png" class="tazza-about" id="tazza-about">
+    <img src="img/home/chicchi-about.png" class="img-chicchi-about">
+    <div class="container">
+      <div class="text-center">
+        <h1>Scopri, sperimenta e gusta:</h1>
+        <h1>il tuo caffè personalizzato ti attende</h1>
+        <div class="paragrafo justify-content-center">
+          <p>Esplora l'esperienza del caffè con noi, dove la modernità si unisce alla storia, dalla tradizione
+            artigianale all'innovazione tecnologica. 
+            <br>Scopri una selezione curata dei migliori chicchi di caffè provenienti da tutto il mondo.
+            <br>Trova quello che fa per te, o crea la tua miscela unica e sperimenta il gusto autentico del caffè.
+          </p>
+          <p class="text-bold">Unisciti a noi per creare la tua esperienza di caffè perfetta, una tazza alla volta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="mailinglist start-animation" id="menu">
+    <video autoplay muted loop>
+      <source src="img/home/sfondo-caffe-caduta.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <h1>Esplora la nostra selezione</h1>
+      <p class="text-bold">Arabica, robusta, singole origini, top selection, specialty coffee - Li abbiamo tutti!</p>
+      <a href="pages/shop.php">
+        <button type="button" class="btn btn-lg">Shop</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- CAFFE -->
+  <section class="caffe start-animation" id="caffe">
+    <div class="caffe-text-container">
+      <img src="img/home/foglie.png" class="img-bg-foglie">
+      <img src="img/home/cucchiaio.png" class="img-bg-cucchiaio">
+      <div class="container-interno text-center justify-content-center">
+        <h2>Trova il caffè adatto a te</h2>
+        <img src="img/divisore.png" class="img-divisore">
+        <p>Trova il caffè perfetto per te attraverso i nostri criteri di selezione.
+          Esplora la corposità, l'acidità, il gusto e il retrogusto per scoprire il caffè che si adatta meglio ai tuoi
+          gusti unici.
+          Personalizza la tua esperienza di caffè e goditi ogni tazza esattamente come la vuoi.</p>
+        <a href="pages/custom.php#selezione">
+          <button type="button" class="btn btn-lg">Vai al tool</button>
+        </a>
+      </div>
+    </div>
+    <div class="img-caffe-container">
+      <img src="img/home/h_05.jpg" class="img-c-01">
+      <img src="img/home/h_03.jpg" class="img-c-02">
+      <img src="img/home/h_01.jpg" class="img-c-03">
+      <img src="img/home/h_04.jpg" class="img-c-04">
+    </div>
+    <div class="img-container-mobile">
+      <img src="img/home/media_caffe.png" class="media-img">
+    </div>
+  </section>
+
+  <!-- CUSTOM -->
+  <section class="custom start-animation" id="custom">
+    <div class="container justify-content-center align-items-center text-center">
+      <h1>Ora tocca a te!</h1>
+      <img src="img/divisore.png" class="img-divisore">
+      <p>Tua la tazza, tua la miscela! Scegli tra una vasta selezione di caffè e crea la miscela perfetta per il tuo
+        palato.
+        <br>Con un tocco di creatività e un pizzico di passione, ogni tazza diventa un'opera d'arte da gustare e
+        apprezzare.
+      </p>
+      <a href="pages/custom.php#crea">
+        <button type="button" class="btn btn-lg">Inizia a creare</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq start-animation" id="faq">
+    <div class="faq-title text-center">
+      <h2>Hai domande?<br>Cerca qui:</h2>
+      <img src="img/divisore.png" class="img-divisore">
+      <p>Se non dovessi trovare ciò di cui hai bisogno,</p>
+      <a href="pages/contatti.html">
+        <button type="button" class="btn btn-lg">CONTATTACI!</button>
+      </a>
+    </div>
+    <div class="container justify-content-center align-items-center">
+      <div class="sezione-faq">
+        <div class="faq-item">
+          <button id="faq-button-1" aria-expanded="false">
+            <span class="faq-titolo">Quali tipi di caffè offrite?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p>
+              Offriamo una vasta selezione di caffè provenienti da tutto il mondo.
+              Ogni chicco viene accuratamente selezionato ed è proveniente da piantagioni rinomate per garantire la
+              massima qualità e freschezza.
+              Per ulteriori informazioni su ciascuna varietà, visita la nostra <a href="pages/shop.php">pagina dedicata
+                ai caffè.</a>
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button id="faq-button-2" aria-expanded="false">
+            <span class="faq-titolo">Come funziona il processo di personalizzazione del caffè?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p>
+              Il processo di personalizzazione è molto semplice:
+              puoi selezionare la quantità desiderata di un tipo e mescolarlo con un'altra quantità di un altro tipo.
+              Ti consigliamo di informarti sulle caratteristiche organolettiche di ogni tipo di caffè prima di procedere
+              con la personalizzazione.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button id="faq-button-3" aria-expanded="false">
+            <span class="faq-titolo">Quali sono le politiche di reso e rimborso?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p>
+              Siamo lieti di offrire una politica di reso e rimborso senza problemi per garantire la tua soddisfazione.
+              Se per qualsiasi motivo non sei completamente soddisfatto del tuo acquisto, ti preghiamo di contattare il
+              nostro servizio clienti
+              entro 30 giorni dalla data di acquisto per organizzare il reso o il rimborso del tuo ordine.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button id="faq-button-3" aria-expanded="false">
+            <span class="faq-titolo">Quali garanzie avete sulla qualità dei vostri caffè?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p>
+              Tutti i nostri chicchi di caffè sono accuratamente selezionati e sottoposti a rigorosi controlli di
+              qualità per garantire freschezza e gusto eccezionale in ogni tazza.
+              Siamo così sicuri della qualità dei nostri caffè che offriamo una garanzia di soddisfazione al 100%.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md">
+              <div class="mb-4">
+                <img class="footer-logo" src="img/logo_footer.png">
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="mb-4">
+                <h2 class="footer-heading">Navigazione</h2>
+                <ul class="list-unstyled">
+                  <li><a href="index.html" class="py-2 d-block">Home</a></li>
+                  <li><a href="pages/shop.php" class="py-2 d-block">Shop</a></li>
+                  <li><a href="pages/custom.php" class="py-2 d-block">Custom</a></li>
+                  <li><a href="pages/contatti.html" class="py-2 d-block">Contatti</a></li>
+                  <li><a href="account.php" class="py-2 d-block">Account</a></li>
+                  <li><a href="pages/carrello.php" class="py-2 d-block">Carrello</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="mb-4">
+                <h2 class="footer-heading">Contatti</h2>
+                <ul class="list-unstyled">
+                  <li><a href="tel:0123456789" class="py-2 d-block">0123 456789</a></li>
+                  <li><a href="mailto:info@e_spresso.it" class="py-2 d-block">info@e_spresso.it</a></li>
+                  <li><a target="_blank" href="#" class="py-2 d-block">Via Roma 17 00159, Roma</a></li>
+                  <li><a target="_blank" href="#" class="py-2 d-block">Lascia una recensione!</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-4">
+            <ul class="footer-social list-unstyled ">
+              <li><a target="_blank" href="https://www.facebook.com/"><span class="bi bi-facebook"></span></a></li>
+              <li><a target="_blank" href="https://www.instagram.com/"><span class="bi bi-instagram"></span></a></li>
+              <li><a target="_blank" href="https://wa.me/"><span class="bi bi-whatsapp"></span></a></li>
             </ul>
-        </div>
-      </div>
-    </nav>
-      
-    <!-- PARALLAX -->
-    <section class="main" id="parallax">
-      <!-- ho creato attributi custom per la velocità di movimento su asse x e y (di default si muovono troppo veloce)-->
-      <img src="img/home/parallax/background.png" data-speedx="0.20" data-speedy="0.25" class="parallax bg-img start-animation">
-      <img src="img/home/parallax/07.png" data-speedx="0.25" data-speedy="0.32" class="parallax bg-img-07 start-animation">
-      <img src="img/home/parallax/06.png" data-speedx="0.20" data-speedy="0.29" class="parallax bg-img-06 start-animation">
-      <div data-speedx="0.18" data-speedy="0.1" class="main-text parallax start-animation">
-          <h1>e-spresso</h1>
-      </div>
-      <img src="img/home/parallax/05.png" data-speedx="0.12" data-speedy="0.15"  class="parallax bg-img-05 start-animation">
-      <img src="img/home/parallax/04.png" data-speedx="0.1" data-speedy="0.1" class="parallax bg-img-04 start-animation">
-      <img src="img/home/parallax/03.png" data-speedx="0.1" data-speedy="0.1" class="parallax bg-img-03 start-animation">
-      <img src="img/home/parallax/02.png" data-speedx="0.075" data-speedy="0.1" class="parallax bg-img-02 start-animation">
-      <img src="img/home/parallax/foreground.png" data-speedx="0.05" data-speedy="0.09" class="parallax fg-img start-animation">
-    </section>
-    
-    <!-- ABOUT -->
-    <section class="about start-animation" id="about">
-      <img src="img/home/tazza-home-about.png" class="tazza-about" id="tazza-about">
-      <img src="img/home/chicchi-about.png" class="img-chicchi-about">
-      <div class="container">
-        <div class="text-center">
-          <h1>Scopri, miscela e gusta:</h1>
-          <h1>il tuo caffè personalizzato ti attende</h1>
-          <div class="paragrafo justify-content-center">
-            <p>Esplora l'esperienza del caffè con noi, dove la modernità si unisce alla storia, dalla tradizione artigianale
-              all'innovazione tecnologica. Scopri una selezione curata dei migliori chicchi di caffè provenienti da tutto il mondo, 
-              <br>trova quello che fa per te, o crea la tua miscela unica e sperimenta il gusto autentico del caffè.</p>
-            <p class="text-bold">Unisciti a noi per creare la tua esperienza di caffè perfetta, una tazza alla volta.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- MENU -->
-    <section class="mailinglist start-animation" id="menu">
-      <video autoplay muted loop>
-        <source src="img/home/sfondo-caffe-caduta.mp4" type="video/mp4">
-      </video>
-      <div class="content">
-        <h1>Esplora la nostra selezione</h1>
-        <p class="text-bold">Arabica, robusta, singole origini, top selection, specialty coffee - Li abbiamo tutti!</p>
-        <a href="pages/shop.php">
-          <button type="button" class="btn btn-lg">Shop</button>
-        </a>
-      </div>
-    </section>
-    
-    <!-- CAFFE -->
-    <section class="caffe start-animation" id="caffe">
-      <div class="caffe-text-container">
-        <img src="img/home/foglie.png" class="img-bg-foglie">
-        <img src="img/home/cucchiaio.png" class="img-bg-cucchiaio">
-        <div class="container-interno text-center justify-content-center">
-          <h2>Trova il caffè adatto a te</h2>
-          <img src="img/divisore.png" class="img-divisore">
-          <p>Trova il caffè perfetto per te attraverso i nostri criteri di selezione. 
-            Esplora la corposità, l'acidità, il gusto e il retrogusto per scoprire il caffè che si adatta meglio ai tuoi gusti unici. 
-            Personalizza la tua esperienza di caffè e goditi ogni tazza esattamente come la vuoi.</p>
-            <a href="pages/custom.php#selezione">
-              <button type="button" class="btn btn-lg">Vai al tool</button>
-            </a>
+      <div class="row">
+        <div class="col- text-left">
+          <p><a target="_blank" href="#">Informativa sulla privacy</a> / <a target="_blank" href="#">Cookie policy</a>
+          </p>
+          <p>&copy; Exclusivity 2024. All Rights Reserved. Made by the E-Spresso Team.</p>
         </div>
       </div>
-      <div class="img-caffe-container">
-        <img src="img/home/h_05.jpg" class="img-c-01" >
-        <img src="img/home/h_03.jpg" class="img-c-02" >
-        <img src="img/home/h_01.jpg" class="img-c-03" >
-        <img src="img/home/h_04.jpg" class="img-c-04" >
-      </div>
-    </section>
-
-    <!-- CUSTOM -->
-    <section class="custom start-animation" id="custom">
-      <div class="container justify-content-center align-items-center text-center">
-        <h1>Ora tocca a te!</h1>
-        <img src="img/divisore.png" class="img-divisore">
-        <p>Tua la tazza, tua la miscela! Scegli tra una vasta selezione di caffè e crea la miscela perfetta per il tuo palato. 
-          <br>Con un tocco di creatività e un pizzico di passione, ogni tazza diventa un'opera d'arte da gustare e apprezzare.</p>
-          <a href="pages/custom.php#crea">
-            <button type="button" class="btn btn-lg">Inizia a creare</button>
-          </a>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq start-animation" id="faq">
-      <div class="faq-title text-center">
-        <h2>Hai domande?<br>Cerca qui:</h2>
-        <img src="img/divisore.png" class="img-divisore">
-        <p>Se non dovessi trovare ciò di cui hai bisogno,</p>
-        <a href="pages/contatti.html">
-          <button type="button" class="btn btn-lg">CONTATTACI!</button>
-        </a>
-      </div>
-      <div class="container justify-content-center align-items-center">
-        <div class="sezione-faq">
-          <div class="faq-item">
-            <button id="faq-button-1" aria-expanded="false">
-              <span class="faq-titolo">Quali tipi di caffè offrite?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-risposta">
-              <p>
-                Offriamo una vasta selezione di caffè provenienti da tutto il mondo. 
-                Ogni chicco viene accuratamente selezionato ed è proveniente da piantagioni rinomate per garantire la massima qualità e freschezza. 
-                Per ulteriori informazioni su ciascuna varietà, visita la nostra <a href="pages/shop.php">pagina dedicata ai caffè.</a>
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button id="faq-button-2" aria-expanded="false">
-              <span class="faq-titolo">Come funziona il processo di personalizzazione del caffè?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-risposta">
-              <p>
-                Il processo di personalizzazione è molto semplice: 
-                puoi selezionare la quantità desiderata di un tipo e mescolarlo con un'altra quantità di un altro tipo. 
-                Ti consigliamo di informarti sulle caratteristiche organolettiche di ogni tipo di caffè prima di procedere con la personalizzazione.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button id="faq-button-3" aria-expanded="false">
-              <span class="faq-titolo">Quali sono le politiche di reso e rimborso?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-risposta">
-              <p>
-                Siamo lieti di offrire una politica di reso e rimborso senza problemi per garantire la tua soddisfazione. 
-                Se per qualsiasi motivo non sei completamente soddisfatto del tuo acquisto, ti preghiamo di contattare il nostro servizio clienti 
-                entro 30 giorni dalla data di acquisto per organizzare il reso o il rimborso del tuo ordine. 
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button id="faq-button-3" aria-expanded="false">
-              <span class="faq-titolo">Quali garanzie avete sulla qualità dei vostri caffè?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-risposta">
-              <p>
-                Tutti i nostri chicchi di caffè sono accuratamente selezionati e sottoposti a rigorosi controlli di qualità per garantire freschezza e gusto eccezionale in ogni tazza. 
-                Siamo così sicuri della qualità dei nostri caffè che offriamo una garanzia di soddisfazione al 100%.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </footer>
 
 
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/home.js"></script>
 
+</body>
 
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md">
-                <div class="mb-4">
-                  <img src="img/logo_footer.png" style="width: 75%;">
-                </div>
-              </div>
-              <div class="col-md">
-                <div class="mb-4">
-                  <h2 class="footer-heading">Navigazione</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="index.html" class="py-2 d-block">Home</a></li>
-                    <li><a href="pages/shop.php" class="py-2 d-block">Shop</a></li>
-                    <li><a href="pages/custom.php" class="py-2 d-block">Custom</a></li>
-                    <li><a href="pages/contatti.html" class="py-2 d-block">Contatti</a></li>
-                    <li><a href="account.php" class="py-2 d-block">Account</a></li>
-                    <li><a href="pages/carrello.php" class="py-2 d-block">Carrello</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md">
-                <div class="mb-4">
-                  <h2 class="footer-heading">Contatti</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="tel:0123456789" class="py-2 d-block">0123 456789</a></li>
-                    <li><a href="mailto:info@e_spresso.it" class="py-2 d-block">info@e_spresso.it</a></li>
-                    <li><a target="_blank" href="#" class="py-2 d-block">Via Roma 17 00159, Roma</a></li>
-                    <li><a target="_blank" href="#" class="py-2 d-block">Lascia una recensione!</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mb-4">
-              <ul class="footer-social list-unstyled ">
-                <li><a target="_blank" href="https://www.facebook.com/"><span class="bi bi-facebook"></span></a></li>
-                <li><a target="_blank" href="https://www.instagram.com/"><span class="bi bi-instagram"></span></a></li>
-                <li><a target="_blank" href="https://wa.me/"><span class="bi bi-whatsapp"></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col- text-left">
-            <p><a target="_blank" href="#">Informativa sulla privacy</a>  /  <a target="_blank" href="#">Cookie policy</a></p>
-            <p>&copy; Exclusivity 2024. All Rights Reserved. Made by the E-Spresso Team.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <script src="scripts/script.js"></script>
-      <script src="scripts/home.js"></script>
-
-    </body>
 </html>

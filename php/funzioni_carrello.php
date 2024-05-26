@@ -1,13 +1,6 @@
 <?php
 //file per connessione al database
-try {
-    $pdo = new PDO('pgsql:host=localhost;dbname=e-spresso', 'postgres', 'admin');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    header('Content-Type: application/json');
-    http_response_code(500); // Codice di stato HTTP per errore del server
-    echo json_encode(array("error" => "Errore di connessione al database: " . $e->getMessage()));
-}
+include("../login/utility/config.php");
 
 // Gestione delle richieste POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

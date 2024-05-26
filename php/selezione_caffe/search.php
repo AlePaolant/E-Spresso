@@ -1,6 +1,6 @@
 <?php
 //File per connessione al database
-include("connessione.php");
+include("../../login/utility/config.php");
 
 // Recupera i filtri dalla richiesta GET e controlla se sono vuoti
 $corposita = $_GET['corposita'];

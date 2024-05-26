@@ -40,7 +40,7 @@
     <div class="container container-navbar">
       <a href="../index.html">
         <img src="../img/navbar-brand-w.png" class="logo-bianco" id="logo-bianco" alt="Logo Bianco">
-        <img src="../img/navbar-brand-b.png" id="logo-nero" alt="Logo Nero">
+        <img src="../img/navbar-brand-w.png" id="logo-nero" alt="Logo Nero">
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-ham" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,7 +98,7 @@
                   <div class="form-group">
                     <label for="password">Password</label>
                     <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" -->
-                    <input id="password" type="password" class="form-control" required placeholder="Password12.">
+                    <input autofocus name="password" id="password" type="password" class="form-control" required placeholder="Password12.">
 
                     <div class="toggle-password">
                       <input type="checkbox" id="show-password" onclick="togglePassword()" style="transform: scale(0.75);">

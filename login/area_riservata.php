@@ -2,40 +2,28 @@
 session_start();
 $sessionid = $_SESSION['id'];
 
+
+//where user.id='$sessionid'--------------------------------------------->PER LA MODIFICA, PASSI ID UTENTE, SESSION è GLOBALE, QUINDI IN OGNI PHP
+//------------------------------------------------------------------------è VISIBILE sessionid
 if ($sessionid == "") {
   header('Location: error.php');
   exit;
 }
+//File per connessione al database
+include("utility/config.php");
 
-$host = 'localhost';
-$port = '5432';
-$dbname = 'e-spresso';
-$user = 'postgres';
-$password = 'admin';
+$sql = "SELECT id, nome, cognome, email, indirizzo, n_civico, citta, numero_telefono FROM users WHERE id=:id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':id', $sessionid, PDO::PARAM_INT);
+$stmt->execute();
 
-$dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
-try {
-  $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  $sql = "SELECT id,nome,cognome,email,indirizzo,n_civico,citta,numero_telefono FROM users WHERE id=:id";
-  $stmt = $pdo->prepare($sql);
-  $stmt->bindParam(':id', $sessionid, PDO::PARAM_INT);
-  $stmt->execute();
-
-  $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  if (!$user) {
+if (!$user) {
     echo "utente non trovato";
     exit();
-  }
-} catch (PDOException $e) {
-  echo 'Connection failed: ' . $e->getMessage();
-  exit;
 }
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -112,7 +100,7 @@ try {
 
         <!-- parte iniziale------------------------------------>
 
-        <th>AREA RISERVATA</th>
+        <th class="riservata">AREA RISERVATA</th>
 
         <!-- corpo--------------------------------------------->
 
@@ -133,7 +121,7 @@ try {
         <!-- parte finale -------------------------------------->
 
         <tfoot>
-          <th id="logout" >ESCI</th>  
+          <th class= "logout" id="logout"> <i class="bi bi-box-arrow-left"></i>ESCI</th>
         </tfoot>
 
       </table>
@@ -215,33 +203,42 @@ try {
 
         </div>
       </div>
-    </div>
-
-    <!-----------------------QUARTO CONTENUTO -------------------------------------->
-    <div class="sezione-contenuto" id="impostazioni" style="display:none;">
-      <div class="interno bg-primary">
-        <button id="editButton">Modifica</button>
-
-        <!--
-
-        <a href="../login/login.php"> 
-        <button type="button" class="btn btn-lg">Login</button>
-        </a> 
-
-        -->
-
-        <!-- Il pop-up -->
-        <div id="popup" class="popup bg-danger">
-          <div class="popup-content">
-            <span class="close">&times;</span>
-            <p>Contenuto del pop-up</p>
-            <!-- Aggiungi qui il contenuto che desideri -->
-            <?php
-                // Codice PHP per generare contenuto dinamico
-                echo "Questo è un esempio di contenuto PHP!";
-            ?>
+      <!-----------------------QUARTO CONTENUTO -------------------------------------->
+      <div class="sezione-contenuto" id="impostazioni" style="display:none;">
+        <div class="interno-quarto">
+          <div id="overlay" class="overlay"></div>
           
+          <div class="modifica-elementi">
+            <h3 class="input-modifica">Vuoi modificare i tuoi dati?</h3>
+            <button id="editButton">Modifica</button>
+            <!-- -------------------------Il pop-up ---------------------------------------------------------->
+            <div id="popupModifica" class="popup">
+              <div class="popup-content">
+                <span class="close">&times;</span>
+                <!-- ------------------contenuto pop-up------------------------------------------- -->
+                <div class="modifica" id="modifica">
+                  <a>Vuoi modificare i tuoi dati?</a>
+                  <button class="btn btn-danger" type="submit"> Modifica </button>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div class="elimina-dati">
+            <h3 class="input-elimina">Vuoi eliminare i tuoi dati?</h3>
+            <button id="deleteButton">Elimina</button>
+            <div id="popupElimina" class="popup">
+              <div class="popup-content">
+                <span class="closed">&times;</span>
+                <!-- ------------------contenuto pop-up------------------------------------------- -->
+                <div class="elimina" id="elimina">
+                  <a>Vuoi eliminare i tuoi dati?</a>
+                  <button class="btn btn-danger" type="submit"> Elimina </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
