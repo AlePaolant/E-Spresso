@@ -82,7 +82,7 @@
           <li class="nav-item"><a href="../pages/custom.php" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="../pages/contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
-          <li class="nav-item"><a href="../pages/carrello.php" class="nav-link bi bi-bag"></a></li>
+          <li class="nav-item"><a href="../pages/carrello.php" class="nav-link bi bi-cart4"></a></li>
         </ul>
       </div>
     </div>

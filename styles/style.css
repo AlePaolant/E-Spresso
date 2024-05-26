@@ -11,35 +11,35 @@ body{
 h1{
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
-  font-size: 60px;
+  font-size: 3.7rem;
   font-weight: 500;
   font-style: normal;
   color: #212222; }
 h2{
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
-  font-size: 45px;
+  font-size: 2.8rem;
   font-weight: 500;
   font-style: normal;
   color: #212222; }
 h3{
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
-  font-size: 30px;
+  font-size: 1.88rem;
   font-weight: 400;
   font-style: normal;
   color: #212222; }
 h4{
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   font-style: normal;
   color: #212222; }
 p{
   font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   font-style: normal;
   color: #212222; }
@@ -47,7 +47,7 @@ a{
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   font-optical-sizing: auto;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   font-style: normal;
   color: #987b65; }

@@ -66,7 +66,7 @@ $cartItems = getCartItems($_SESSION['id']);
           <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="../login/area_riservata.php" class="nav-link bi bi-person-circle"></a></li>
-          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
+          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-cart4"></a></li>
         </ul>
       </div>
     </div>
