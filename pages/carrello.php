@@ -93,6 +93,7 @@ $cartItems = getCartItems($_SESSION['id']);
                 </tr>
               </thead>
               <tbody>
+                <?php $total = 0; //inizializza totale a zero ?> 
                 <?php foreach ($cartItems as $item) : ?>
                   <tr>
                     <td class="img-item">
