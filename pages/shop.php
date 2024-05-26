@@ -73,10 +73,13 @@ $products = getProducts();
       
       <div class="shop-container">
         <h1 class="shop-title">Shop</h1>
-        <p class="shop-description">Ahhh, qui ci starebbe proprio bene una bella descrizione.</p>
+        <p class="shop-description">Qui potrai effettuare l'acquisto di diverse tipologie di caffè, divise in quattro categorie.
+          <br>Ogni unità acquistata equivale a 450g di prodotto.
+          <br>Usa i pulsanti "freccia" per navigare fra i prodotti disponibili, ed il pulsante "info" per visualizzarne descrizioni più dettagliate.
+          <br>Sulla destra troverai il pulsante per accedere al carrello.</p>
       </div>
 
-      <a href="#acquista"><button class="down-btn"></button></a>
+      <a href="#acquista"><button class="down-btn"><i class="bi bi-arrow-down"></i></button></a>
     
     </section>
       
@@ -96,173 +99,178 @@ $products = getProducts();
       }
     ?>
 
-    <!-- SEZIONE SINGOLE ORIGINI -->
-    <section class="category-section" id="acquista">
-      <div class="category-container">
-        <h1 class="category-title">SINGOLE ORIGINI</h1>
-        <p class="category-description">una bella descrizione</p>
-      </div>
+    <section id="acquista" class="acquista">
+      <a href="../pages/carrello.php"><button id="cart-btn" class="cart-btn"><i class="bi bi-cart2"></i></button></a>
 
-      <div class="slider-container">
-        <div class="card-slider slider-pic1">
-          <div class="pointer">
-            <?php foreach ($categorie['Singole origini'] as $caffe) : ?>
-
-              <div class="card">
-
-                <div class="card-img-container">
-                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
-                </div>
-                <div class="card-title-container">
-                  <p class="card-title"><?= $caffe['nome'] ?></p>
-                </div>
-
-                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
-                <button class="card-btn-desc">i</button>
-                <div class="card-desc-container">
-                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
-                </div>
-
-              </div>
-
-            <?php endforeach; ?>
-          </div>
-
-          <button class="left-btn">&lt;</button>
-          <button class="right-btn">&gt;</button>
+      <!-- SEZIONE SINGOLE ORIGINI -->
+      <section class="category-section">
+        <div class="category-container">
+          <h1 class="category-title">SINGOLE ORIGINI</h1>
+          <p class="category-description">Un caffè Singola Origine è un’unica varietà di caffè (Arabica, Robusta, Fine Robusta) coltivato all’interno di un’area geografica ben determinata. 
+            Di conseguenza le sue proprietà organolettiche sono ben riconoscibili e distintive.</p>
         </div>
 
-        <div class="dot-container"></div>
-      </div>
-      
-    </section>
+        <div class="slider-container">
+          <div class="card-slider">
+            <div class="pointer">
+              <?php foreach ($categorie['Singole origini'] as $caffe) : ?>
 
-    <!-- SEZIONE TOP SELECTION -->
-    <section class="category-section2">
-      <div class="category-container">
-        <h1 class="category-title2">TOP SELECTION</h1>
-        <p class="category-description2">una bella descrizione</p>
-      </div>
+                <div class="card">
 
-      <div class="slider-container">
-        <div class="card-slider slider-pic2">
-          <div class="pointer">
-            <?php foreach ($categorie['Top selection'] as $caffe) : ?>
+                  <div class="card-img-container">
+                    <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                  </div>
+                  <div class="card-title-container">
+                    <p class="card-title"><?= $caffe['nome'] ?></p>
+                  </div>
 
-              <div class="card">
+                  <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€<?= $caffe['prezzo'] ?>&nbsp&nbsp<i class="bi bi-cart2"></i></button>
+                  <button class="card-btn-desc"><i class="bi bi-info"></i></button>
+                  <div class="card-desc-container">
+                    <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                  </div>
 
-                <div class="card-img-container">
-                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
-                </div>
-                <div class="card-title-container">
-                  <p class="card-title"><?= $caffe['nome'] ?></p>
                 </div>
 
-                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
-                <button class="card-btn-desc">i</button>
-                <div class="card-desc-container">
-                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
-                </div>
+              <?php endforeach; ?>
+            </div>
 
-              </div>
-
-            <?php endforeach; ?>
+            <button class="left-btn"><i class="bi bi-caret-left-fill"></i></button>
+            <button class="right-btn"><i class="bi bi-caret-right-fill"></i></button>
           </div>
 
-          <button class="left-btn">&lt;</button>
-          <button class="right-btn">&gt;</button>
+          <div class="dot-container"></div>
+        </div>
+              
+      </section>
+
+      <!-- SEZIONE TOP SELECTION -->
+      <section class="category-section2">
+        <div class="category-container">
+          <h1 class="category-title2">TOP SELECTION</h1>
+          <p class="category-description2">I caffè Top Selection sono microlotti tacciabili di arabiche pregiate con un profilo aromatico complesso.</p>
         </div>
 
-        <div class="dot-container"></div>
-      </div>
-      
-    </section>
+        <div class="slider-container">
+          <div class="card-slider">
+            <div class="pointer">
+              <?php foreach ($categorie['Top selection'] as $caffe) : ?>
 
-    <!-- SEZIONE MISCELE -->
-    <section class="category-section3">
-      <div class="category-container">
-        <h1 class="category-title">MISCELE</h1>
-        <p class="category-description">una bella descrizione</p>
-      </div>
+                <div class="card">
 
-      <div class="slider-container">
-        <div class="card-slider slider-pic3">
-          <div class="pointer">
-            <?php foreach ($categorie['Miscele'] as $caffe) : ?>
+                  <div class="card-img-container">
+                    <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                  </div>
+                  <div class="card-title-container">
+                    <p class="card-title"><?= $caffe['nome'] ?></p>
+                  </div>
 
-              <div class="card">
+                  <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?>&nbsp&nbsp<i class="bi bi-cart2"></i></button>
+                  <button class="card-btn-desc"><i class="bi bi-info"></i></button>
+                  <div class="card-desc-container">
+                    <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                  </div>
 
-                <div class="card-img-container">
-                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
-                </div>
-                <div class="card-title-container">
-                  <p class="card-title"><?= $caffe['nome'] ?></p>
                 </div>
 
-                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
-                <button class="card-btn-desc">i</button>
-                <div class="card-desc-container">
-                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
-                </div>
+              <?php endforeach; ?>
+            </div>
 
-              </div>
-
-            <?php endforeach; ?>
+            <button class="left-btn"><i class="bi bi-caret-left-fill"></i></button>
+            <button class="right-btn"><i class="bi bi-caret-right-fill"></i></button>
           </div>
 
-          <button class="left-btn">&lt;</button>
-          <button class="right-btn">&gt;</button>
+          <div class="dot-container"></div>
+        </div>
+              
+      </section>
+
+      <!-- SEZIONE MISCELE -->
+      <section class="category-section3">
+        <div class="category-container">
+          <h1 class="category-title">MISCELE</h1>
+          <p class="category-description">Le miscele nascono dalla miscelazione delle singole origini e dalle arabiche top selection. 
+            Gli unici caffè che non possono essere miscelati, per le loro caratteristiche organolettiche, sono i caffè della categoria Specialty Coffee.</p>
         </div>
 
-        <div class="dot-container"></div>
-      </div>
-      
-    </section>
+        <div class="slider-container">
+          <div class="card-slider">
+            <div class="pointer">
+              <?php foreach ($categorie['Miscele'] as $caffe) : ?>
 
-    <!-- SEZIONE SPECIALTY -->
-    <section class="category-section4">
-      <div class="category-container">
-        <h1 class="category-title2">SPECIALTY</h1>
-        <p class="category-description2">una bella descrizione</p>
-      </div>
+                <div class="card">
 
-      <div class="slider-container">
-        <div class="card-slider slider-pic4">
-          <div class="pointer">
-            <?php foreach ($categorie['Specialty'] as $caffe) : ?>
+                  <div class="card-img-container">
+                    <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                  </div>
+                  <div class="card-title-container">
+                    <p class="card-title"><?= $caffe['nome'] ?></p>
+                  </div>
 
-              <div class="card">
+                  <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?>&nbsp&nbsp<i class="bi bi-cart2"></i></button>
+                  <button class="card-btn-desc"><i class="bi bi-info"></i></button>
+                  <div class="card-desc-container">
+                    <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                  </div>
 
-                <div class="card-img-container">
-                  <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
-                </div>
-                <div class="card-title-container">
-                  <p class="card-title"><?= $caffe['nome'] ?></p>
                 </div>
 
-                <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?></button>
-                <button class="card-btn-desc">i</button>
-                <div class="card-desc-container">
-                  <p class="card-desc"><?= $caffe['descrizione'] ?></p>
-                </div>
+              <?php endforeach; ?>
+            </div>
 
-              </div>
-
-            <?php endforeach; ?>
+            <button class="left-btn"><i class="bi bi-caret-left-fill"></i></button>
+            <button class="right-btn"><i class="bi bi-caret-right-fill"></i></button>
           </div>
 
-          <button class="left-btn">&lt;</button>
-          <button class="right-btn">&gt;</button>
+          <div class="dot-container"></div>
+        </div>
+              
+      </section>
+
+      <!-- SEZIONE SPECIALTY -->
+      <section class="category-section4">
+        <div class="category-container">
+          <h1 class="category-title2">SPECIALTY</h1>
+          <p class="category-description2">Un caffè verde pregiato della specie Arabica, tostato in modo da esprimere tutto il suo profilo aromatico e gustativo ed estratto secondo standard di qualità precisi. 
+            Uno Specialty Coffee viene valutato con il metodo di degustazione del protocollo SCA (Specialty Coffee Association) che analizza l’alta qualità del chicco assegnando un punteggio su una scala che va da 80 a 100 punti (“cupping score” riportato in etichetta).</p>
         </div>
 
-        <div class="dot-container"></div>
-      </div>
-      
-    </section>
+        <div class="slider-container">
+          <div class="card-slider">
+            <div class="pointer">
+              <?php foreach ($categorie['Specialty'] as $caffe) : ?>
 
+                <div class="card">
+
+                  <div class="card-img-container">
+                    <img src="../img/caffe/tipicaffe/<?= $caffe['nome'] ?>.png" class="card-img">
+                  </div>
+                  <div class="card-title-container">
+                    <p class="card-title"><?= $caffe['nome'] ?></p>
+                  </div>
+
+                  <button class="card-btn-price" onclick="addToCart(<?= $caffe['id'] ?>)">€ <?= $caffe['prezzo'] ?>&nbsp&nbsp<i class="bi bi-cart2"></i></button>
+                  <button class="card-btn-desc"><i class="bi bi-info"></i></button>
+                  <div class="card-desc-container">
+                    <p class="card-desc"><?= $caffe['descrizione'] ?></p>
+                  </div>
+
+                </div>
+
+              <?php endforeach; ?>
+            </div>
+
+            <button class="left-btn"><i class="bi bi-caret-left-fill"></i></button>
+            <button class="right-btn"><i class="bi bi-caret-right-fill"></i></button>
+          </div>
+
+          <div class="dot-container"></div>
+        </div>
+              
+      </section>
+
+    </section>
     <!-- FINE SEZIONI CATEGORIE -->
-
-    <a href="../pages/carrello.php">Vai al carrello</a>
   </section>
 
   <!-- FOOTER -->
