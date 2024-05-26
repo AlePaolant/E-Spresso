@@ -129,7 +129,7 @@
 
 @media (max-width: 520px) {
     .main h1 {
-        font-size: 2.3rem;
+        font-size: 2rem;
         line-height: 0.7;
     }
 }
@@ -213,6 +213,15 @@
     .img-chicchi-about {
         width: 30%;
     }
+    .about .container h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .about .container p {
+        font-size: 1rem;
+        line-height: 1.1;
+    }
 }
 @media screen and (max-width: 700px) {
     .about {
@@ -220,6 +229,18 @@
     }
     .tazza-about {
         display: none;
+    }
+    .about .container{
+        margin-left: 5%;
+    }
+    .about .container h1 {
+        font-size: 1.7rem;
+        line-height: 1.1;
+    }
+    
+    .about .container p {
+        font-size: 1.2rem;
+        line-height: 1;
     }
 }
 
@@ -484,9 +505,12 @@
 
 @media screen and (max-width: 768px) {
     .caffe {
-        height: 70vh;
+        height: 80vh;
     }
-
+    .container-interno {
+        margin-left: 0;
+        margin-top: 10%;
+    }
     .img-container-mobile {
         display: none;
     }
@@ -499,13 +523,13 @@
         top: 15%;
         left: -10%;
     }
-
     .img-bg-cucchiaio {
         position: absolute;
         width: 45%;
         top: 77.5%;
         left: 10%;
     }
+    
 }
 
 /*SECTION CUSTOM*/
@@ -559,7 +583,11 @@
 }
 @media screen and (max-width: 768px) {
     .custom{
-        height: 65vh;
+        height: 80vh;
+    }
+    .custom .container h1 {
+        font-size: 2.3rem;
+        line-height: 1;
     }
 }
 
@@ -749,20 +777,23 @@
 
 @media screen and (max-width: 768px) {
     .faq {
-        height: 120vh;
+        height: 140vh;
         flex-direction: column;
     }
-
+    .faq .faq-title h2 {
+        font-size: 2.3rem;
+        line-height: 1;
+    }
     .faq .faq-title,
     .faq .container {
-        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
     }
-
     .faq .container {
         margin: 10%;
     }
-
     .sezione-faq button[aria-expanded='true']+.faq-risposta {
-        max-height: 13em;
+        max-height: 20em;
     }
 }
