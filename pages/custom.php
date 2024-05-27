@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+  $UserLoggato = false;
+} else {
+  $UserLoggato = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -156,57 +165,72 @@
   </section>
 
   <!-- CREAZIONE -->
-  <section class="crea start-animation" id="crea">
-    <div class="container">
-      <div class="crea-intestazione testo">
+  <?php if ($UserLoggato) : ?>
+    <section class="crea start-animation" id="crea">
+      <div class="container">
+        <div class="crea-intestazione testo">
+          <h1>Qui tocca a te!</h1>
+          <p>Crea il caffè perfetto combinando i tipi a disposizione!
+            <br>Basta trascinare l'immagine del caffè desiderato nel riquadro e scegliere la percentuale di un gusto rispetto all'altro.
+            <br>Ti consigliamo di controllare prima quale caffè ha il gusto desiderato, utilizzando il tool <a href="custom.php#selezione">qui sopra</a> e poi puoi sbizzarrirti a creare!
+          </p>
+        </div>
+        <?php
+        // File per connessione al database
+        include("../login/utility/config.php");
+
+        $stmt = $pdo->prepare("SELECT id, nome FROM tipicaffe WHERE nome != :escludiGustoCustom AND idcategoria IN (1, 2)");
+        $escludiGustoCustom = "Gusto Custom";
+        $stmt->bindParam(':escludiGustoCustom', $escludiGustoCustom, PDO::PARAM_STR);
+        $stmt->execute();
+        $caffeList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($caffeList as $caffe) : ?>
+          <div class="caffe-item" draggable="true" ondragstart="drag(event, <?php echo $caffe['id']; ?>)" id="caffe-<?php echo $caffe['id']; ?>">
+            <img src="../img/caffe/tipicaffe/<?php echo $caffe['nome']; ?>.png" alt="<?php echo $caffe['nome']; ?>">
+            <p class="text-on-drag-item"><?php echo $caffe['nome']; ?></p>
+          </div>
+        <?php endforeach; ?>
+        <div class="drop-zone-container">
+          <div class="drop-sx">
+            <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-1"></div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="slider-1" onchange="updateSliders(this)">
+            <div class="percentage" id="percentage-1">50%</div>
+          </div>
+          <div class="drop-dx">
+            <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-2"></div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="slider-2" onchange="updateSliders(this)">
+            <div class="percentage" id="percentage-2">50%</div>
+          </div>
+        </div>
+        <button class="submit-button" onclick="submitCustom()">Crea Gusto Custom</button>
+      </div>
+      <div id="custom-popup" class="popup">
+        <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()"><i class="bi bi-x"></i></span>
+          <p id="popup-message"></p>
+          <button onclick="cancelCustom()" id="cancel-btn">Annulla</button>
+          <button onclick="addToCartCustom()" id="add-to-cart-btn">Aggiungi al carrello</button>
+        </div>
+      </div>
+    </section>
+  <?php else : ?>
+    <section class="login-richiesto-section start-animation" id="crea">
+      <div class="container testo">
         <h1>Qui tocca a te!</h1>
         <p>Crea il caffè perfetto combinando i tipi a disposizione!
           <br>Basta trascinare l'immagine del caffè desiderato nel riquadro e scegliere la percentuale di un gusto rispetto all'altro.
           <br>Ti consigliamo di controllare prima quale caffè ha il gusto desiderato, utilizzando il tool <a href="custom.php#selezione">qui sopra</a> e poi puoi sbizzarrirti a creare!
         </p>
+        <h3 class="login-richiesto">Prima di procedere devi effettuare il login.</h3>
+        <a href="../login/login.php">
+          <button type="button" class="btn btn-lg">Login</button>
+        </a>
       </div>
-      <?php
-      //File per connessione al database
-      include("../login/utility/config.php");
+    </section>
+  <?php endif; ?>
 
 
-      $stmt = $pdo->prepare("SELECT id, nome FROM tipicaffe WHERE nome != :escludiGustoCustom");
-      $escludiGustoCustom = "Gusto Custom";
-      $stmt->bindParam(':escludiGustoCustom', $escludiGustoCustom, PDO::PARAM_STR);
-      $stmt->execute();
-      $caffeList = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-      foreach ($caffeList as $caffe) : ?>
-        <div class="caffe-item" draggable="true" ondragstart="drag(event, <?php echo $caffe['id']; ?>)" id="caffe-<?php echo $caffe['id']; ?>">
-          <img src="../img/caffe/tipicaffe/<?php echo $caffe['nome']; ?>.png" alt="<?php echo $caffe['nome']; ?>">
-          <p class="text-on-drag-item"><?php echo $caffe['nome']; ?></p>
-        </div>
-      <?php endforeach; ?>
-      <div class="drop-zone-container">
-        <div class="drop-sx">
-          <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-1"></div>
-          <input type="range" min="0" max="100" value="50" class="slider" id="slider-1" onchange="updateSliders(this)">
-          <div class="percentage" id="percentage-1">50%</div>
-        </div>
-        <div class="drop-dx">
-          <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-2"></div>
-          <input type="range" min="0" max="100" value="50" class="slider" id="slider-2" onchange="updateSliders(this)">
-          <div class="percentage" id="percentage-2">50%</div>
-        </div>
-      </div>
-      <button class="submit-button" onclick="submitCustom()">Crea Gusto Custom</button>
-    </div>
-    <div id="custom-popup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <p id="popup-message"></p>
-        <button onclick="addToCartCustom()" id="add-to-cart-btn">Aggiungi al carrello</button>
-        <button onclick="cancelCustom()" id="cancel-btn">Annulla</button>
-      </div>
-    </div>
-
-  </section>
 
 
   <!-- FOOTER -->
