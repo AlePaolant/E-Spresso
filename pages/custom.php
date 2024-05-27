@@ -197,6 +197,14 @@
       </div>
       <button class="submit-button" onclick="submitCustom()">Crea Gusto Custom</button>
     </div>
+    <div id="custom-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p id="popup-message"></p>
+        <button onclick="addToCartCustom()" id="add-to-cart-btn">Aggiungi al carrello</button>
+        <button onclick="cancelCustom()" id="cancel-btn">Annulla</button>
+      </div>
+    </div>
 
   </section>
 

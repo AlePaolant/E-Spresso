@@ -296,12 +296,102 @@ function submitCustom() {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            alert("Gusto Custom creato con successo!");
+            showPopup("Miscela custom creata con successo!");
         }
     };
     xhr.send(`description=${description}`);
-    
 }
+
+let customProductId;
+
+function submitCustom() {
+    var zone1 = document.getElementById("zone-1").querySelector("img").alt;
+    var zone2 = document.getElementById("zone-2").querySelector("img").alt;
+    var slider1 = document.getElementById("slider-1").value;
+    var slider2 = document.getElementById("slider-2").value;
+
+    var description = `${slider1}% di ${zone1}, ${slider2}% di ${zone2}`;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "../php/submit_custom.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                customProductId = response.productId;
+                showPopup("Miscela custom creata con successo!");
+            } else {
+                alert("Errore nella creazione della miscela custom: " + response.error);
+            }
+        }
+    };
+    xhr.send(`description=${description}`);
+}
+
+function showPopup(message) {
+    var popup = document.getElementById("custom-popup");
+    var popupMessage = document.getElementById("popup-message");
+    popupMessage.textContent = message;
+    popup.style.display = "block";
+}
+
+function closePopup() {
+    var popup = document.getElementById("custom-popup");
+    popup.style.display = "none";
+}
+
+function addToCartCustom() {
+    addToCart(customProductId);
+    closePopup();
+}
+
+function addToCart(productId) {
+    fetch('../php/add_to_cart.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ productId: productId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Miscela custom aggiunta al carrello!');
+        } else {
+            alert('Impossibile aggiungere la miscela custom al carrello.');
+        }
+    });
+}
+
+function cancelCustom() {
+    fetch('../php/cancel_custom.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ productId: customProductId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Miscela custom annullata.');
+        } else {
+            alert('Impossibile annullare la miscela custom.');
+        }
+        closePopup();
+    });
+}
+
+// Aggiungi un listener per chiudere il popup cliccando fuori dal popup stesso
+window.onclick = function(event) {
+    var popup = document.getElementById("custom-popup");
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
+
+
 
 
 
