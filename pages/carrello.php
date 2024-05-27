@@ -79,7 +79,8 @@ $cartItems = getCartItems($_SESSION['id']);
       <div class="div-carrello">
         <h2>Carrello</h2>
         <div class="container-carrello ">
-          <?php if (empty($cartItems)) : ?>
+          <?php $total = 0; //inizializza totale a zero
+          if (empty($cartItems)) : ?>
             <p>Il carrello è vuoto.</p>
           <?php else : ?>
             <table class="tabella">
@@ -93,7 +94,6 @@ $cartItems = getCartItems($_SESSION['id']);
                 </tr>
               </thead>
               <tbody>
-                <?php $total = 0; //inizializza totale a zero ?> 
                 <?php foreach ($cartItems as $item) : ?>
                   <tr>
                     <td class="img-item">

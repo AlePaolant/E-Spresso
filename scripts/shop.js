@@ -9,43 +9,43 @@ function addToCart(productId) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('Product added to cart!');
+            // alert('Product added to cart!');
+            showPopup("Prodotto aggiunto al carrello!");
         } else {
-            alert('Failed to add product to cart.');
+            // alert('Failed to add product to cart.');
+            showPopup("Impossibile aggiungere il prodotto al carrello.");
         }
     });
 }
+
+// POPUP
+function showPopup(message) {
+    var popup = document.getElementById("custom-popup");
+    var popupMessage = document.getElementById("popup-message");
+    popupMessage.textContent = message;
+    popup.style.display = "block";
+}
+
+function closePopup() {
+    var popup = document.getElementById("custom-popup");
+    popup.style.display = "none";
+}
+
+window.onclick = function(event) {
+    var popup = document.getElementById("custom-popup");
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
+
+
+
+
 
 
 // AGGIUNTA 24/05 - AGGIORNATA 26/05
 
 // SETUP
-// Controlla il movimento del tasto carrello
-/* const sezioneAcquista = document.getElementById("acquista");
-const cartButton = document.getElementById("cart-btn");
-window.addEventListener('scroll', () => {
-    var scrollY = window.scrollY;
-    var acquistaRect = sezioneAcquista.getBoundingClientRect();
-    var cartRect = cartButton.getBoundingClientRect();
-
-    /*if (acquistaRect.top + 1.5*cartRect.height - 0.9*window.innerHeight > 0){
-        cartButton.style.position = "absolute";
-        cartButton.style.top = "calc(var(--sizevar) * 60)";
-        cartButton.style.bottom = "auto";
-    }
-    else*/
-    /* if (acquistaRect.bottom - 0.5*cartRect.height - 0.9*window.innerHeight > 0){
-        cartButton.style.position = "fixed";
-        cartButton.style.top = "auto";
-        cartButton.style.bottom = "10%";
-    }
-    else {
-        cartButton.style.position = "absolute";
-        cartButton.style.top = "auto";
-        cartButton.style.bottom = "calc(var(--sizevar) * 60)";
-    }
-}) */
-
 // Crea una lista di containers (slider container = slider + container di puntini)
 const containers = document.querySelectorAll(".slider-container");
 // Setta le proprietà di ogni slider

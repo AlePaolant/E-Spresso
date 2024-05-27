@@ -271,6 +271,15 @@ $products = getProducts();
 
     </section>
     <!-- FINE SEZIONI CATEGORIE -->
+
+    <!-- POPUP -->
+    <div id="custom-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <br>
+        <p id="popup-message"></p>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
