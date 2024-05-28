@@ -55,7 +55,7 @@
           <li class="nav-item"><a href="../pages/custom.php" class="nav-link-register">Create</a></li>
           <li class="nav-item"><a href="../pages/contatti.html" class="nav-link-register">Contatti</a></li>
           <li class="nav-item"><a href="../account.php" class="nav-link-register bi bi-person-circle"></a></li>
-          <li class="nav-item"><a href="../pages/carrello.php" class="nav-link-register bi bi-bag"></a></li>
+          <li class="nav-item"><a href="../pages/carrello.php" class="nav-link-register bi bi-cart4"></a></li>
         </ul>
       </div>
     </div>

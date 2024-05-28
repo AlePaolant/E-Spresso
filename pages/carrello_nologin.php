@@ -31,6 +31,8 @@
 
   <style>
     .error-container {
+      width: 100vw;
+      height: 90vh;
       padding-top: 15%;
       padding-bottom: 10%;
       text-align: center;
@@ -62,6 +64,21 @@
     .registrati-h3{
         padding-top: 5%;
     }
+    @media screen and (max-width: 768px) {
+      .error-container{
+        height: 60vh;
+        padding-top: 25%;
+      }
+      .error-container h1{
+        font-size: 2rem;
+      }
+      .error-container h2{
+        font-size: 1.6rem;
+      }
+      .error-container h3, .error-container a{
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 
@@ -86,7 +103,7 @@
           <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
-          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
+          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-cart4"></a></li>
         </ul>
       </div>
     </div>
@@ -95,7 +112,7 @@
   <!-- LATO CLIENT -->
 
   <div class="container error-container start-animation">
-    <div class="box error">
+    <div>
 
       <h1>Il carrello è vuoto :(</h1>
       <h2>Per favore effettua il login</h2>

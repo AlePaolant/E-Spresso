@@ -66,7 +66,7 @@ $cartItems = getCartItems($_SESSION['id']);
           <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="../login/area_riservata.php" class="nav-link bi bi-person-circle"></a></li>
-          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
+          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-cart4"></a></li>
         </ul>
       </div>
     </div>
@@ -79,7 +79,8 @@ $cartItems = getCartItems($_SESSION['id']);
       <div class="div-carrello">
         <h2>Carrello</h2>
         <div class="container-carrello ">
-          <?php if (empty($cartItems)) : ?>
+          <?php $total = 0; //inizializza totale a zero
+          if (empty($cartItems)) : ?>
             <p>Il carrello è vuoto.</p>
           <?php else : ?>
             <table class="tabella">
@@ -87,7 +88,7 @@ $cartItems = getCartItems($_SESSION['id']);
                 <tr>
                   <th class="prod">Prodotto</th>
                   <th class="quan">Quantità</th>
-                  <th class="pu">Prezzo Unitario</th>
+                  <th class="pu">Prezzo</th>
                   <th class="ptot">Totale</th>
                   <th></th>
                 </tr>
@@ -106,8 +107,8 @@ $cartItems = getCartItems($_SESSION['id']);
                         <i class="bi bi-plus icona" onclick="aumenta(<?= $item['id'] ?>)"></i>
                       </div>
                     </td>
-                    <td id="prezzo<?= $item['id'] ?>">€ <?= number_format($item['prezzo'], 2) ?></td>
-                    <td id="subtotale<?= $item['id'] ?>">€ <?= number_format($item['quantita'] * $item['prezzo'], 2) ?></td>
+                    <td class="prezzo" id="prezzo<?= $item['id'] ?>">€ <?= number_format($item['prezzo'], 2) ?></td>
+                    <td class="subtot" id="subtotale<?= $item['id'] ?>">€ <?= number_format($item['quantita'] * $item['prezzo'], 2) ?></td>
                     <td>
                       <div class="container-rimuovi">
                         <i class="bi bi-x icona" onclick="rimuoviElementi(<?= $item['id'] ?>)"></i>

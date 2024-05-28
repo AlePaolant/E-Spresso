@@ -60,7 +60,7 @@ $products = getProducts();
           <li class="nav-item"><a href="custom.php" class="nav-link">Create</a></li>
           <li class="nav-item"><a href="contatti.html" class="nav-link">Contatti</a></li>
           <li class="nav-item"><a href="../account.php" class="nav-link bi bi-person-circle"></a></li>
-          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-bag"></a></li>
+          <li class="nav-item"><a href="carrello.php" class="nav-link bi bi-cart4"></a></li>
         </ul>
       </div>
     </div>
@@ -271,6 +271,15 @@ $products = getProducts();
 
     </section>
     <!-- FINE SEZIONI CATEGORIE -->
+
+    <!-- POPUP -->
+    <div id="custom-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <br>
+        <p id="popup-message"></p>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -281,7 +290,7 @@ $products = getProducts();
           <div class="row">
             <div class="col-md">
               <div class="mb-4">
-                <img src="../img/logo_footer.png" style="width: 75%;">
+                <img class="footer-logo" src="../img/logo_footer.png">
               </div>
             </div>
             <div class="col-md">

@@ -21,12 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':prezzo', $prezzo);
 
         if ($stmt->execute()) {
-            echo "Gusto Custom creato con successo!";
+            $productId = $pdo->lastInsertId();
+            echo json_encode(['success' => true, 'productId' => $productId]);
         } else {
-            echo "Errore: " . $stmt->errorInfo()[2];
+            echo json_encode(['success' => false, 'error' => $stmt->errorInfo()[2]]);
         }
     } catch (PDOException $e) {
-        echo 'Connessione fallita: ' . $e->getMessage();
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
 }
 ?>

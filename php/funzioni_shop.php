@@ -21,6 +21,7 @@ function addToCart($userId, $productId) {
     }
 }
 
+
 function getProducts() {
     $pdo = getDbConnection();
     $stmt = $pdo->query('SELECT caf.id, caf.nome, caf.prezzo, caf.descrizione, cat.categoria 

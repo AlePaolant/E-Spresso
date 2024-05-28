@@ -5,13 +5,16 @@
     margin: 0;
     box-sizing: border-box;
 }
-a{
+
+a {
     font-size: 1.2rem;
     line-height: 1.3;
 }
-a:hover{
+
+a:hover {
     color: #7e5e47;
 }
+
 /*SEZIONE LANDING*/
 .landing {
     position: relative;
@@ -25,15 +28,18 @@ a:hover{
     margin: 0;
     padding: 0;
 }
+
 .landing .container {
     margin-top: 7%;
     margin-left: 10%;
     margin-right: 10%;
 }
+
 .landing .container h1 {
     font-size: 3.7rem;
     line-height: 0.9;
 }
+
 .landing .container p {
     font-size: 1.2rem;
     line-height: 1.3;
@@ -45,49 +51,60 @@ a:hover{
     display: flex;
     flex-direction: column;
 }
-.spiegone .corpo, .acido{
+
+.spiegone .corpo,
+.acido {
     width: 100%;
-    height: 40vh; 
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(224, 219, 209); 
+    background-color: rgb(224, 219, 209);
 }
-.spiegone .corpo{
+
+.spiegone .corpo {
     border-radius: 50px 50px 0 0;
 }
-.corpo img{
+
+.corpo img {
     position: relative;
     padding-left: 5%;
     width: 30%;
 }
-.corpo .testo{
+
+.corpo .testo {
     padding-left: 7%;
     padding-right: 7%;
 }
-.testo h1{
+
+.testo h1 {
     font-size: 3.7rem;
     line-height: 0.9;
 }
-.testo p{
+
+.testo p {
     font-size: 1.2rem;
     line-height: 1.3;
 }
-.acido img{
+
+.acido img {
     position: relative;
     padding-right: 5%;
     width: 35%;
 }
-.acido .testo{
+
+.acido .testo {
     padding-left: 7%;
     padding-right: 7%;
 }
-.spiegone .g-r-container{
+
+.spiegone .g-r-container {
     width: 100%;
-    height: 40vh; 
+    height: 40vh;
     display: flex;
 }
-.spiegone .g-r{
+
+.spiegone .g-r {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -95,9 +112,10 @@ a:hover{
     justify-content: center;
     padding-left: 5%;
     padding-right: 5%;
-    background-color: rgb(224, 219, 209); 
+    background-color: rgb(224, 219, 209);
 }
-.spiegone .g-r-margin{
+
+.spiegone .g-r-margin {
     border-right: 2px inset #7e5e47;
 }
 
@@ -114,6 +132,7 @@ a:hover{
     margin: 0;
     padding: 0;
 }
+
 .selezione .img-divisore {
     position: relative;
     width: 25%;
@@ -121,6 +140,7 @@ a:hover{
     margin-top: 1%;
     transform: translate(-50%, -50%);
 }
+
 .selezione .container {
     margin-left: 10%;
     margin-right: 10%;
@@ -128,6 +148,7 @@ a:hover{
     flex-direction: column;
     align-items: center;
 }
+
 .selezione .container h1 {
     font-size: 3.7rem;
     line-height: 0.9;
@@ -137,11 +158,13 @@ a:hover{
     font-size: 1.2rem;
     line-height: 1.3;
 }
+
 .selezione .filtri {
     padding-left: 7%;
     padding-right: 7%;
     padding-top: 5%;
 }
+
 .filtri-label {
     font-family: "Poppins", sans-serif;
     font-size: 2rem;
@@ -160,11 +183,13 @@ a:hover{
 .selezione .corposita {
     display: flex;
 }
+
 .corposita-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
 .corposita-button {
     padding: 10px 20px;
     border-radius: 15px;
@@ -174,9 +199,11 @@ a:hover{
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .corposita-button:hover {
     background-color: #a58e76;
 }
+
 .corposita-button.active {
     background-color: #7e5e47;
     color: #fff;
@@ -192,11 +219,13 @@ a:hover{
     display: flex;
     padding-top: 2.5%;
 }
+
 .acidita-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
 .acidita-button {
     padding: 10px 20px;
     border-radius: 15px;
@@ -206,9 +235,11 @@ a:hover{
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .acidita-button:hover {
     background-color: #a58e76;
 }
+
 .acidita-button.active {
     background-color: #7e5e47;
     color: #fff;
@@ -224,11 +255,13 @@ a:hover{
     display: flex;
     padding-top: 2.5%;
 }
+
 .gusti-container {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
+
 .gusti-button {
     position: relative;
     border: none;
@@ -242,6 +275,7 @@ a:hover{
     cursor: pointer;
     transition: background-color 0.3s ease, border 0.3s ease;
 }
+
 .gusti-text {
     position: absolute;
     top: 50%;
@@ -258,35 +292,42 @@ a:hover{
     /* Cambia la dimensione del testo come desiderato */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .gusti-button img {
     display: block;
     width: 100px;
     height: auto;
 }
+
 .gusti-button:hover {
     background-color: #c7b8a3;
 }
+
 .gusti-button:hover>img {
     display: block;
     width: 100px;
     height: auto;
     opacity: 0.6;
 }
+
 .gusti-button:hover>.gusti-text {
     color: white;
     background: rgba(126, 93, 71, 0.9);
 }
+
 .gusti-button.active {
     background-color: #7e5e47;
     color: #fff;
     border: 5px #7e5e47;
 }
+
 .gusti-button.active>img {
     display: block;
     width: 100px;
     height: auto;
     opacity: 0.6;
 }
+
 .gusti-button.active>.gusti-text {
     color: white;
     background: rgba(126, 93, 71, 0.9);
@@ -300,11 +341,13 @@ a:hover{
     display: flex;
     padding-top: 2.5%;
 }
+
 .retrogusti-container {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
+
 .retrogusti-button {
     position: relative;
     border: none;
@@ -318,6 +361,7 @@ a:hover{
     cursor: pointer;
     transition: background-color 0.3s ease, border 0.3s ease;
 }
+
 .retrogusti-text {
     position: absolute;
     top: 50%;
@@ -334,35 +378,42 @@ a:hover{
     /* Cambia la dimensione del testo come desiderato */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .retrogusti-button img {
     display: block;
     width: 100px;
     height: auto;
 }
+
 .retrogusti-button:hover {
     background-color: #c7b8a3;
 }
+
 .retrogusti-button:hover>img {
     display: block;
     width: 100px;
     height: auto;
     opacity: 0.6;
 }
+
 .retrogusti-button:hover>.retrogusti-text {
     color: white;
     background: rgba(126, 93, 71, 0.9);
 }
+
 .retrogusti-button.active {
     background-color: #7e5e47;
     color: #fff;
     border: 5px #7e5e47;
 }
+
 .retrogusti-button.active>img {
     display: block;
     width: 100px;
     height: auto;
     opacity: 0.6;
 }
+
 .retrogusti-button.active>.retrogusti-text {
     color: white;
     background: rgba(126, 93, 71, 0.9);
@@ -375,6 +426,7 @@ a:hover{
     border-color: transparent;
     background-color: #c7b8a3;
 }
+
 .selezione .btn:hover {
     color: #fff;
     background-color: #7e5e47;
@@ -394,10 +446,12 @@ a:hover{
     padding-right: 10%;
 
 }
-.risultato{
+
+.risultato {
     width: 100%;
     font-size: 1.2rem;
 }
+
 .acquista-button {
     background-color: #c7b8a3;
     color: white;
@@ -413,17 +467,21 @@ a:hover{
     margin-top: 2%;
     margin-bottom: 2%;
 }
+
 .acquista-button:hover {
     background-color: #a58e76;
 }
+
 .acquista-button:active {
     background-color: #7e5e47;
 }
-.risultato-negativo{
+
+.risultato-negativo {
     width: 100%;
     font-size: 1.2rem;
 }
-.pulsante-ris-neg{
+
+.pulsante-ris-neg {
     background-color: #c7b8a3;
     color: white;
     padding: 10px 20px;
@@ -438,10 +496,12 @@ a:hover{
     margin-top: 2%;
     margin-bottom: 2%;
 }
-.pulsante-ris-neg:hover{
+
+.pulsante-ris-neg:hover {
     background-color: #a58e76;
 }
-.pulsante-ris-neg:active{
+
+.pulsante-ris-neg:active {
     background-color: #7e5e47;
 }
 
@@ -452,10 +512,11 @@ a:hover{
 /*            SEZIONE CREA               */
 /*---------------------------------------*/
 /*---------------------------------------*/
-.crea{
-    background-color: rgb(224, 219, 209); 
+.crea {
+    background-color: rgb(224, 219, 209);
 }
-.crea-intestazione{
+
+.crea-intestazione {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -463,47 +524,59 @@ a:hover{
     align-items: center;
     justify-content: center;
 }
-.text-on-drag-item{
+
+.text-on-drag-item {
     cursor: default;
 }
+
 .caffe-item {
     display: inline-block;
     margin: 10px;
     text-align: center;
 }
-.caffe-item img:active{
+
+.caffe-item img:active {
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
 }
+
 .caffe-item img {
     width: 100px;
     height: 100px;
-    cursor: move; /* fallback se il cursore grab non è supportato */
+    cursor: move;
+    /* fallback se il cursore grab non è supportato */
     cursor: grab;
-    cursor: -moz-grab;     /* imposta il cursore grab quando si trova sull'immagine*/
+    cursor: -moz-grab;
+    /* imposta il cursore grab quando si trova sull'immagine*/
     cursor: -webkit-grab;
 }
-.caffe-item img:active{
+
+.caffe-item img:active {
     cursor: grabbing;
-    cursor: -moz-grabbing; /* imposta il cursore grabbing quando trascina l'immagine*/
+    cursor: -moz-grabbing;
+    /* imposta il cursore grabbing quando trascina l'immagine*/
     cursor: -webkit-grabbing;
 }
+
 .drop-zone-container {
     display: flex;
     justify-content: center;
 }
-.drop-sx{
+
+.drop-sx {
     width: 25vw;
     padding-top: 5%;
     padding-right: 2.5%;
 }
-.drop-dx{
+
+.drop-dx {
     width: 25vw;
     padding-top: 5%;
     padding-left: 2.5%;
 }
-.drop-zone{
+
+.drop-zone {
     display: inline-block;
     width: 150px;
     height: 150px;
@@ -511,23 +584,27 @@ a:hover{
     margin: 20px;
     position: relative;
 }
+
 .drop-zone img {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     object-fit: cover;
 }
+
 .slider {
     width: 75%;
     margin-top: 10px;
 }
+
 .crea .container {
     text-align: center;
     margin-top: 20px;
 }
+
 .submit-button {
     margin-top: 5%;
     margin-bottom: 5%;
@@ -542,9 +619,107 @@ a:hover{
     border-radius: 5px;
     cursor: pointer;
 }
+
 .submit-button:hover {
     background-color: #a58e76;
 }
+
 .submit-button:active {
     background-color: #7e5e47;
+}
+
+
+
+/*POPUP*/
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.popup-content {
+    background-color: #ebe9e4;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 10px 90px 10px rgba(0, 0, 0, 0.3);
+}
+.close-btn {
+    color: #212222;
+    float: right;
+    margin-top: -4%;
+    margin-right: -3.5%;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#popup-message{
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+#add-to-cart-btn,
+#cancel-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#add-to-cart-btn {
+    margin-left: 5%;
+    border: 2px solid #a58e76;
+    background-color: #a58e76;
+    color: white;
+}
+#add-to-cart-btn:hover {
+    border: 2px solid #7e5e47;
+    background-color: #7e5e47;
+}
+#cancel-btn {
+    border: 2px solid #7e5e47;
+    background-color: transparent;
+    color: #7e5e47;
+}
+#cancel-btn:hover {
+    background-color: #7e5e47;
+    color: white;
+}
+
+
+
+/*SEZIONE IN CASO DI LOGIN=FALSE*/
+.login-richiesto-section {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(224, 219, 209);
+}
+.login-richiesto {
+    color: red;
+    margin-top: 5%;
+}
+.login-richiesto-section .btn {
+    margin-top: 2%;
+    color: #fff;
+    border-color: transparent;
+    background-color: #a58e76;
+}
+.login-richiesto-section .btn:hover {
+    color: #fff;
+    background-color: #7e5e47;
+    border-color: #7e5e47;
 }

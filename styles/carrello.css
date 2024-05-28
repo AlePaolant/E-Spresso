@@ -8,7 +8,7 @@
 
 .carrello {
     width: 100vw;
-    height: 98vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     padding-top: 9%;
@@ -44,6 +44,8 @@
     margin-bottom: 2%;
     border-bottom: 2px solid rgba(33, 34, 34, 0.2);
     height: 60%;
+
+    overflow-y: auto;  /*aggiunta 27/05*/
 }
 
 .tabella {
@@ -125,6 +127,15 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     /* Per rimuovere le frecce in WebKit */
 }
+th .pu{
+    width: 25%;
+    padding-right: 5%;
+}
+
+.prezzo, .subtot{
+    font-size: 1rem;
+}
+
 
 .container-rimuovi .icona {
     color: rgba(33, 34, 34, 0.7);
@@ -181,6 +192,7 @@ input::-webkit-inner-spin-button {
 .tabella-totale td {
     padding: 5px 20px;
     color: rgba(33, 34, 34, 0.8);
+    font-size: 1rem;
 }
 
 .totale {
@@ -192,6 +204,7 @@ input::-webkit-inner-spin-button {
 
 .totale h4 {
     margin: 0;
+    font-size: 1.3rem;
 }
 
 
@@ -245,10 +258,9 @@ input::-webkit-inner-spin-button {
 
 .checkout-button {
     position: sticky;
-    bottom: 0;
+    padding: 0;
     width: 100%;
     padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .form-control {
@@ -285,22 +297,65 @@ input::-webkit-inner-spin-button {
 
 @media screen and (max-width: 991px) {
     .carrello {
-        height: 140vh;
+        height: 200vh;
     }
-
     .card-carrello {
         width: 100%;
         flex-direction: column;
     }
-
     .div-carrello,
     .checkout {
         flex: 100%;
     }
-
     .checkout {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
         margin-top: 20%;
         padding-bottom: 40%;
         width: 100%;
+    }
+    .quantita-container .icona {
+        font-size: 18px;
+        padding: 0 5px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .carrello {
+        height: 200vh;
+    }
+    .tabella-head th {
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    .nome-item{
+        font-size: 0.9rem;
+    }
+    .quantita-container input {
+        width: 10px;
+        font-size: 15px;
+        margin: 0 2px;
+    }
+    .prezzo, .subtot{
+        font-size: 0.7rem;
+    }
+    .prod{
+        width: 30%;
+    }
+    .div-sx{
+        margin-right: 5%;
+    }
+    .totale-carrello a {
+        font-size: 0.9rem;
+    }
+    .tabella-totale td {
+        font-size: 0.8rem;
+    }
+    .checkout{
+        height: 200vh;
+    }
+}
+@media screen and (max-width: 576px) {
+    .carrello{
+        height: 180vh;
     }
 }
