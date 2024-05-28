@@ -129,32 +129,32 @@ if (!$user) {
     </div>
     <!-----------------------PRIMO CONTENUTO -------------------------------------->
     <div class="contenuto-dx">
-      <div class="sezione-contenuto" id="profilo" style="display: block;">
+      <div class="sezione-contenuto" id="profilo">
         <div class="interno">
           <div class="oggetti">
-            <label for="nome"> Nome </label>
-            <div id="nomeDisplay">
+            <label class= "interni-label" for="nome"> Nome </label>
+            <div class= "interni-sx" id="nomeDisplay">
               <p class="nome"><?php echo htmlspecialchars($user['nome']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label for="cognome"> Cognome </label>
-            <div id="cognomeDisplay">
+            <label class= "interni-label" for="cognome"> Cognome </label>
+            <div class= "interni-dx" id="cognomeDisplay">
               <p class="cognome"><?php echo htmlspecialchars($user['cognome']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label for="email"> Email </label>
-            <div id="emailDisplay">
+            <label class= "interni-label" for="email"> Email </label>
+            <div class= "interni-sx" id="emailDisplay">
               <p class="email"><?php echo htmlspecialchars($user['email']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label for="telefono"> Telefono </label>
-            <div id="telefonoDisplay">
+            <label class= "interni-label" for="telefono"> Telefono </label>
+            <div class= "interni-dx" id="telefonoDisplay">
               <p class="telefono"><?php echo htmlspecialchars($user['numero_telefono']); ?></p>
             </div>
           </div>
@@ -167,22 +167,22 @@ if (!$user) {
         <div class="interno">
 
           <div class="oggetti">
-            <label for="indirizzo"> Indirizzo </label>
-            <div id="indirizzoDisplay">
+            <label class= "interni-label" for="indirizzo"> Indirizzo </label>
+            <div class= "interni-sx" id="indirizzoDisplay">
               <p class="indirizzo"><?php echo htmlspecialchars($user['indirizzo']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label for="n_civico"> Numero Civico </label>
-            <div id="civicoDisplay">
+            <label class= "interni-label" for="n_civico"> Numero Civico </label>
+            <div class= "interni-dx" id="civicoDisplay">
               <p class="n_civico"><?php echo htmlspecialchars($user['n_civico']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label for="citta"> Email </label>
-            <div id="cittaDisplay">
+            <label class= "interni-label" for="citta"> Città </label>
+            <div class= "interni-sx" id="cittaDisplay">
               <p class="citta"><?php echo htmlspecialchars($user['citta']); ?></p>
             </div>
           </div>
@@ -195,7 +195,7 @@ if (!$user) {
         <div class="interno">
 
           <div class="oggetti">
-            <label for="pagamento"> Inserisci metodo di pagamento: </label>
+            <label class= "interni-label" for="pagamento"> Dettagli di pagamento: </label>
             <div id="pagamentoDisplay">
               <input type="text" placeholder="1234-XXXX-XXXX-XXXX">
             </div>

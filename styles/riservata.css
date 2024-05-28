@@ -1,10 +1,9 @@
 .welcome {
     width: 100vw;
-    height: 100 vh;
+    height: 100vh;
     display: flex;
     padding-top: 9%;
-    padding-bottom: 5%;
-    padding-left: 5%;
+    padding-left: 2.5%;
 }
 
 .contenuto-sx {
@@ -96,15 +95,18 @@ tr:active {
     color: white;
 }
 
-.interno {
-    /*contenitore oggetti*/
+.interno { 
+    /*contenitore oggetti, cambia la visualizzazione delle label*/
+    width:auto;
+    color: #7e5e47;
     display: grid;
-    padding-top: 14%;
+    padding-top: 10%;
     padding-left: 10%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    column-gap: 10rem;
-    row-gap: 10rem;
+    column-gap: 8rem;
+    row-gap: 8rem;
+    font-size: 130%;
 }
 
 .edit {
@@ -195,8 +197,38 @@ tr:active {
     font-size: 25px;
 }
 
-
-
 .modifica-elementi {
     padding-bottom: 20%;
 }
+
+.oggetti{
+    width:150%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
+}
+
+.interni-sx{
+    height:min-content;
+    width:75%;
+    display:flex;
+    background-color: rgba(211, 211, 211, 0.837);
+    border:0.5px solid lightgrey;
+    border-radius:15px;
+    padding-top: 3%;
+    padding-left: 5%;
+}
+
+.interni-dx{
+    height:min-content;
+    min-width: fit-content;
+    display:flex;
+    background-color: lightgrey;
+    border:0.5px solid lightgrey;
+    border-radius:15px;
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.interni-label{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
