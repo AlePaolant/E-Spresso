@@ -13,10 +13,11 @@
 }
 
 .contenuto-dx {
-    padding-left: 10%;
+    padding-left: 5%;
+    padding-right: 25%;
     display: flex;
     height: 70vh;
-    width: 50vw;
+    width: 90vw;
 }
 
 
@@ -113,14 +114,6 @@ tr:active {
     display: grid;
 }
 
-.sezione-contenuto {
-    display: none;
-}
-
-.sezione-contenuto.active {
-    display: block;
-}
-
 .popup, .overlay {
     display: none;
     position: fixed;
@@ -134,7 +127,7 @@ tr:active {
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Ensure it covers the rest of the content */
+    z-index: 1000; 
 }
 .popup {
     display: none;
@@ -230,5 +223,152 @@ tr:active {
 
 .interni-label{
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.terzo{
+    display: flex;
+    width:120vh;
+    height:35vw;
+    right: 50%;
+}
+
+.parte-sx{
+    margin-left:5%;
+    background: linear-gradient(90deg, #007bff, #00c6ff); /* Gradient background */
+    margin-top: 16%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius:10px;
+    width:40%;
+    height:35%;
+    border: 0.5px solid #000;
+}
+
+.sezione-contenuto {
+    display: none;
+    width: 150%;
+}
+
+.sezione-contenuto.active {
+    display: block;
+}
+.visa{
+    padding-left:83%;
+    padding-top:3%;
+}
+
+.visa h4{
+    font-size: 140%;
+}
+
+.numeri{
+    padding-top:8%;
+    padding-left: 8%;
+}
+.valid{
+    display:flex;
+    align-items: flex-start;
+    padding-left:80%;
+    padding-top:3%;
+    height: 8%;
+}
+.valid p{
+    font-size: 70%;
+}
+.valid .holder{
+padding-right:10%;
+}
+
+.mm{
+    padding-top: 2%;
+    padding-left: 81%;
+    padding-bottom: 55%;
+}
+
+.mm a{
+    font-size:110%;
+}
+
+.parte-dx{
+    margin-top: 3%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-left: 15%;
+    height:33vw;
+    width:33%;
+}
+
+.titolo h3{
+    font-size: 180%;
+    font-family:'Times New Roman', Times, serif;
+}
+.nome-carta{
+    padding-top:10%;
+}
+.numero-carta{
+    padding-top:10%;
+}
+
+.exp{
+    padding-top: 10%;
+}
+
+.forma-control{
+    margin-top: -2%;
+    border-radius: 9px;
+    width:100%;
+    height:3vw;
+}
+.exp{
+    align-items: center;
+    display:flex;
+}
+.exp-item{
+    width:50%;
+}
+
+.riga1{
+    width:85%;
+    height:3vw;
+    margin-top: -2%;
+    border-radius: 9px;
+}
+
+.riga2{
+    width:85%;
+    height:3vw;
+    margin-top: -2%;
+    border-radius: 9px;
+    margin-left: 15%;
+}
+.titoli{
+    font-size: 110%;
+}
+.titolo-cvv{
+    font-size: 110%;
+    padding-left: 15%;
+}
+
+.btn{
+    margin-top: 15%;
+    width:100%;
+    display: block;
+    border:10px;
+    border-radius: 10px;
+    background-color:#2a2a2a;
+  }
+
+.btn:hover{
+    background-color:#d9ccb5;
+}
+
+.conferma{
+    padding-top: 2%;
+    color:wheat;
+}
+.conferma:hover{
+    color:rgb(76, 41, 8);
+}
+
+::placeholder{
+    padding-left: 5%;
 }
 

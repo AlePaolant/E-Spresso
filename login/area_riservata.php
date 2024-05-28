@@ -20,8 +20,8 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$user) {
-    echo "utente non trovato";
-    exit();
+  echo "utente non trovato";
+  exit();
 }
 ?>
 
@@ -121,7 +121,7 @@ if (!$user) {
         <!-- parte finale -------------------------------------->
 
         <tfoot>
-          <th class= "logout" id="logout"> <i class="bi bi-box-arrow-left"></i>ESCI</th>
+          <th class="logout" id="logout"> <i class="bi bi-box-arrow-left"></i>ESCI</th>
         </tfoot>
 
       </table>
@@ -132,29 +132,29 @@ if (!$user) {
       <div class="sezione-contenuto" id="profilo">
         <div class="interno">
           <div class="oggetti">
-            <label class= "interni-label" for="nome"> Nome </label>
-            <div class= "interni-sx" id="nomeDisplay">
+            <label class="interni-label" for="nome"> Nome </label>
+            <div class="interni-sx" id="nomeDisplay">
               <p class="nome"><?php echo htmlspecialchars($user['nome']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label class= "interni-label" for="cognome"> Cognome </label>
-            <div class= "interni-dx" id="cognomeDisplay">
+            <label class="interni-label" for="cognome"> Cognome </label>
+            <div class="interni-dx" id="cognomeDisplay">
               <p class="cognome"><?php echo htmlspecialchars($user['cognome']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label class= "interni-label" for="email"> Email </label>
-            <div class= "interni-sx" id="emailDisplay">
+            <label class="interni-label" for="email"> Email </label>
+            <div class="interni-sx" id="emailDisplay">
               <p class="email"><?php echo htmlspecialchars($user['email']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label class= "interni-label" for="telefono"> Telefono </label>
-            <div class= "interni-dx" id="telefonoDisplay">
+            <label class="interni-label" for="telefono"> Telefono </label>
+            <div class="interni-dx" id="telefonoDisplay">
               <p class="telefono"><?php echo htmlspecialchars($user['numero_telefono']); ?></p>
             </div>
           </div>
@@ -167,22 +167,22 @@ if (!$user) {
         <div class="interno">
 
           <div class="oggetti">
-            <label class= "interni-label" for="indirizzo"> Indirizzo </label>
-            <div class= "interni-sx" id="indirizzoDisplay">
+            <label class="interni-label" for="indirizzo"> Indirizzo </label>
+            <div class="interni-sx" id="indirizzoDisplay">
               <p class="indirizzo"><?php echo htmlspecialchars($user['indirizzo']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label class= "interni-label" for="n_civico"> Numero Civico </label>
-            <div class= "interni-dx" id="civicoDisplay">
+            <label class="interni-label" for="n_civico"> Numero Civico </label>
+            <div class="interni-dx" id="civicoDisplay">
               <p class="n_civico"><?php echo htmlspecialchars($user['n_civico']); ?></p>
             </div>
           </div>
 
           <div class="oggetti">
-            <label class= "interni-label" for="citta"> Città </label>
-            <div class= "interni-sx" id="cittaDisplay">
+            <label class="interni-label" for="citta"> Città </label>
+            <div class="interni-sx" id="cittaDisplay">
               <p class="citta"><?php echo htmlspecialchars($user['citta']); ?></p>
             </div>
           </div>
@@ -192,12 +192,48 @@ if (!$user) {
 
       <!-----------------------TERZO CONTENUTO -------------------------------------->
       <div class="sezione-contenuto" id="pagamento" style="display:none;">
-        <div class="interno">
+        <div class="terzo">
+          <div class="parte-sx">
+            <div class="visa">
+              <h4>VISA</h4>
+            </div>
+            <div class="numeri">
+              <h4>0000 0000 0000 0000</h4>
+            </div>
 
-          <div class="oggetti">
-            <label class= "interni-label" for="pagamento"> Dettagli di pagamento: </label>
-            <div id="pagamentoDisplay">
-              <input type="text" placeholder="1234-XXXX-XXXX-XXXX">
+            <div class="valid">
+              <p> VALID THRU</p>
+            </div>
+
+            <div class="mm">
+              <a>MM/YY</a>
+            </div>
+          </div>
+
+          <div class="parte-dx">
+            <div class="titolo">
+              <h3>Dettagli di pagamento</h3>
+            </div>
+            <div class="nome-carta">
+              <h4 class="titoli">Proprietario carta <i class="bi bi-person"></i> </h4>
+              <input type="nome-carta" class="forma-control" required placeholder="Proprietario della carta">
+            </div>
+            <div class="numero-carta">
+              <h4 class="titoli">Numero della carta <i class="bi bi-credit-card"></i> </h4>
+              <input type="numero-carta" class="forma-control" required placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="exp">
+              <div class="exp-item">
+                <h4 class="titoli">Scadenza <i class="bi bi-calendar-week"></i> </h4>
+                <input type="text" class="riga1" required placeholder="MM/YY">
+              </div>
+              <div class="exp-item">
+                <h4 class="titolo-cvv">CVV <i class="bi bi-lock"></i> </h4>
+                <input type="text" class="riga2" required placeholder="000">
+              </div>
+            </div>
+            <div class="btn">
+              <h4 class="conferma">Conferma</h4>
             </div>
           </div>
 
