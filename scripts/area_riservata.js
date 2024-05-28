@@ -16,25 +16,18 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 // Ottieni il pop-up
-var popup = document.getElementById("popupModifica");
-var popup2=document.getElementById("popupElimina");
+var popup=document.getElementById("popupElimina");
 var overlay = document.getElementById("overlay");
 
 // Ottieni il pulsante che apre il pop-up
-var btn = document.getElementById("editButton");
-var btn2 = document.getElementById("deleteButton");
+var btn = document.getElementById("deleteButton");
 
 // Ottieni l'elemento <span> che chiude il pop-up
-var span = document.getElementsByClassName("close")[0];
-var span2 = document.getElementsByClassName("closed")[0];
+var span = document.getElementsByClassName("closed")[0];
 
 // Quando l'utente clicca sul pulsante, apri il pop-up 
 btn.onclick = function () {
     popup.style.display = "block";
-    overlay.style.display = "block";
-}
-btn2.onclick = function () {
-    popup2.style.display = "block";
     overlay.style.display = "block";
 }
 
@@ -44,21 +37,13 @@ span.onclick = function () {
     overlay.style.display = "none";
 }
 
-span2.onclick=function(){
-    popup2.style.display = "none";
-    overlay.style.display = "none";
-}
-
  // Quando l'utente clicca fuori dal pop-up, chiudi il pop-up
  window.onclick = function (event) {
     if (event.target == overlay) {
         popup.style.display = "none";
-        popup2.style.display = "none";
         overlay.style.display = "none";
     }
 }
-
-
 
 
 
@@ -88,19 +73,24 @@ function togglePassword() {
     }
 }
 
-document.getElementById('elimina').addEventListener('click', function() {
-    var confirmation = confirm('Sei sicuro di voler eliminare i tuoi dati?');
-    if (confirmation) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'delete_user.php', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          alert('Dati eliminati con successo');
-          // Reindirizza alla pagina di logout
-          window.location.href = '../login/utility/out.php'; 
-        }
-      };
-      xhr.send('id=<?php echo $sessionid; ?>');
+// Modifica la funzione di eliminazione per accettare un parametro 'id'
+
+
+document.getElementById('deleteAccountButton').addEventListener('click', function() {
+    if (confirm('Sei sicuro di voler eliminare il tuo account?')) {
+        fetch('../login/utility/delete_user.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+            if (data.includes("Account eliminato con successo")) {
+                window.location.href = '../login/utility/out.php'; // Reindirizza alla pagina principale o di login
+            }
+        })
+        .catch(error => console.error('Errore:', error));
     }
-  });
+});

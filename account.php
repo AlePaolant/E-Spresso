@@ -75,8 +75,16 @@
             <div class="card-body">
               <form id="loginForm">
                 <div class="btn-login">
-                  <button class="btn btn-primary accedi" onclick="window.open('login/login.php')" > Accedi</button>
-                    <button class="btn btn-primary registrati" onclick="window.open('login/register.php', '_blank')"> Registrati </button>
+                  <a href="login/login.php">
+                    <div class="bottone1">
+                      <h4> Accedi </h4>
+                    </div>
+                  </a>
+                  <a href="login/register.php">
+                    <div class="bottone2">
+                      <h4> Registrati </h4>
+                    </div>
+                  </a>
                 </div>
               </form>
             </div>

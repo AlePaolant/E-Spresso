@@ -207,23 +207,6 @@ if (!$user) {
       <div class="sezione-contenuto" id="impostazioni" style="display:none;">
         <div class="interno-quarto">
           <div id="overlay" class="overlay"></div>
-          
-          <div class="modifica-elementi">
-            <h3 class="input-modifica">Vuoi modificare i tuoi dati?</h3>
-            <button id="editButton">Modifica</button>
-            <!-- -------------------------Il pop-up ---------------------------------------------------------->
-            <div id="popupModifica" class="popup">
-              <div class="popup-content">
-                <span class="close">&times;</span>
-                <!-- ------------------contenuto pop-up------------------------------------------- -->
-                <div class="modifica" id="modifica">
-                  <a>Vuoi modificare i tuoi dati?</a>
-                  <button class="btn btn-danger" type="submit"> Modifica </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div class="elimina-dati">
             <h3 class="input-elimina">Vuoi eliminare i tuoi dati?</h3>
             <button id="deleteButton">Elimina</button>
@@ -233,12 +216,11 @@ if (!$user) {
                 <!-- ------------------contenuto pop-up------------------------------------------- -->
                 <div class="elimina" id="elimina">
                   <a>Vuoi eliminare i tuoi dati?</a>
-                  <button class="btn btn-danger" type="submit"> Elimina </button>
+                  <button class="btn btn-danger" type="submit" id="deleteAccountButton"> Elimina </button>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

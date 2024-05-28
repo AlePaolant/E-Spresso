@@ -100,14 +100,6 @@
                       <label for="show-password" style="font-size: 11px; color:lightgoldenrodyellow;">Mostra password</label>
                     </div>
                   </div>
-
-                  <!-- <div class="remember-me">
-                    <label class="checkbox" for="remember-me">
-                      <input type="radio" id="remember-me" name="remember-me" required> 
-                      <span class="checkmark"> </span>Ricordami!
-                    </label>
-                </div> -->
-
                   <div class="btn-login">
                     <button type="submit" class="btn btn-primary">Accedi</button>
                   </div>
@@ -120,23 +112,6 @@
           </div>
         </div>
       </form>
-
-      <!--
-    <form class="" action="utility/login.php" method="POST">
-
-      <input type="hidden" name="action" value="login">
-
-      <label for="email">Email or Username</label>
-      <input autofocus name="email" type="text">
-    
-      <label for="password">Password</label>
-      <input name="password" id="password" placeholder="" type="password">
-
-      <button type="submit">Login</button>
-
-    </form>
-    -->
-
     </div>
   </div>
 
