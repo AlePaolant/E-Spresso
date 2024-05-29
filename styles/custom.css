@@ -62,6 +62,8 @@ a:hover {
         height: 80vh;
     }
 }
+
+
 /*SEZIONE SPIEGONE*/
 .spiegone {
     width: 100vw;
@@ -135,6 +137,16 @@ a:hover {
 .spiegone .g-r-margin {
     border-right: 2px inset #7e5e47;
 }
+@media screen and (max-width: 1200px) {
+    .spiegone h1{
+        font-size: 2.3rem;
+        line-height: 0.9;
+    }
+    .spiegone p{
+        font-size: 1rem;
+        line-height: 1;
+    }
+}
 @media screen and (max-width: 768px) {
     .spiegone img{
         display: none;
@@ -162,7 +174,203 @@ a:hover {
         padding-top: 20%;
         padding-bottom: 40%;
     }
+    .corpo .testo{
+        padding-top: 10%;
+    }
 }
+
+/*SECTION FAQ*/
+.faq {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(224, 219, 209);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.faq-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    padding: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: transparent !important;
+}
+
+.faq .faq-title h2 {
+    font-size: 2.9rem;
+    line-height: 1.1;
+}
+
+.faq .faq-title p {
+    margin-top: 6%;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.faq .faq-title .btn {
+    margin-top: 2%;
+    color: #343a40;
+    border-color: #343a40;
+}
+
+.faq .faq-title .btn:hover {
+    color: #fff;
+    background-color: #7e5e47;
+    border-color: #7e5e47;
+}
+
+.faq .img-divisore {
+    position: relative;
+    width: 55%;
+    left: 27%;
+    margin-top: 3%;
+    transform: translate(-50%, -50%);
+}
+
+.faq .container {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 10%;
+    padding: 0;
+    background-color: transparent !important;
+}
+
+.sezione-faq .faq-item {
+    border-bottom: 1px solid #7e5e47;
+}
+
+.sezione-faq .faq-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #7e5e47;
+}
+
+.sezione-faq button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #343a40;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.sezione-faq button:hover,
+.sezione-faq button:focus {
+    cursor: pointer;
+    color: #a58e76;
+}
+
+.sezione-faq button:hover::after,
+.sezione-faq button:focus::after {
+    cursor: pointer;
+    color: #a58e76;
+    border: 1px solid #a58e76;
+}
+
+.sezione-faq button .faq-titolo {
+    padding: 1em 1.5em 1em 0;
+}
+
+.sezione-faq button .faq-icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+}
+
+.sezione-faq button .faq-icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+
+.sezione-faq button .faq-icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+
+.sezione-faq button[aria-expanded='true'] {
+    color: #a58e76;
+}
+
+.sezione-faq button[aria-expanded='true'] .faq-icon::after {
+    width: 0;
+}
+
+.sezione-faq button[aria-expanded='true']+.faq-risposta {
+    opacity: 1;
+    max-height: 30em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.sezione-faq .faq-risposta {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.sezione-faq .faq-risposta p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+}
+
+@media screen and (max-width: 768px) {
+    #spiegone {
+      display: none;
+    }
+    #faq {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    #spiegone {
+      display: block;
+    }
+    #faq {
+      display: none;
+    }
+  }
+
+
+
+
+
 
 
 
@@ -223,19 +431,38 @@ a:hover {
     padding-right: 5%;
 }
 
+@media screen and (max-width: 991px) {
+    .selezione .container{
+        align-content: center;
+        text-align: center;
+    }
+    .selezione .container h1 {
+        font-size: 2.3rem;
+        line-height: 0.9;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .selezione .container p {
+        margin-right: 5%;
+        margin-left: 5%;
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+}
 
 
-
-
-/*CORPOSITA*/
+/* CORPOSITA */
 .selezione .corposita {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .corposita-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 10px;  
+    margin-top: 2%; 
 }
 
 .corposita-button {
@@ -258,7 +485,15 @@ a:hover {
     border-color: #7e5e47;
 }
 
-
+@media screen and (max-width: 991px) {
+    .corposita-container {
+        margin-top: 5%;
+        align-items: center; 
+        margin-left: 8%;
+        margin-bottom: 10%;
+        margin-right: 8%;
+    }
+}
 
 
 
@@ -266,12 +501,15 @@ a:hover {
 .selezione .acidita {
     display: flex;
     padding-top: 2.5%;
+    flex-direction: column;
+    align-items: center;
 }
 
 .acidita-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 2%;
 }
 
 .acidita-button {
@@ -293,6 +531,15 @@ a:hover {
     color: #fff;
     border-color: #7e5e47;
 }
+@media screen and (max-width: 991px) {
+    .acidita-container {
+        margin-top: 5%;
+        align-items: center; 
+        margin-left: 8%;
+        margin-bottom: 10%;
+        margin-right: 8%;
+    }
+}
 
 
 
@@ -302,12 +549,16 @@ a:hover {
 .selezione .gusti {
     display: flex;
     padding-top: 2.5%;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gusti-container {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    margin-top: 2%; 
+
 }
 
 .gusti-button {
@@ -380,7 +631,14 @@ a:hover {
     color: white;
     background: rgba(126, 93, 71, 0.9);
 }
-
+@media screen and (max-width: 991px) {
+    .gusti-container {
+        margin-top: 5%;
+        align-items: center; 
+        margin-bottom: 10%;
+        margin-left: 8%;
+    }
+}
 
 
 
@@ -388,12 +646,15 @@ a:hover {
 .selezione .retrogusti {
     display: flex;
     padding-top: 2.5%;
+    flex-direction: column;
+    align-items: center;
 }
 
 .retrogusti-container {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    margin-top: 2%; 
 }
 
 .retrogusti-button {
@@ -466,7 +727,14 @@ a:hover {
     color: white;
     background: rgba(126, 93, 71, 0.9);
 }
-
+@media screen and (max-width: 991px) {
+    .retrogusti-container {
+        margin-top: 5%;
+        align-items: center; 
+        margin-bottom: 10%;
+        margin-left: 8%;
+    }
+}
 /*PULSANTE*/
 .selezione .btn {
     margin-top: 2%;
@@ -481,6 +749,7 @@ a:hover {
     border-color: #7e5e47;
     cursor: pointer;
 }
+
 
 
 /* RISULTATI */
@@ -560,6 +829,7 @@ a:hover {
 /*            SEZIONE CREA               */
 /*---------------------------------------*/
 /*---------------------------------------*/
+/* Stili generali */
 .crea {
     background-color: rgb(224, 219, 209);
 }
@@ -567,6 +837,8 @@ a:hover {
 .crea-intestazione {
     width: 100%;
     height: 30vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -577,50 +849,63 @@ a:hover {
     cursor: default;
 }
 
-.caffe-item {
+/* Desktop */
+#desktop-view .caffe-item {
     display: inline-block;
     margin: 10px;
     text-align: center;
 }
 
-.caffe-item img:active {
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-}
-
-.caffe-item img {
+#desktop-view .caffe-item img {
     width: 100px;
     height: 100px;
     cursor: move;
-    /* fallback se il cursore grab non è supportato */
     cursor: grab;
     cursor: -moz-grab;
-    /* imposta il cursore grab quando si trova sull'immagine*/
     cursor: -webkit-grab;
 }
 
-.caffe-item img:active {
+#desktop-view .caffe-item img:active {
     cursor: grabbing;
     cursor: -moz-grabbing;
-    /* imposta il cursore grabbing quando trascina l'immagine*/
     cursor: -webkit-grabbing;
 }
 
+/* Mobile */
+#mobile-view {
+    display: none;
+}
+
+#mobile-view .caffe-button {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#mobile-view .caffe-button img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Drop zones */
 .drop-zone-container {
     display: flex;
     justify-content: center;
 }
 
-.drop-sx {
+.drop-sx, .drop-dx {
     width: 25vw;
     padding-top: 5%;
+}
+
+.drop-sx {
     padding-right: 2.5%;
 }
 
 .drop-dx {
-    width: 25vw;
-    padding-top: 5%;
     padding-left: 2.5%;
 }
 
@@ -650,7 +935,6 @@ a:hover {
 
 .crea .container {
     text-align: center;
-    margin-top: 20px;
 }
 
 .submit-button {
@@ -659,10 +943,7 @@ a:hover {
     padding: 10px 20px;
     background-color: #c7b8a3;
     color: white;
-    padding: 10px 20px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -676,9 +957,7 @@ a:hover {
     background-color: #7e5e47;
 }
 
-
-
-/*POPUP*/
+/* Popup */
 .popup {
     display: none;
     position: fixed;
@@ -689,6 +968,7 @@ a:hover {
     height: 100%;
     overflow: auto;
 }
+
 .popup-content {
     background-color: #ebe9e4;
     margin: 15% auto;
@@ -698,6 +978,7 @@ a:hover {
     text-align: center;
     box-shadow: 0 10px 90px 10px rgba(0, 0, 0, 0.3);
 }
+
 .close-btn {
     color: #212222;
     float: right;
@@ -706,16 +987,19 @@ a:hover {
     font-size: 28px;
     font-weight: bold;
 }
+
 .close-btn:hover,
 .close-btn:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-#popup-message{
+
+#popup-message {
     font-size: 1.2rem;
     line-height: 1.3;
 }
+
 #add-to-cart-btn,
 #cancel-btn {
     margin-top: 10px;
@@ -723,38 +1007,90 @@ a:hover {
     cursor: pointer;
     border-radius: 5px;
 }
+
 #add-to-cart-btn {
     margin-left: 5%;
     border: 2px solid #a58e76;
     background-color: #a58e76;
     color: white;
 }
+
 #add-to-cart-btn:hover {
     border: 2px solid #7e5e47;
     background-color: #7e5e47;
 }
+
 #cancel-btn {
     border: 2px solid #7e5e47;
     background-color: transparent;
     color: #7e5e47;
 }
+
 #cancel-btn:hover {
     background-color: #7e5e47;
     color: white;
 }
-
+@media screen and (max-width: 991px) {
+    .crea-intestazione {
+        height: 50vh;
+    }
+    .crea-intestazione h1 {
+        font-size: 2.3rem;
+        line-height: 0.9;
+    }
+    
+    .crea-intestazione p {
+        font-size: 1.1rem;
+        line-height: 1.1;
+    }
+}
+@media screen and (max-width: 768px) {
+    #desktop-view {
+        display: none;
+    }
+    #mobile-view {
+        display: block;
+    }
+    .drop-sx, .drop-dx {
+        width: 45vw;
+    }
+    .popup-content {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .crea-intestazione {
+        height: 60vh;
+    }
+    .drop-sx, .drop-dx {
+        width: 45vw;
+    }
+    .drop-sx {
+        padding-right: 0;
+    }
+    .drop-dx {
+        padding-left: 2.5%;
+    }
+    .popup-content {
+        width: 80%;
+    }
+}
 
 
 /*SEZIONE IN CASO DI LOGIN=FALSE*/
 .login-richiesto-section {
     width: 100vw;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: rgb(224, 219, 209);
+}
+.login-richiesto-section h1{
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .login-richiesto {
     color: red;
@@ -770,4 +1106,29 @@ a:hover {
     color: #fff;
     background-color: #7e5e47;
     border-color: #7e5e47;
+}
+@media screen and (max-width: 991px) {
+    .login-richiesto-section {
+        height: 80vh;
+    }
+    .login-richiesto-section h1{
+        margin-top: 10%;
+        font-size: 2.5rem;
+    }
+    .login-richiesto-section p{
+        font-size: 1.2rem;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .login-richiesto-section a{
+        font-size: 1.2rem;
+    }
+    .login-richiesto-section h3{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 576px) {
+    .login-richiesto-section {
+        height: 90vh;
+    }
 }

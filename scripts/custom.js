@@ -1,7 +1,6 @@
 // Funzione per gestire l'evento window.onload senza conflitti
 window.addEventListener('load', function() {
     caricaOpzioni();
-    initCustomGusto();
 });
 
 // Funzione esistente per caricare opzioni
@@ -231,7 +230,6 @@ function filtroCaffe() {
     });
 }
 
-// Funzioni drag and drop e slider
 function allowDrop(event) {
     event.preventDefault();
 }
@@ -248,22 +246,33 @@ function drop(event) {
     if (draggedElement) {
         var clonedElement = draggedElement.cloneNode(true);
         clonedElement.removeAttribute("id");
-        event.target.innerHTML = "";
-        event.target.appendChild(clonedElement);
+        if (!event.target.querySelector("img")) {
+            event.target.appendChild(clonedElement);
+        }
     } else {
         console.error("Elemento trascinato non trovato:", data);
     }
 }
 
-// Funzione per inizializzare i valori dei slider e altre impostazioni
-function initCustomGusto() {
-    document.getElementById("slider-1").value = 50;
-    document.getElementById("slider-2").value = 50;
-    document.getElementById("percentage-1").innerText = "50%";
-    document.getElementById("percentage-2").innerText = "50%";
+function selectCaffe(caffeName) {
+    var zone1 = document.getElementById("zone-1");
+    var zone2 = document.getElementById("zone-2");
+
+    var caffeImg = document.createElement("img");
+    caffeImg.src = "../img/caffe/tipicaffe/" + caffeName + ".png";
+    caffeImg.alt = caffeName;
+
+    if (!zone1.querySelector("img")) {
+        zone1.innerHTML = "";
+        zone1.appendChild(caffeImg);
+    } else if (!zone2.querySelector("img")) {
+        zone2.innerHTML = "";
+        zone2.appendChild(caffeImg);
+    } else {
+        alert("Entrambe le zone di selezione sono già piene. Si prega di rimuovere un caffè prima di aggiungerne un altro.");
+    }
 }
 
-// Funzione per aggiornare i valori dei slider
 function updateSliders(slider) {
     var slider1 = document.getElementById("slider-1");
     var slider2 = document.getElementById("slider-2");
@@ -284,33 +293,20 @@ function updateSliders(slider) {
 }
 
 function submitCustom() {
-    var zone1 = document.getElementById("zone-1").querySelector("img").alt;
-    var zone2 = document.getElementById("zone-2").querySelector("img").alt;
+    var zone1 = document.getElementById("zone-1").querySelector("img");
+    var zone2 = document.getElementById("zone-2").querySelector("img");
+    
+    if (!zone1 || !zone2) {
+        alert("Per favore seleziona due caffè per creare una miscela custom.");
+        return;
+    }
+    
+    var caffe1 = zone1.alt;
+    var caffe2 = zone2.alt;
     var slider1 = document.getElementById("slider-1").value;
     var slider2 = document.getElementById("slider-2").value;
 
-    var description = `${slider1}% di ${zone1}, ${slider2}% di ${zone2}`;
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "../php/submit_custom.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            showPopup("Miscela custom creata con successo!");
-        }
-    };
-    xhr.send(`description=${description}`);
-}
-
-let customProductId;
-
-function submitCustom() {
-    var zone1 = document.getElementById("zone-1").querySelector("img").alt;
-    var zone2 = document.getElementById("zone-2").querySelector("img").alt;
-    var slider1 = document.getElementById("slider-1").value;
-    var slider2 = document.getElementById("slider-2").value;
-
-    var description = `${slider1}% di ${zone1}, ${slider2}% di ${zone2}`;
+    var description = `${slider1}% di ${caffe1}, ${slider2}% di ${caffe2}`;
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "../php/submit_custom.php", true);
@@ -393,6 +389,42 @@ window.onclick = function(event) {
 
 
 
+
+
+//FUNZIONE PER LEGGIBILITÀ MOBILE
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('spiegone').style.display = 'none';
+      document.getElementById('faq').style.display = 'block';
+    } else {
+      document.getElementById('spiegone').style.display = 'block';
+      document.getElementById('faq').style.display = 'none';
+    }
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('spiegone').style.display = 'none';
+      document.getElementById('faq').style.display = 'block';
+    } else {
+      document.getElementById('spiegone').style.display = 'block';
+      document.getElementById('faq').style.display = 'none';
+    }
+  });
+
+//FUNZIONE PER FAQ (presa da index, sempre per leggibilità da mobile)
+ 
+const items = document.querySelectorAll('.sezione-faq button');
+function toggleSezione() {
+    const itemToggle = this.getAttribute('aria-expanded');
+    for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+    }
+    if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+    }
+}
+items.forEach((item) => item.addEventListener('click', toggleSezione));
 
 
 
