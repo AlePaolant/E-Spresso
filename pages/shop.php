@@ -278,6 +278,7 @@ $products = getProducts();
         <span class="close-btn" onclick="closePopup()">&times;</span>
         <br>
         <p id="popup-message"></p>
+        <a href="../account.php"><button id="login-btn">Login</button></a>
       </div>
     </div>
   </section>

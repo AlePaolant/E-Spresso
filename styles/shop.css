@@ -429,3 +429,19 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+#login-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #a58e76;
+    background-color: #a58e76;
+    color: white;
+
+    z-index: 1;
+}
+#login-btn:hover {
+    border: 2px solid #7e5e47;
+    background-color: #7e5e47;
+}
