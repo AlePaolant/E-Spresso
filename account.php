@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['id'])) {
+  header('Location: login/area_riservata.php');
+  exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html  lang="it">
     <head>

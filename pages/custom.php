@@ -7,6 +7,34 @@ if (!isset($_SESSION['id'])) {
 }
 ?>
 
+<?php
+$corpoTitolo = 'Corposità';
+$corpoTesto = 'La composita di un caffè si può ricondurre al senso del tatto: si tratta infatti,
+  della proprietà fisica della bevanda percepita dalla bocca durante e dopo l’ingestione.
+  <br>Indica la struttura del liquido e la concentrazione delle sostanze in esso disciolte.
+  <br>Nell’analisi sensoriale del caffè, la corposità riguarda la <strong>densità</strong>,
+  l’<strong>oleosità</strong> (ossia il contenuto in grassi) e la <strong>viscosità</strong> (ossia la quantità di materia solida sospesa nell’infuso).';
+
+$acidoTitolo = 'Acidità';
+$acidoTesto = 'L’acidità è uno tra i gusti più confusi e incompresi dall’uomo, probabilmente per via del fatto che l’acidità
+  è letta dal nostro cervello come un segnale di pericolo, o di possibile tossicità, ma nel caffè è un parametro positivo,
+  anzi è indice di un caffè di qualità superiore.
+  <br>A livello sensoriale l’acidità è una risorsa, è in grado di aprire le papille gustative,
+  predisponendo il palato a recepire tutte le sfumature di un buon caffè.';
+
+$gustoTitolo = 'Gusto';
+$gustoTesto = 'Per gusto intendiamo le note aromatiche del caffè. Se ne percepiscono di diverse, e per distinguerle si ricorre alla ruota degli aromi:
+  La ruota degli aromi è uno strumento ideato dalla SCAA (Specialty Coffee Association of America) fondamentale al fine di percepire e
+  quindi descrivere correttamente tutte le note aromatiche di un caffè.';
+
+$retrogustoTitolo = 'Retrogusto';
+$retrogustoTesto = 'Il retrogusto è l’ultima fase dell’analisi sensoriale del caffè, e riguarda il gusto che il caffè ci lascia in bocca, il ricordo che rimane
+  all’interno del palato una volta che la nostra tazzina sarà vuota.
+  Oltre alle note aromatiche che variano a seconda del chicco e della provenienza, il retrogusto può variare anche in base alla persistenza,
+  cioè per quanti minuti rimane in bocca una buona sensazione di caffè.';
+?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -88,40 +116,70 @@ if (!isset($_SESSION['id'])) {
     <div class="corpo">
       <img src="../img/custom/coffee-corpo.png" alt="corpo-img">
       <div class="testo">
-        <h1>Corposità</h1>
-        <p>La composita di un caffè si può ricondurre al senso del tatto: si tratta infatti,
-          della proprietà fisica della bevanda percepita dalla bocca durante e dopo l’ingestione.
-          <br>Indica la struttura del liquido e la concentrazione delle sostanze in esso disciolte.
-          <br>Nell’analisi sensoriale del caffè, la corposità riguarda la <strong>densità</strong>,
-          l’<strong>oleosità</strong> (ossia il contenuto in grassi) e la <strong>viscosità</strong> (ossia la quantità di materia solida sospesa nell’infuso).
-        </p>
+        <h1><?php echo $corpoTitolo; ?></h1>
+        <p><?php echo $corpoTesto; ?></p>
       </div>
     </div>
     <div class="acido">
       <div class="testo">
-        <h1>Acidità</h1>
-        <p>L’acidità è uno tra i gusti più confusi e incompresi dall’uomo, probabilmente per via del fatto che l’acidità
-          è letta dal nostro cervello come un segnale di pericolo, o di possibile tossicità, ma nel caffè è un parametro positivo,
-          anzi è indice di un caffè di qualità superiore.
-          <br>A livello sensoriale l’acidità è una risorsa, è in grado di aprire le papille gustative,
-          predisponendo il palato a recepire tutte le sfumature di un buon caffè.
-        </p>
+        <h1><?php echo $acidoTitolo; ?></h1>
+        <p><?php echo $acidoTesto; ?></p>
       </div>
       <img src="../img/custom/coffee-acido.png" alt="acido-img">
     </div>
     <div class="g-r-container">
       <div class="g-r g-r-margin">
-        <h1>Gusto</h1>
-        <p>Per gusto intendiamo le note aromatiche del caffè. Se ne percepiscono di diverse, e per distinguerle si ricorre alla ruota degli aromi:
-          La ruota degli aromi è uno strumento ideato dalla SCAA (Specialty Coffee Association of America) fondamentale al fine di percepire e
-          quindi descrivere correttamente tutte le note aromatiche di un caffè.</p>
+        <h1><?php echo $gustoTitolo; ?></h1>
+        <p><?php echo $gustoTesto; ?></p>
       </div>
       <div class="g-r">
-        <h1>Retrogusto</h1>
-        <p>Il retrogusto è l’ultima fase dell’analisi sensoriale del caffè, e riguarda il gusto che il caffè ci lascia in bocca, il ricordo che rimane
-          all’interno del palato una volta che la nostra tazzina sarà vuota.
-          Oltre alle note aromatiche che variano a seconda del chicco e della provenienza, il retrogusto può variare anche in base alla persistenza,
-          cioè per quanti minuti rimane in bocca una buona sensazione di caffe.</p>
+        <h1><?php echo $retrogustoTitolo; ?></h1>
+        <p><?php echo $retrogustoTesto; ?></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SEZIONE PER LEGGIBILITÀ MOBILE -->
+  <section class="faq start-animation" id="faq">
+    <div class="container justify-content-center align-items-center">
+      <div class="sezione-faq">
+        <div class="faq-item">
+          <button id="faq-button-1" aria-expanded="false">
+            <span class="faq-titolo"><?php echo $corpoTitolo; ?></span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p><?php echo $corpoTesto; ?></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button id="faq-button-2" aria-expanded="false">
+            <span class="faq-titolo"><?php echo $acidoTitolo; ?></span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p><?php echo $acidoTesto; ?></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button id="faq-button-3" aria-expanded="false">
+            <span class="faq-titolo"><?php echo $gustoTitolo; ?></span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p><?php echo $gustoTesto; ?></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button id="faq-button-4" aria-expanded="false">
+            <span class="faq-titolo"><?php echo $retrogustoTitolo; ?></span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-risposta">
+            <p><?php echo $retrogustoTesto; ?></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -129,7 +187,7 @@ if (!isset($_SESSION['id'])) {
   <!-- SELEZIONE -->
   <section class="selezione start-animation" id="selezione">
     <div class="container mt-5">
-      <h1 class="mb-4">Scelta del Caffè</h1>
+      <h1 class="mb-4 mt-3">Scelta del Caffè</h1>
       <img src="../img/divisore.png" class="img-divisore">
       <p>Tua la tazza, tua la miscela! Scegli tra una vasta selezione di caffè e crea la miscela perfetta per il tuo palato.
         <br>Con un tocco di creatività e un pizzico di passione, ogni tazza diventa un'opera d'arte da gustare e apprezzare.
@@ -176,7 +234,6 @@ if (!isset($_SESSION['id'])) {
           </p>
         </div>
         <?php
-        // File per connessione al database
         include("../login/utility/config.php");
 
         $stmt = $pdo->prepare("SELECT id, nome FROM tipicaffe WHERE nome != :escludiGustoCustom AND idcategoria IN (1, 2)");
@@ -185,12 +242,24 @@ if (!isset($_SESSION['id'])) {
         $stmt->execute();
         $caffeList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        echo '<div id="desktop-view">';
         foreach ($caffeList as $caffe) : ?>
           <div class="caffe-item" draggable="true" ondragstart="drag(event, <?php echo $caffe['id']; ?>)" id="caffe-<?php echo $caffe['id']; ?>">
             <img src="../img/caffe/tipicaffe/<?php echo $caffe['nome']; ?>.png" alt="<?php echo $caffe['nome']; ?>">
             <p class="text-on-drag-item"><?php echo $caffe['nome']; ?></p>
           </div>
-        <?php endforeach; ?>
+        <?php endforeach;
+        echo '</div>';
+
+        echo '<div id="mobile-view">';
+        foreach ($caffeList as $caffe) : ?>
+          <button class="caffe-button" onclick="selectCaffe('<?php echo $caffe['nome']; ?>')">
+            <img src="../img/caffe/tipicaffe/<?php echo $caffe['nome']; ?>.png" alt="<?php echo $caffe['nome']; ?>">
+            <p class="text-on-drag-item"><?php echo $caffe['nome']; ?></p>
+          </button>
+        <?php endforeach;
+        echo '</div>';
+        ?>
         <div class="drop-zone-container">
           <div class="drop-sx">
             <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="zone-1"></div>
@@ -214,6 +283,8 @@ if (!isset($_SESSION['id'])) {
         </div>
       </div>
     </section>
+
+
   <?php else : ?>
     <section class="login-richiesto-section start-animation" id="crea">
       <div class="container testo">

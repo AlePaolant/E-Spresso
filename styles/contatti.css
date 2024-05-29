@@ -94,7 +94,9 @@ p, .tx {
 .info a{
     font-size: 1.3rem;
 }
-
+.info a:hover{
+    color: #c7b8a3;
+}
 
 
 /*SEZIONE CONTATTI*/

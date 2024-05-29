@@ -10,19 +10,23 @@ function addToCart(productId) {
     .then(data => {
         if (data.success) {
             // alert('Product added to cart!');
-            showPopup("Prodotto aggiunto al carrello!");
+            showPopup("Prodotto aggiunto al carrello!", false);
         } else {
             // alert('Failed to add product to cart.');
-            showPopup("Impossibile aggiungere il prodotto al carrello.");
+            showPopup("Impossibile aggiungere il prodotto al carrello.", true);
         }
     });
 }
 
 // POPUP
-function showPopup(message) {
+function showPopup(message, loginBool) {
     var popup = document.getElementById("custom-popup");
     var popupMessage = document.getElementById("popup-message");
     popupMessage.textContent = message;
+    if (loginBool==false){
+        var loginBtn = document.getElementById("login-btn");
+        loginBtn.style.display = "none";
+    }
     popup.style.display = "block";
 }
 
