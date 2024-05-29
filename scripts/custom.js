@@ -208,7 +208,7 @@ function filtroCaffe() {
                 acquistaButton.textContent = "Acquista ora";
                 acquistaButton.classList.add("acquista-button");
                 acquistaButton.addEventListener('click', function() {
-                    window.location.href = `../pages/caffe.html#${caffe.nome}`;
+                    window.location.href = `../pages/shop.php#${caffe.nome}`;
                 });
 
                 risultato.appendChild(acquistaButton);
