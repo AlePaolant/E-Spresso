@@ -43,6 +43,16 @@
   font-style: normal;
   font-size:28px;
   color:navajowhite;
+  animation: cambiaColore 1.5s ease infinite alternate;
+}
+
+@keyframes cambiaColore {
+  from {
+      color: rgb(255, 255, 255);
+  }
+  to {
+      color:#7E5E47;
+  }
 }
 
 .nav-link-register{

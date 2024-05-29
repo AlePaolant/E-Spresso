@@ -3,9 +3,95 @@
 .card{
     background-color: rgba(255, 255, 255, 0.27);
     border-radius: 27px;
-    width:450px;
+    width:75%;
     height:auto;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  @media screen and (max-width:991px){
+    .card{
+      width: 100%;
+      height:100%;
+    }
+
+    .page-content{
+      width:100vw;
+      height:100vh;
+      background-size:cover;
+      background-position: center;
+    }
+
+    .bottone1{
+      width:100%;
+      height:100%;
+    }
+
+    .bottone2{
+      width:100%;
+      height:100%;
+      margin-left:10%;
+    }
+
+    .bottone1 h4{
+      font-size: 1em;
+    }
+
+    .bottone2 h4{
+      font-size: 0.8em;
+    }
+    
+  }
+
+  @media screen and (max-width:778px){
+    .card{
+      width: 100%;
+      height:100%;
+    }
+
+    .bottone1{
+      width:100%;
+      height:100%;
+    }
+
+    .bottone2{
+      width:100%;
+      height:100%;
+    }
+
+    .bottone1 h4{
+      font-size: 0.9em;
+    }
+
+    .bottone2 h4{
+      font-size: 0.7em;
+    }
+  
+  }
+
+  @media screen and (max-width:576px){
+    .card{
+      width: 60%;
+      height:100%;
+    }
+
+    .bottone1{
+      width:100%;
+      height:100%;
+    }
+
+    .bottone2{
+      width:100%;
+      height:100%;
+    }
+
+    .bottone1 h4{
+      font-size: 0.6em;
+    }
+
+    .bottone2 h4{
+      font-size: 0.5em;
+    }
+  
   }
   
   .card-under-header{
@@ -31,7 +117,7 @@
 
   #login-video{
     width: 100%;
-    height: auto;
+    height: 100%;
     position:absolute;
     object-fit: cover;
     left:0;
@@ -153,6 +239,8 @@
   }
 
   .bottone1{
+    width:100%;
+    height:100%;
     display: flex;
     border:10px;
     border-radius: 10px;
@@ -172,6 +260,8 @@
   }
 
   .bottone2{
+    width:100%;
+    height:100%;
     display:flex;
     border:10px;
     border-radius: 10px;

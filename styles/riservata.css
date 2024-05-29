@@ -9,7 +9,7 @@
 .contenuto-sx {
     display: flex;
     height: 70vh;
-    width: 25vw;
+    width: 20vw;
 }
 
 .contenuto-dx {
@@ -40,7 +40,6 @@
 .bi-box-arrow-left{
     padding-right:55%;
 }
-
 
 
 td {
@@ -137,8 +136,8 @@ tr:active {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 25vw;
-    height: 25vh;
+    width: 30vw;
+    height: 30vh;
     overflow: auto;
     background-color: #a62323; /* Solid color */
     padding: 10px;
@@ -152,6 +151,7 @@ tr:active {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     padding: 20px;
     height: 100%;
+    width:100%;
     box-sizing: border-box;
     position: relative;
     z-index: 999;
@@ -261,8 +261,8 @@ tr:active {
 }
 .visa{
     height:30%;
-    width:100%;
-    padding-left:83%;
+    width:80%;
+    margin-left:83%;
     padding-top:3%;
 }
 
@@ -311,10 +311,11 @@ tr:active {
     border-radius: 10px;
     margin-top: 3%;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin-left: 15%;
-    padding-left: 1%;
-    padding-right: 1%;
-    height:31vw;
+    margin-left: 5%;
+    padding-top:2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    height:83%;
     width:38%;
 }
 
@@ -409,4 +410,100 @@ input[type="text"]{
     width:30%;
 }
 
+@media screen and (max-width:991px){
+    .welcome{
+        width:100%;
+        height:100%;
+        margin-bottom: 15%;
+    }
+
+    .contenuto-dx{
+        padding-right:20%;
+    }
+
+    .parte-sx{
+        height:60%;
+        width:45%;
+    }
+
+    .parte-dx{
+        height:120%;
+    }
+
+    .proprietario{
+        margin-top:3%;
+    }
+
+    .thru{
+        margin-left: 30%;
+    }
+    .data{
+        margin-top:3%;
+    }
+    .procedere{
+        height:65%;
+    }
+    
+}
+
+@media screen and (max-width:778px){
+    .welcome{
+        width:100%;
+        height:100%;
+        margin-bottom: 15%;
+    }
+
+    .parte-sx{
+        display: none;
+        height:30%;
+        width:40%;
+    }
+    .parte-dx{
+        height:150%;
+        margin-left: 15%;
+    }
+
+    .sezione-contenuto{
+        margin-right: 20%;
+    }
+
+    .interno{
+        margin-left: 10%;
+        width:50%;
+    }
+    .procedere{
+        height:100%;
+    }
+    .popup{
+        width: 40%;
+        height: 40%;
+    }
+
+}
+
+@media screen and (max-width:576px){
+
+    .contenuto-sx{
+        width:30%;
+        margin-top: 10%;
+        overflow-x: auto;
+    }
+
+    .welcome{
+        width:30%;
+        height:100%;
+        margin-bottom: 15%;
+    }
+
+    .parte-sx{
+        display: none;
+        height:30%;
+        width:40%;
+    }
+    .parte-dx{
+        height:150%;
+        margin-left: 15%;
+    }
+    
+}
 

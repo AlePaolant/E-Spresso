@@ -76,7 +76,7 @@
       <form class="" action="utility/login.php" method="POST"> <!-- il metodo post serve a non mostrare le credenziali sulla barra di ricerca -->
         <input type="hidden" name="action" value="login">
 
-        <video id="login-video" autoplay loop muted>
+        <video class="video" id="login-video" autoplay loop muted>
           <source src="../img/video/sfondo_ridotto.mp4" type="video/mp4">
         </video>
         <div class="row justify-content-center">

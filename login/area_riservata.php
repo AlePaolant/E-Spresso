@@ -95,38 +95,34 @@ if (!$user) {
   <div class="welcome">
 
     <div class="contenuto-sx">
-
       <table id="clickableTable">
-
-        <!-- parte iniziale------------------------------------>
-
-        <th class="riservata">AREA RISERVATA</th>
-
-        <!-- corpo--------------------------------------------->
-
-        <tr>
-          <td class="area profilo" onclick="Cambio_area('profilo')"> <i class="bi bi-person-circle"></i> PROFILO </td>
-        </tr>
-
-        <tr>
-          <td class="area indirizzo" onclick="Cambio_area('indirizzo')"> <i class="bi bi-house-check-fill"></i> INDIRIZZO</td>
-        </tr>
-        <tr>
-          <td class="area pagamento" onclick="Cambio_area('pagamento')"> <i class="bi bi-cash-coin"></i> PAGAMENTO</td>
-        </tr>
-        <tr>
-          <td class="area impostazioni" onclick="Cambio_area('impostazioni')"> <i class="bi bi-gear-wide-connected"></i> IMPOSTAZIONI</td>
-        </tr>
-
-        <!-- parte finale -------------------------------------->
-
+        <thead>
+          <tr>
+            <th class="riservata">AREA RISERVATA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="area profilo" onclick="Cambio_area('profilo')"> <i class="bi bi-person-circle"></i> PROFILO </td>
+          </tr>
+          <tr>
+            <td class="area indirizzo" onclick="Cambio_area('indirizzo')"> <i class="bi bi-house-check-fill"></i> INDIRIZZO</td>
+          </tr>
+          <tr>
+            <td class="area pagamento" onclick="Cambio_area('pagamento')"> <i class="bi bi-cash-coin"></i> PAGAMENTO</td>
+          </tr>
+          <tr>
+            <td class="area impostazioni" onclick="Cambio_area('impostazioni')"> <i class="bi bi-gear-wide-connected"></i> IMPOSTAZIONI</td>
+          </tr>
+        </tbody>
         <tfoot>
-          <th class="logout" id="logout"> <i class="bi bi-box-arrow-left"></i>ESCI</th>
+          <tr>
+            <th class="logout" id="logout"> <i class="bi bi-box-arrow-left"></i>ESCI</th>
+          </tr>
         </tfoot>
-
       </table>
-
     </div>
+
     <!-----------------------PRIMO CONTENUTO -------------------------------------->
     <div class="contenuto-dx">
       <div class="sezione-contenuto" id="profilo">
@@ -195,7 +191,7 @@ if (!$user) {
         <div class="terzo">
           <div class="parte-sx">
             <div class="visa">
-              <h4>VISA</h4>
+              <h4 class="scritta">VISA</h4>
             </div>
             <div class="numeri">
               <h4 id="display-numeri">0000 0000 0000 0000</h4>
@@ -255,7 +251,7 @@ if (!$user) {
                 <!-- ------------------contenuto pop-up------------------------------------------- -->
                 <div class="elimina" id="elimina">
                   <p class="procedere"> Vuoi veramente procedere?</p>
-                  <button class="btn btn-danger" type="submit" id="deleteAccountButton"> Elimina </button>
+                  <button class="btn btn-danger siddartha" type="submit" id="deleteAccountButton"> Elimina </button>
                 </div>
               </div>
             </div>
