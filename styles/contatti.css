@@ -91,7 +91,9 @@ p, .tx {
     height: 100%;
 }
 
-
+.info a{
+    font-size: 1.3rem;
+}
 
 
 

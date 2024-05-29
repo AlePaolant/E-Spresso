@@ -82,7 +82,7 @@
         <div class="row justify-content-center">
           <div class="col-md-6 login-container">
             <div class="card">
-              <div class="card-under-header">
+              <div class="card-under-header ">
                 Inserisci la tua Email e la tua Password
               </div>
               <div class="card-body">

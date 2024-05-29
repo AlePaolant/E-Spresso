@@ -69,19 +69,16 @@ if (isset($_SESSION['id'])) {
 
     <!--INSERISCI QUI IL NUOVO CODICE-->
     <div class="page-content">
-    <!--<div class="img-pre">
-        <img src="img/bg-login.jpg" >
-    </div>-->
     <div class="container container-login">
   
     <!--INSERISCI QUI IL NUOVO CODICE-->
       <div class="row justify-content-center">
         <div class="col-md-6 login-container">
           <div class="card">
-            <div class="card-under-header">
-              <h3> Accedi o registrati! </h3>
+            <div class="card-under-header franco">
+              Accedi o registrati!
             </div>
-            <div class="card-body">
+            <div class="card-body account">
               <form id="loginForm">
                 <div class="btn-login">
                   <a href="login/login.php">
