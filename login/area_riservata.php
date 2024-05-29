@@ -45,7 +45,7 @@ if (!$user) {
   <meta property="og:description" content="Stanco del solito caffè? Entra nel mondo di E-Spresso e crea il caffè dei tuoi sogni.">
   <meta property="og:image" content="https://www.e-spresso.it/img/og_image.png"> <!-- ovviamente non funziona -->
 
-  <link rel="icon" type="svg" href="../../img/icon.svg">
+  <link rel="icon" type="svg" href="../img/icon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -271,7 +271,7 @@ if (!$user) {
           <div class="row">
             <div class="col-md">
               <div class="mb-4">
-                <img src="../img/logo_footer.png" style="width: 75%;">
+                <img class="footer-logo" src="../img/logo_footer.png">
               </div>
             </div>
             <div class="col-md">
