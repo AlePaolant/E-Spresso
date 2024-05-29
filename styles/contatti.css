@@ -5,30 +5,83 @@
     margin: 0;
     box-sizing: border-box;
 }
-/*SEZIONE INFO*/
-.info{
-    width: 100vw;
-    height: 100vh;
+
+h2 {
+    font-size: calc(var(--sizevar) * 50);
+}
+p, .tx {
+    font-size: calc(var(--sizevar) * 22);
+}
+
+
+/*TITOLO*/
+.title-container {
+    background-image: url("../img/shop/chicchi2.jpg");
+    background-size: cover;
+    background-position: center;
+
     display: flex;
     justify-content: center;
-    padding-top: 9%;
-    padding-bottom: 7%;
+    align-items: center;
+
+    width: 100vw;
+    height: 70vh;
+
+    box-shadow: inset 0 calc(var(--sizevar) * -6) calc(var(--sizevar) * 12) #212222;
+
+    text-align: center;
+}
+.title {
+    color: #212222;
+
+    font-size: calc(var(--sizevar) * 80);
+    text-shadow: 0 0 calc(var(--sizevar) * 8) white;
+}
+
+
+/*SEZIONE INFO*/
+.info{
+    display: flex;
+    justify-content: center;
+
+    width: 100vw;
+    padding: 10% 0 5%;
+
+    background-color: #ebe9e4;
+}
+.info-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 90vw;
+
+    box-shadow: 0 calc(var(--sizevar) * 4) calc(var(--sizevar) * 30) rgba(0, 0, 0, 0.15);
 }
 .info .sezione-sinistra, .info .sezione-destra{
     flex: 50%;
 }
-.info .sezione-sinistra{
+.info .sezione-sinistra {
+    display: flex;
+    align-items: center;
+
+    height: 80vh;
+}
+.info .sezione-destra{
     flex: 50%;
-    border-right: 2px solid black;
+    padding: calc(var(--sizevar) * 40);
+
+    background-color: rgb(224, 219, 209);
 }
 .mappa-responsive {
+    overflow: hidden;
+
+    width: 90%;
+    height: 90%;
+
     position: relative;
     margin: 5%;
-    border-radius: 20px;
-    padding-bottom: 60%;
-    padding-top: 0;
-    height: 0;
-    overflow: hidden;
+    border-radius: calc(var(--sizevar) * 20);
 }
 .mappa-responsive iframe {
     position: absolute;
@@ -44,19 +97,21 @@
 
 /*SEZIONE CONTATTI*/
 .contatti{
-    width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
+
+    width: 100vw;
     padding-top: 0;
     padding-bottom: 4%;
+    margin: 5vh 0;
 }
 .card-contatti {
-    width: 80%;
-    height: 100%;
     display: flex;
+
+    width: 88%;
+    border-radius: calc(var(--sizevar) * 10);
+
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
 }
 .contatti .div-sx{
     flex: 35%;
@@ -65,18 +120,49 @@
     flex: 65%;
 }
 .div-sx img{
-    width: 100%;
-    height:100%;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: calc(var(--sizevar) * 10);
+    border-bottom-left-radius:calc(var(--sizevar) * 10);
 }
 .div-dx .contenitore{
-    margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
     width: 90%;
+    margin: 10% 5%;
 }
 .pulsantino{
     align-items: end;
+}
+
+
+/*RESPONSIVE*/
+body {
+    --sizevar: 1px;
+}
+@media screen and (max-width: 768px){
+
+    body {
+        --sizevar: 0.13vw;  /*100 / 768*/
+    }
+    .div-sx {
+        display: none
+    }
+    .div-dx {
+        flex: 100%
+    }
+    .sezione-sinistra {
+        max-height: 60vh
+    }
+    
+}
+@media screen and (max-width: 520px){
+    body {
+        --sizevar: 0.19vw;  /*100 / 520*/
+    }
+}
+@media screen and (max-height: 390px) and (min-aspect-ratio: 4/3) {
+    body {
+        --sizevar: 0.25vh;
+    }
 }

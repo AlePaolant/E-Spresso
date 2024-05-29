@@ -57,26 +57,30 @@
           </div>
         </div>
       </nav>
+
+      <!-- TITOLO -->
+      <section class="title-container">
+        <h1 class="title">Puoi trovarci qui!</h1>
+      </section>
       
       <!-- INFO -->
-      <section class="info bg-secondary">
-        <div class="sezione-sinistra bg-danger">
-          <div>
-            <h1>Contattaci</h1>
+      <section class="info">
+        <div class="info-container">
+          <div class="sezione-sinistra">
+            <div class="mappa-responsive">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.202988576372!2d12.535517376024993!3d41.90999486341671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f63d0f827eb25%3A0xf065d83b34c75cef!2sLargo%20Antonio%20Beltramelli%2C%2036%2C%2000157%20Roma%20RM!5e0!3m2!1sit!2sit!4v1716808801775!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </div>
-          <div>
-            Chatta con noi
-          </div>
-          <div>
-            Chiamaci
-          </div>
-          <div>
-            Vieni a trovarci ( pulsante che attiva / disattiva mappa sulla dx)
-          </div>
-        </div>
-        <div class="sezione-destra bg-primary">
-          <div class="mappa-responsive">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.202988576372!2d12.535517376024993!3d41.90999486341671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f63d0f827eb25%3A0xf065d83b34c75cef!2sLargo%20Antonio%20Beltramelli%2C%2036%2C%2000157%20Roma%20RM!5e0!3m2!1sit!2sit!4v1716808801775!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="sezione-destra">
+            <h2>Orari di apertura</h2>
+            <p>Lunedì - Venerdì:<br>7:30 - 19:30</p>
+            <p>Sabato:<br>7:30 - 11:30</p>
+            <p>Domenica chiuso</p>
+            <br>
+            <h2>Come contattarci</h2>
+            <p>Numero di telefono:<br>06 41XX XX02</p>
+            <p>Mail:<br>espressocommerce@mail.it</p>
+            <p>Scorri in fondo alla pagina per scriverci!</p>
           </div>
         </div>
       </section>
@@ -91,18 +95,18 @@
           </div>
           <div class="div-dx">
             <div class="contenitore">
-              <h2>Contattaci!</h2>
+              <h2 class="big-text">Contattaci!</h2>
               <form id="contactForm" method="post" action="../php/modulo_contatti.php">
                 <div class="form-group">
-                  <label for="nome">Il tuo Nome:</label>
+                  <label for="nome" class="tx">Il tuo Nome:</label>
                   <input type="text" class="form-control" id="nome" name="nome" required>
                 </div>
                 <div class="form-group">
-                  <label for="email">La tua Email:</label>
+                  <label for="email" class="tx">La tua Email:</label>
                   <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group mb-4">
-                  <label for="messaggio">Messaggio:</label>
+                  <label for="messaggio" class="tx">Messaggio:</label>
                   <textarea class="form-control" id="messaggio" name="messaggio" rows="5" required></textarea>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
