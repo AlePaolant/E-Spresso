@@ -9,15 +9,24 @@
   }
   
   .card-under-header{
-    font-size:22px;
-    margin-top:30px;  
-    margin-bottom:-5px;
+    margin-top: 5%;
+    font-size:1.4rem; 
     text-align: center;
-    font-style: italic;
-    text-emphasis-color:initial;
-    color:black;
-    -webkit-text-stroke-width: 0.1px; /* Larghezza del bordo */
-    -webkit-text-stroke-color:black; /* Colore del bordo */
+    animation: cambiaColore 1.5s ease infinite alternate;
+  }
+
+  .franco{
+    font-size:2rem;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  @keyframes cambiaColore {
+    from {
+        color: rgb(255, 255, 255);
+    }
+    to {
+        color:#7E5E47;
+    }
   }
 
   #login-video{
@@ -133,6 +142,7 @@
     height:100vh;
     background-image: url("../img/bg-login.jpg");
     background-size:cover;
+    background-position: center;
   }
 
   .login-container{
@@ -146,11 +156,11 @@
     display: flex;
     border:10px;
     border-radius: 10px;
-    background-color:#C7B8A3;
+    background-color:#7e470b;
   }
 
   .bottone1:hover{
-    background-color: #7e5e47;
+    background-color: #C7B8A3;
   }
 
   .bottone1 h4{
@@ -158,18 +168,18 @@
   }
 
   .bottone1 h4:hover{
-    color:wheat;
+    color:darkcyan;
   }
 
   .bottone2{
     display:flex;
     border:10px;
     border-radius: 10px;
-    background-color:#A58E76;
+    background-color:#C7B8A3;
   }
 
   .bottone2:hover{
-    background-color: #7e5e49;
+    background-color: #7e470b;
     color:#fff;
   }
 
@@ -178,17 +188,18 @@
   }
 
   .bottone2 h4:hover{
-    color:wheat;
+    color:darkcyan;
   }
 
 
   .bottone1,.bottone2{
-    width:10vw;
-    height:8.5vh;
+    width:6.9vw;
+    height:7vh;
     margin:5px;
     justify-content: center;
     align-items: center;
-    padding-top: 5%;
+    padding-top:5%;
+    margin-top: -10%;
   }
 
   
