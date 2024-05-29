@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 // Ottieni il pop-up
-var popup=document.getElementById("popupElimina");
+var popup = document.getElementById("popupElimina");
 var overlay = document.getElementById("overlay");
 
 // Ottieni il pulsante che apre il pop-up
@@ -37,8 +37,8 @@ span.onclick = function () {
     overlay.style.display = "none";
 }
 
- // Quando l'utente clicca fuori dal pop-up, chiudi il pop-up
- window.onclick = function (event) {
+// Quando l'utente clicca fuori dal pop-up, chiudi il pop-up
+window.onclick = function (event) {
     if (event.target == overlay) {
         popup.style.display = "none";
         overlay.style.display = "none";
@@ -76,7 +76,7 @@ function togglePassword() {
 // Modifica la funzione di eliminazione per accettare un parametro 'id'
 
 
-document.getElementById('deleteAccountButton').addEventListener('click', function() {
+document.getElementById('deleteAccountButton').addEventListener('click', function () {
     if (confirm('Sei sicuro di voler eliminare il tuo account?')) {
         fetch('../login/utility/delete_user.php', {
             method: 'POST',
@@ -84,13 +84,33 @@ document.getElementById('deleteAccountButton').addEventListener('click', functio
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         })
-        .then(response => response.text())
-        .then(data => {
-            alert(data);
-            if (data.includes("Account eliminato con successo")) {
-                window.location.href = '../login/utility/out.php'; // Reindirizza alla pagina principale o di login
-            }
-        })
-        .catch(error => console.error('Errore:', error));
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                if (data.includes("Account eliminato con successo")) {
+                    window.location.href = '../login/utility/out.php'; // Reindirizza alla pagina principale o di login
+                }
+            })
+            .catch(error => console.error('Errore:', error));
     }
 });
+
+//per aggiornare i dati del pagamento
+document.addEventListener('DOMContentLoaded', function () {
+    const inputHolder = document.getElementById('input-holder');
+    const inputNumeri = document.getElementById('input-numeri');
+    const inputMM = document.getElementById('input-mm');
+    const inputCvv = document.getElementById('input-cvv');
+
+    const displayHolder = document.getElementById('display-holder');
+    const displayNumeri = document.getElementById('display-numeri');
+    const displayMM = document.getElementById('display-mm');
+    const btnConferma = document.getElementById('btn-conferma');
+
+    btnConferma.addEventListener('click', function() {
+        displayHolder.textContent = inputHolder.value || 'CARD HOLDER';
+        displayNumeri.textContent = inputNumeri.value || '0000 0000 0000 0000';
+        displayMM.textContent = inputMM.value || 'MM/YY';
+      });
+});
+

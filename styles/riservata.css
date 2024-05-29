@@ -130,43 +130,40 @@ tr:active {
     z-index: 1000; 
 }
 .popup {
-    display: none;
+    border-radius: 20px;
+    display: none; /*DA CAMBIARE IN NONE UNA VOLTA MODIFICATO*/
     position: fixed;
     z-index: 1001;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 30vw;
-    height: 30vh;
+    width: 25vw;
+    height: 25vh;
     overflow: auto;
     background-color: #a62323; /* Solid color */
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #888;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .popup-content {
+    border-radius: 10px;
     background-color: #fefefe;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    border: 1px solid #888;
     height: 100%;
     box-sizing: border-box;
     position: relative;
     z-index: 999;
 }
-
-.close:hover,
-.close:focus {
-    
-    color:aqua;
-    text-decoration: none;
-    cursor: pointer;
+.procedere{
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .closed:hover,
 .closed:focus {
-    
-    color:rgb(196, 228, 78);
+    color:red;
     text-decoration: none;
     cursor: pointer;
 }
@@ -177,25 +174,34 @@ tr:active {
 
 /* modifica quarto contenuto*/
 .interno-quarto {
+    margin-top: 15%;
+    margin-left: 10%;
     display: block;
     padding: 90px;
 }
 
-/* grandezza scritte modifica ed elimina*/
-.input-modifica {
-    font-size: 25px;
-}
-
 .input-elimina {
-    font-size: 25px;
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.modifica-elementi {
-    padding-bottom: 20%;
+.elbot{
+    background-color:crimson;
+    color:white;
+    margin-left: 18%;
+    width:30%;
+    height:100%;
+    border-radius: 10px;
+}
+
+.elimina{
+    width:20vw;
+    height:15vh;
 }
 
 .oggetti{
     width:150%;
+    height:70%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
 }
 
@@ -211,15 +217,16 @@ tr:active {
 }
 
 .interni-dx{
-    height:min-content;
-    min-width: fit-content;
+    height:3.7vw;
+    width:80%; 
     display:flex;
     background-color: lightgrey;
     border:0.5px solid lightgrey;
     border-radius:15px;
-    padding-top: 10%;
-    padding-left: 10%;
+    padding-top: 3.5%;
+    padding-left: 6%;
 }
+
 
 .interni-label{
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -233,6 +240,7 @@ tr:active {
 }
 
 .parte-sx{
+    box-shadow: 0 5px 30px rgba(126, 93, 71, 0.8);
     margin-left:5%;
     background: linear-gradient(90deg, #007bff, #00c6ff); /* Gradient background */
     margin-top: 16%;
@@ -252,6 +260,8 @@ tr:active {
     display: block;
 }
 .visa{
+    height:30%;
+    width:100%;
     padding-left:83%;
     padding-top:3%;
 }
@@ -261,39 +271,51 @@ tr:active {
 }
 
 .numeri{
-    padding-top:8%;
+    height:30%;
+    width:100%;
+    padding-top:2%;
     padding-left: 8%;
 }
 .valid{
+    margin-top:3%;
+    width: 23vw;
+    height: 4vh;
     display:flex;
-    align-items: flex-start;
-    padding-left:80%;
-    padding-top:3%;
-    height: 8%;
+    flex-direction: row;
+   
 }
 .valid p{
-    font-size: 70%;
+    font-size: 58%;
 }
-.valid .holder{
-padding-right:10%;
+
+.thru{
+    padding-left: 57%;
+}
+
+.holder{
+    padding-left: 3%;
 }
 
 .mm{
-    padding-top: 2%;
-    padding-left: 81%;
-    padding-bottom: 55%;
-}
-
-.mm a{
-    font-size:110%;
+    overflow:hidden;
+    display: flex;
+    height:3vw;
+    width:100%;
+    margin-top:-4%;
+    flex-direction: row;
 }
 
 .parte-dx{
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+    border:0.9px solid black;
+    border-radius: 10px;
     margin-top: 3%;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin-left: 15%;
-    height:33vw;
-    width:33%;
+    padding-left: 1%;
+    padding-right: 1%;
+    height:31vw;
+    width:38%;
 }
 
 .titolo h3{
@@ -348,7 +370,7 @@ padding-right:10%;
 }
 
 .btn{
-    margin-top: 15%;
+    margin-top: 3%;
     width:100%;
     display: block;
     border:10px;
@@ -368,7 +390,23 @@ padding-right:10%;
     color:rgb(76, 41, 8);
 }
 
-::placeholder{
-    padding-left: 5%;
+input[type="text"]{
+    padding:0 0 0 20px;
 }
+
+.proprietario{
+    height:200vh;
+    width:70%;
+    margin-left: 5%;
+    font-size: 80%;
+}
+
+.data{
+    margin-left: 7%;
+}
+.mese-anno{
+    height:100%;
+    width:30%;
+}
+
 

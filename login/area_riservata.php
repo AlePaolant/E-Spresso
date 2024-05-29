@@ -198,60 +198,63 @@ if (!$user) {
               <h4>VISA</h4>
             </div>
             <div class="numeri">
-              <h4>0000 0000 0000 0000</h4>
+              <h4 id="display-numeri">0000 0000 0000 0000</h4>
             </div>
-
             <div class="valid">
-              <p> VALID THRU</p>
+              <p class="holder">CARD HOLDER</p>
+              <p class="thru" id="display-thru">VALID THRU</p>
             </div>
-
             <div class="mm">
-              <a>MM/YY</a>
+              <div class="proprietario">
+                <p class="nome" id="display-holder"> Nome Cognome</p>
+              </div>
+              <div class="data">
+                <p class="mese-anno" id="display-mm">MM/YY</p>
+              </div>
             </div>
           </div>
-
           <div class="parte-dx">
             <div class="titolo">
               <h3>Dettagli di pagamento</h3>
             </div>
             <div class="nome-carta">
-              <h4 class="titoli">Proprietario carta <i class="bi bi-person"></i> </h4>
-              <input type="nome-carta" class="forma-control" required placeholder="Proprietario della carta">
+              <h4 class="titoli">Proprietario carta <i class="bi bi-person"></i></h4>
+              <input type="text" id="input-holder" class="forma-control" required placeholder="Proprietario della carta">
             </div>
             <div class="numero-carta">
-              <h4 class="titoli">Numero della carta <i class="bi bi-credit-card"></i> </h4>
-              <input type="numero-carta" class="forma-control" required placeholder="0000 0000 0000 0000">
+              <h4 class="titoli">Numero della carta <i class="bi bi-credit-card"></i></h4>
+              <input type="text" id="input-numeri" class="forma-control" required placeholder="0000 0000 0000 0000">
             </div>
             <div class="exp">
               <div class="exp-item">
-                <h4 class="titoli">Scadenza <i class="bi bi-calendar-week"></i> </h4>
-                <input type="text" class="riga1" required placeholder="MM/YY">
+                <h4 class="titoli">Scadenza <i class="bi bi-calendar-week"></i></h4>
+                <input type="text" id="input-mm" class="riga1" required placeholder="MM/YY">
               </div>
               <div class="exp-item">
-                <h4 class="titolo-cvv">CVV <i class="bi bi-lock"></i> </h4>
-                <input type="text" class="riga2" required placeholder="000">
+                <h4 class="titolo-cvv">CVV <i class="bi bi-lock"></i></h4>
+                <input type="text" id="input-cvv" class="riga2" required placeholder="000">
               </div>
             </div>
             <div class="btn">
-              <h4 class="conferma">Conferma</h4>
+              <h4 id="btn-conferma" class="conferma">Conferma</h4>
             </div>
           </div>
-
         </div>
       </div>
+
       <!-----------------------QUARTO CONTENUTO -------------------------------------->
       <div class="sezione-contenuto" id="impostazioni" style="display:none;">
-        <div class="interno-quarto">
+        <div class="interno-quarto ">
           <div id="overlay" class="overlay"></div>
           <div class="elimina-dati">
-            <h3 class="input-elimina">Vuoi eliminare i tuoi dati?</h3>
-            <button id="deleteButton">Elimina</button>
+            <h3 class="input-elimina ">Vuoi eliminare i tuoi dati?</h3>
+            <button class="elbot" id="deleteButton">Elimina</button>
             <div id="popupElimina" class="popup">
               <div class="popup-content">
                 <span class="closed">&times;</span>
                 <!-- ------------------contenuto pop-up------------------------------------------- -->
                 <div class="elimina" id="elimina">
-                  <a>Vuoi eliminare i tuoi dati?</a>
+                  <p class="procedere"> Vuoi veramente procedere?</p>
                   <button class="btn btn-danger" type="submit" id="deleteAccountButton"> Elimina </button>
                 </div>
               </div>
