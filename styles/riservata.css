@@ -467,10 +467,15 @@ input[type="text"]{
         margin-right: 20%;
     }
 
+    .interni-dx{
+        height:50px;
+    }
+
     .interno{
         margin-left: 10%;
         width:50%;
     }
+    
     .procedere{
         height:100%;
     }
