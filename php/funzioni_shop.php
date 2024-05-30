@@ -24,9 +24,19 @@ function addToCart($userId, $productId) {
 
 function getProducts() {
     $pdo = getDbConnection();
-    $stmt = $pdo->query('SELECT caf.id, caf.nome, caf.prezzo, caf.descrizione, cat.categoria 
+
+    $stmt = $pdo->prepare('SELECT caf.id, caf.nome, caf.prezzo, caf.descrizione, cat.categoria 
+                           FROM tipicaffe caf
+                           JOIN categorieDisponibili cat ON caf.idCategoria = cat.id
+                           WHERE caf.nome != :escludiGustoCustom');
+    $escludiGustoCustom = "Gusto Custom";
+    $stmt->bindParam(':escludiGustoCustom', $escludiGustoCustom, PDO::PARAM_STR);
+    $stmt->execute();
+
+    /*$stmt = $pdo->query('SELECT caf.id, caf.nome, caf.prezzo, caf.descrizione, cat.categoria 
                          FROM tipicaffe caf
-                         JOIN categorieDisponibili cat ON caf.idCategoria = cat.id');
+                         JOIN categorieDisponibili cat ON caf.idCategoria = cat.id');*/
+
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
