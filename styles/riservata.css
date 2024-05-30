@@ -373,7 +373,7 @@ tr:active {
 .btn{
     margin-top: 3%;
     width:100%;
-    display: block;
+    display: flex;
     border:10px;
     border-radius: 10px;
     background-color:#2a2a2a;
@@ -478,31 +478,49 @@ input[type="text"]{
         width: 40%;
         height: 40%;
     }
+    .input-elimina{
+        font-size: 20px;
+    }
+    .elbot{
+        font-size: 13px;
+        width:60px;
+    }
 
 }
 
 @media screen and (max-width:576px){
 
-    .contenuto-sx{
-        width:30%;
-        margin-top: 10%;
-        overflow-x: auto;
-    }
-
     .welcome{
         width:30%;
         height:100%;
         margin-bottom: 15%;
+        flex-wrap:wrap-reverse;
     }
 
-    .parte-sx{
-        display: none;
-        height:30%;
-        width:40%;
+    .contenuto-sx{
+        display: flex;
+        width:30%;
+        overflow-x: auto;
     }
+
+    .contenuto-dx{
+        width:70%;
+    }
+
     .parte-dx{
-        height:150%;
-        margin-left: 15%;
+        height:65vh;
+    }
+
+    .interni-dx{
+        height:50px;
+    }
+
+    .input-elimina{
+        font-size: 30px;
+        width:300px;
+    }
+    .elbot{
+        width:150px; 
     }
     
 }
