@@ -4,6 +4,11 @@ include("config.php");
 if (isset($_SESSION['id'])){
   $sessionid = $_SESSION['id'];
   try{
+
+    $sql = $pdo->prepare("DELETE FROM carrello WHERE user_id = :id");
+    $sql->bindParam(':id', $sessionid, PDO::PARAM_INT);
+    $sql->execute();
+    
     $sql=$pdo->prepare("DELETE FROM users WHERE id = :id");
     $sql->bindParam(':id', $sessionid, PDO::PARAM_INT);
 
